@@ -1,7 +1,6 @@
 // app/not-found.tsx
 import Link from "next/link";
 import Image from "next/image";
-import { Particles } from "@/components/ui/particles";
 
 export default function NotFound() {
   return (
