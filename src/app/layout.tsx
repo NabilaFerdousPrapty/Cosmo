@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   title: "Sun Flare",
   description:
     "Sailing with the Sun – A whimsical adventure where characters explore with the sun.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +47,7 @@ export default function RootLayout({
           <div className="bg-black sticky top-0 z-50">
             <NavbarHome />
           </div>
-          <Particles />
+
           <SmoothCursor />
           {children}
         </ThemeProvider>
