@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import "animate.css";
 import { NavbarHome } from "@/components/Home/Navbar";
-import { Particles } from "@/components/ui/particles";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const geistSans = Geist({

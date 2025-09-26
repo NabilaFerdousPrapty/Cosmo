@@ -9,8 +9,10 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
 import React, { useRef, useState } from "react";
+
+import { Merriweather } from "next/font/google"; // Import Merriweather
+const merriweather = Merriweather({ subsets: ["latin"], weight: "400" }); // Merriweather for nav items
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -121,6 +123,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       onMouseLeave={() => setHovered(null)}
       className={cn(
         "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-neutral-400 transition duration-200 hover:text-neutral-100 lg:flex lg:space-x-2",
+        `${merriweather.className} font-medium`, // Added Merriweather here
         className
       )}
     >
@@ -141,6 +144,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           <span
             className={cn(
               "relative z-20 transition-colors",
+              `${merriweather.className}`, // Added Merriweather here
               hovered === idx ? "text-white" : "text-neutral-300"
             )}
           >
@@ -211,7 +215,8 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg  px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]bg-neutral-950",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] bg-neutral-950",
+            `${merriweather.className}`, // Added Merriweather here for mobile menu items
             className
           )}
         >
@@ -240,7 +245,10 @@ export const NavbarLogo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black animate__animated animate__bounce animate__delay-2s"
+      className={cn(
+        "relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black animate__animated animate__bounce animate__delay-2s",
+        `${merriweather.className}` // Added Merriweather here for logo text if needed
+      )}
     >
       <Image src="/logo.png" alt="logo" width={80} height={80} />
     </Link>
@@ -279,7 +287,12 @@ export const NavbarButton = ({
   return (
     <Tag
       href={href || undefined}
-      className={cn(baseStyles, variantStyles[variant], className)}
+      className={cn(
+        baseStyles,
+        variantStyles[variant],
+        `${merriweather.className} font-bold`, // Added Merriweather here
+        className
+      )}
       {...props}
     >
       {children}

@@ -18,13 +18,26 @@ export function NavbarHome() {
       name: "Home",
       link: "/",
     },
-    {
-      name: "About",
-      link: "/about",
-    },
+
     {
       name: "Stories",
       link: "/stories",
+    },
+    {
+      name: "Space Weather",
+      link: "/space-weather",
+    },
+    {
+      name: "Fun & Learn",
+      link: "/fun-and-learn",
+    },
+    {
+      name: "Games",
+      link: "/games",
+    },
+    {
+      name: "About Us",
+      link: "/about",
     },
   ];
 
