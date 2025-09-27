@@ -39,15 +39,15 @@ export const Card = React.memo(
         onMouseLeave={() => setHovered(null)}
         onClick={handleClick}
         className={cn(
-          "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out cursor-pointer",
+          "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60  w-full transition-all duration-300 ease-out cursor-pointer",
           hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
         )}
       >
         <Image
           src={card.src}
           alt={card.title}
-          width={400}
-          height={300}
+          width={200}
+          height={150}
           className="my-auto mx-auto absolute inset-0 object-center w-full h-full"
         />
 

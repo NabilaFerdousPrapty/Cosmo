@@ -94,7 +94,7 @@ export default function HeroSectionOne() {
               alt="Landing page preview"
               className="aspect-[16/9] h-auto w-full object-cover"
               height={1000}
-              width={1000}
+              width={1600}
             />
           </div>
         </motion.div>

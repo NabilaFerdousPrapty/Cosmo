@@ -1,14 +1,15 @@
+"use client";
 import SolaraStory from "@/components/AuroraCast/SolaraStory";
 import { FocusCards } from "@/components/ui/focus-cards";
 
-export default async function AuroraCast() {
+export default function AuroraCast() {
   const cards = [
     {
       title: "NASA Heliophysics",
       src: "/Heliophysics.png",
       description:
         "Discover how the Sun creates amazing space weather and beautiful auroras!",
-      href: "/nasa-heliophysics", // or your actual route
+      href: "/nasa-heliophysics",
     },
     {
       title: "Space Weather Prediction Center",
@@ -34,10 +35,10 @@ export default async function AuroraCast() {
   return (
     <main className="p-8 bg-black text-white min-h-screen">
       <SolaraStory />
-      <h2 className="text-3xl font-bold text-center mb-10">
-        Explore More About Space Weather!
-      </h2>
-      <FocusCards cards={cards} />
+
+      <div className="mt-20">
+        <FocusCards cards={cards} />
+      </div>
     </main>
   );
 }
