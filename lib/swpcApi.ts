@@ -1,4 +1,3 @@
-// lib/swpcApi.ts
 import axios from "axios";
 
 // --- Types ---
@@ -34,7 +33,7 @@ export async function getKpIndex(): Promise<KpIndex[]> {
       "https://services.swpc.noaa.gov/json/planetary_k_index_1m.json"
     );
     return res.data;
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("Error fetching Kp index:", err);
     return [];
   }
@@ -47,19 +46,29 @@ export async function getSolarWind(): Promise<SolarWind[]> {
       "https://services.swpc.noaa.gov/json/ace/swepam/ace_swepam_1h.json"
     );
     return res.data;
-  } catch (err: any) {
-    console.error("Error fetching solar wind (1h):", err.message);
+  } catch (err: unknown) {
+    if (axios.isAxiosError(err)) {
+      console.error("Error fetching solar wind (1h):", err.message);
+    } else {
+      console.error("Unknown error fetching solar wind:", err);
+    }
     return [];
   }
 }
+
 // 3. Get solar X-ray flux
 export async function getXRayFlux1Day(): Promise<XRayPoint[]> {
   try {
-    const url = "https://services.swpc.noaa.gov/json/goes/primary/xrays-1-day.json";
+    const url =
+      "https://services.swpc.noaa.gov/json/goes/primary/xrays-1-day.json";
     const res = await axios.get<XRayPoint[]>(url);
     return res.data;
-  } catch (err) {
-    console.error("Error fetching GOES X-ray flux 1-day:", err);
+  } catch (err: unknown) {
+    if (axios.isAxiosError(err)) {
+      console.error("Error fetching GOES X-ray flux 1-day:", err.message);
+    } else {
+      console.error("Unknown error fetching GOES X-ray flux 1-day:", err);
+    }
     return [];
   }
 }

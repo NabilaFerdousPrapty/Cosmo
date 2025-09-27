@@ -119,7 +119,6 @@ const SolaraStory: React.FC = () => {
     setIsVisible(true);
   }, []);
 
-  // Don't render anything until client-side to avoid hydration mismatch
   if (!isClient) {
     return (
       <div className="font-comic-sans p-5 max-w-6xl mx-auto leading-relaxed bg-black min-h-screen flex items-center justify-center">
