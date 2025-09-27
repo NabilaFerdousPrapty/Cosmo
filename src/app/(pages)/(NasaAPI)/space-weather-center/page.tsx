@@ -4,6 +4,8 @@ import {
   getKpIndex,
   getSolarWind,
   getXRayFlux1Day,
+  KpIndex,
+  SolarWind,
   XRayPoint,
 } from "../../../../../lib/swpcApi";
 
@@ -82,8 +84,9 @@ const SolarFlare = ({ flux }: { flux: number }) => {
 };
 
 export default function SpaceWeatherStory() {
-  const [kp, setKp] = useState<any[]>([]);
-  const [wind, setWind] = useState<any[]>([]);
+  const [kp, setKp] = useState<KpIndex[]>([]);
+  const [wind, setWind] = useState<SolarWind[]>([]);
+
   const [xray, setXray] = useState<XRayPoint[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 

@@ -160,9 +160,10 @@ const SolaraStory: React.FC = () => {
               activity can significantly impact your daily life!
             </p>
             <p className="text-lg text-center text-blue-200 font-semibold">
-              🌟 <span className="text-yellow-300">"Space weather"</span> – the
-              variations in space between us – can impact technologies in space
-              and on Earth! 🌟
+              🌟{" "}
+              <span className="text-yellow-300">&quot;Space weather&quot;</span>
+              – the variations in space between us – can impact technologies in
+              space and on Earth! 🌟
             </p>
           </div>
         </div>
