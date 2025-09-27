@@ -75,7 +75,7 @@ const Donki = () => {
       <Particles className="absolute inset-0 z-0" />
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <header className="mb-10 text-center">
           <h1 className="flex items-center justify-center text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text">
             <SunIcon className="mr-3 h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14" />

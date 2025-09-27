@@ -35,7 +35,7 @@ export async function getSolarFlares(
   try {
     const res = await axios.get<SolarFlare[]>(
       `https://api.nasa.gov/DONKI/FLR?startDate=${startDate}&endDate=${endDate}&api_key=${
-        process.env.NASA_API_KEY || "DEMO_KEY"
+        process.env.NASA_API_KEY || "hFdSKUyfxgyOER14PvJAcQdKXGekNFjfh9VlpcgW"
       }`
     );
 
