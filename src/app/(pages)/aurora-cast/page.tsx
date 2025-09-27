@@ -20,13 +20,13 @@ export default function AuroraCast() {
     },
     {
       title: "Solar and Heliospheric Observatory",
-      src: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=3070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/SOHO.jpg",
       description: "Explore the Sun with our amazing solar telescope in space!",
       href: "/solar-observatory",
     },
     {
       title: "Solar Dynamics Observatory",
-      src: "https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/SDO.png",
       description: "Watch the Sun's incredible dances and explosions up close!",
       href: "/solar-dynamics",
     },
