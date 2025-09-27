@@ -2,8 +2,16 @@
 
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation"; // or next/router if using Pages Router
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+
+// Define the type first
+type CardType = {
+  title: string;
+  src: string;
+  href?: string;
+  description?: string;
+};
 
 export const Card = React.memo(
   ({
@@ -12,7 +20,7 @@ export const Card = React.memo(
     hovered,
     setHovered,
   }: {
-    card: any;
+    card: CardType; // Changed from 'any' to 'CardType'
     index: number;
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
@@ -60,14 +68,7 @@ export const Card = React.memo(
 
 Card.displayName = "Card";
 
-type Card = {
-  title: string;
-  src: string;
-  href?: string;
-  description?: string;
-};
-
-export function FocusCards({ cards }: { cards: Card[] }) {
+export function FocusCards({ cards }: { cards: CardType[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
