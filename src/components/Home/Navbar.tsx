@@ -24,8 +24,8 @@ export function NavbarHome() {
       link: "/stories",
     },
     {
-      name: "Space Weather",
-      link: "/space-weather",
+      name: "Aurora Cast",
+      link: "/aurora-cast",
     },
     {
       name: "Fun & Learn",
