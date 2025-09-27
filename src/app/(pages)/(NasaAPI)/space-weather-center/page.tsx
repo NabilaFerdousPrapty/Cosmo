@@ -139,8 +139,8 @@ export default function SpaceWeatherStory() {
         <div className="text-center mb-8 relative">
           <div className="flex justify-center items-center gap-4 mb-4">
             <AnimatedSun />
-            <h1 className="text-5xl font-extrabold text-yellow-300 bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">
-              Solara's Daily Adventure
+            <h1 className="text-5xl font-extrabold  bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">
+              Solara&apos;s Daily Adventure
             </h1>
             <AnimatedSun />
           </div>
@@ -173,11 +173,11 @@ export default function SpaceWeatherStory() {
               </h3>
               <p className="text-yellow-100 text-sm">
                 <strong>Kp Index {latestKp}</strong> measures how much the
-                Earth's magnetic field is being stretched by solar energy! Think
-                of it like a cosmic trampoline - when Solara sends more energy,
-                our magnetic field bounces and creates colorful lights called
-                auroras! The higher the number, the more dancing lights you
-                might see near the North and South poles!
+                Earth&apos;s magnetic field is being stretched by solar energy!
+                Think of it like a cosmic trampoline - when Solara sends more
+                energy, our magnetic field bounces and creates colorful lights
+                called auroras! The higher the number, the more dancing lights
+                you might see near the North and South poles!
               </p>
             </div>
             <p className="mt-3 text-yellow-300 flex items-center gap-2">
@@ -195,7 +195,7 @@ export default function SpaceWeatherStory() {
             <div className="flex items-center gap-3 mb-3">
               <div className="text-4xl animate-spin-slow">🌪️</div>
               <h2 className="text-2xl font-bold text-blue-300 bg-black/50 px-3 py-1 rounded-lg">
-                Chapter 2: Solara's Windy Friends
+                Chapter 2: Solara&apos;s Windy Friends
               </h2>
             </div>
             <p className="text-lg text-yellow-200 mb-3">
@@ -211,10 +211,10 @@ export default function SpaceWeatherStory() {
               </h3>
               <p className="text-yellow-100 text-sm">
                 <strong>Solar Wind {Math.round(latestWind)} km/s</strong> is
-                like the Sun's breath! The Sun is so hot that tiny particles
-                escape its gravity and fly through space at incredible speeds.
-                This wind takes about 2-3 days to travel from the Sun to Earth -
-                that's 150 million kilometers!
+                like the Sun&apos;s breath! The Sun is so hot that tiny
+                particles escape its gravity and fly through space at incredible
+                speeds. This wind takes about 2-3 days to travel from the Sun to
+                Earth - that&apos;s 150 million kilometers!
               </p>
             </div>
             <p className="mt-3 text-yellow-300 flex items-center gap-2">
@@ -233,12 +233,12 @@ export default function SpaceWeatherStory() {
             <div className="flex items-center gap-3 mb-3">
               <div className="text-4xl animate-pulse">💥</div>
               <h2 className="text-2xl font-bold text-red-300 bg-black/50 px-3 py-1 rounded-lg">
-                Chapter 3: Solara's Fireworks
+                Chapter 3: Solara&apos;s Fireworks
               </h2>
             </div>
             <p className="text-lg text-yellow-200 mb-3">
-              Sometimes Solara can't help herself and releases a Solar Flare!
-              Right now, the Sun whispers:{" "}
+              Sometimes Solara can&apos;t help herself and releases a Solar
+              Flare! Right now, the Sun whispers:{" "}
               <span className="text-red-400 font-bold text-xl animate-bounce">
                 {getXRayEmoji(latestXray)}
               </span>
@@ -249,14 +249,16 @@ export default function SpaceWeatherStory() {
               </h3>
               <p className="text-yellow-100 text-sm">
                 <strong>X-Ray Flux {latestXray.toExponential(2)} W/m²</strong>{" "}
-                measures Solara's solar flares! These are enormous explosions
-                that release as much energy as millions of nuclear bombs! The
-                X-rays travel at light speed and reach Earth in just 8 minutes.
+                measures Solara&apos;s solar flares! These are enormous
+                explosions that release as much energy as millions of nuclear
+                bombs! The X-rays travel at light speed and reach Earth in just
+                8 minutes.
               </p>
             </div>
             <p className="mt-3 text-yellow-300 flex items-center gap-2">
               <span className="text-2xl">🛡️</span>
-              Don't worry - our atmosphere protects us like a superhero shield!
+              Don&apos;t worry - our atmosphere protects us like a superhero
+              shield!
             </p>
           </div>
         </section>
@@ -304,8 +306,8 @@ export default function SpaceWeatherStory() {
                 <div className="flex items-center gap-2 p-2 bg-yellow-900/30 rounded">
                   <span className="text-2xl">🛡️</span>
                   <span>
-                    <strong>Safety First:</strong> Earth's atmosphere protects
-                    us!
+                    <strong>Safety First:</strong> Earth&apos;s atmosphere
+                    protects us!
                   </span>
                 </div>
               </div>

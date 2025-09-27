@@ -126,7 +126,7 @@ const SolaraStory: React.FC = () => {
         <div className="text-center">
           <div className="text-6xl animate-spin-slow mb-4">☀️</div>
           <h2 className="text-2xl text-yellow-300">
-            Loading Solara's Story...
+            Loading Solara&apos;s Story...
           </h2>
         </div>
       </div>
@@ -157,8 +157,8 @@ const SolaraStory: React.FC = () => {
 
           <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 p-6 rounded-2xl border-2 border-yellow-500/50 shadow-2xl">
             <p className="text-xl text-center mb-2 text-gray-200 leading-relaxed">
-              Although I'm 93 million miles away from Earth, my solar activity
-              can significantly impact your daily life!
+              Although I&apos;m 93 million miles away from Earth, my solar
+              activity can significantly impact your daily life!
             </p>
             <p className="text-lg text-center text-blue-200 font-semibold">
               🌟 <span className="text-yellow-300">"Space weather"</span> – the
@@ -194,7 +194,7 @@ const SolaraStory: React.FC = () => {
               <p className="text-lg text-gray-200 leading-relaxed transform hover:scale-105 transition-transform duration-300">
                 <span className="text-red-400 text-2xl">💃</span> Solara loved
                 to wiggle and jiggle, and sometimes, when she wiggled extra
-                hard, she'd send out big bursts of energy and particles!
+                hard, she&apos;d send out big bursts of energy and particles!
               </p>
 
               <div className="bg-black/50 p-4 rounded-xl border-l-4 border-yellow-500">
@@ -237,7 +237,7 @@ const SolaraStory: React.FC = () => {
                 />
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 px-6 py-2 rounded-full border border-yellow-400">
                   <p className="italic text-yellow-300 text-sm font-semibold animate-pulse">
-                    Solara's Space Weather Journey
+                    Solara&apos;s Space Weather Journey
                   </p>
                 </div>
               </div>
