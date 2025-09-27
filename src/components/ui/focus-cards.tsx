@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation"; // or next/router if using Pages Router
+import Image from "next/image";
 
 export const Card = React.memo(
   ({
@@ -34,11 +35,12 @@ export const Card = React.memo(
           hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
         )}
       >
-        <img
+        <Image
           src={card.src}
           alt={card.title}
           className="my-auto mx-auto absolute inset-0 object-center w-full h-full"
         />
+
         <div
           className={cn(
             "absolute inset-0 bg-black/50 flex items-end py-8 px-4 transition-opacity duration-300",
