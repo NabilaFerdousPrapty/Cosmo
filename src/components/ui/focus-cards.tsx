@@ -38,6 +38,8 @@ export const Card = React.memo(
         <Image
           src={card.src}
           alt={card.title}
+          width={400}
+          height={300}
           className="my-auto mx-auto absolute inset-0 object-center w-full h-full"
         />
 

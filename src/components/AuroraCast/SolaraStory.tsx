@@ -37,7 +37,7 @@ const SolaraStory: React.FC = () => {
           />
         </div>
         <p className="italic text-center text-gray-400 mt-2">
-          Solara's Space Weather Journey
+          Solara&apos;s Space Weather Journey
         </p>
       </div>
     </div>
