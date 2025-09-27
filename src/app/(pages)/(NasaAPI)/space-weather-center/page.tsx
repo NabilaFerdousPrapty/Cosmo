@@ -142,7 +142,7 @@ export default function SpaceWeatherStory() {
         <div className="text-center mb-8 relative">
           <div className="flex justify-center items-center gap-4 mb-4">
             <AnimatedSun />
-            <h1 className="text-5xl font-extrabold  bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">
+            <h1 className="lg:text-5xl md:text-3xl text-xl font-extrabold  bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text text-transparent">
               Solara&apos;s Daily Adventure
             </h1>
             <AnimatedSun />
