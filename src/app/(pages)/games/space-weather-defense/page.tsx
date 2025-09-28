@@ -345,7 +345,7 @@ export default function SpaceWeatherDefense() {
                 <li>• Balance your defense across all lanes</li>
                 <li>• Use appropriate towers for each storm type</li>
                 <li>• Upgrade towers when possible</li>
-                <li>• Monitor Earth's health constantly</li>
+                <li>• Monitor Earth&apos;s health constantly</li>
               </ul>
             </div>
           </div>
