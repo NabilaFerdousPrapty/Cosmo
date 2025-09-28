@@ -31,7 +31,7 @@ export default function CMEDodger() {
     setIsPlaying(true);
     setGameOver(false);
     particles.current = [];
-    playerX.current = 50; // Reset player position
+    playerX.current = 50;
   };
 
   // Handle player movement
