@@ -19,11 +19,7 @@ const StoryPage = () => {
   return (
     <div className="p-10 max-w-3xl mx-auto text-center">
       <h1 className="text-3xl font-bold text-yellow-400 mb-4">{page.title}</h1>
-      <img
-        src={page.illustration.image}
-        alt={page.illustration.description}
-        className="w-full max-h-96 object-contain mx-auto mb-6"
-      />
+
       <p className="text-lg text-white mb-6 whitespace-pre-line">{page.text}</p>
 
       {/* Read Aloud */}

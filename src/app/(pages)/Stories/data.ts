@@ -8,7 +8,7 @@ export const stories: Story[] = [
     title: "The Diary of a Solar Storm",
     description:
       "Follow Solara, a playful solar storm, as she travels from the Sun to Earth.",
-    coverImage: "/images/cover-solar.png",
+    coverImage: "https://i.ibb.co.com/ZRMj3MZs/sola.png",
     pdfUrl: "",
     pages: [
       {
@@ -20,7 +20,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Big glowing Sun with golden-orange flames. Solara with a scarf smiling beside her diary.",
-          image: "/images/sun.png",
+          image: "/sun.png",
         },
         animation: ["sun-glow", "solara-wave", "diary-flip"],
       },
@@ -32,7 +32,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Close-up of Sun surface with plasma arcs. Solara flying out of a flare.",
-          image: "/images/flare.png",
+          image: "",
         },
         animation: ["plasma-wave", "solara-shoot", "bubble-words"],
       },
@@ -44,7 +44,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Split page: Earth weather with clouds and rain vs. space weather with Solara zooming toward Earth.",
-          image: "/images/space-weather.png",
+          image: "",
         },
         animation: ["page-flip", "rain-move", "solara-zoom"],
       },
@@ -56,7 +56,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Earth’s orbit full of satellites with faces. One looks dizzy as Solara zips past.",
-          image: "/images/satellites.png",
+          image: "",
         },
         animation: ["solara-zip", "signal-flicker", "satellite-shake"],
       },
@@ -68,7 +68,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Children in snowy mountains watching auroras. Solara paints the sky with a glowing brush.",
-          image: "/images/aurora.png",
+          image: "",
         },
         animation: ["aurora-wave", "brush-trail", "children-glow"],
       },
@@ -80,7 +80,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "City at night with flickering lights and buzzing power lines. Solara looking 'oops'.",
-          image: "/images/power-grid.png",
+          image: "",
         },
         animation: ["lights-blink", "power-spark", "solara-fade"],
       },
@@ -92,7 +92,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Airplane flying over clouds, Solara glowing nearby. Pilot surprised at 'No Signal'.",
-          image: "/images/airplane.png",
+          image: "",
         },
         animation: ["plane-fly", "signal-blink", "solara-breeze"],
       },
@@ -104,7 +104,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "ISS orbiting Earth. Two astronauts waving at Solara while auroras glow below.",
-          image: "/images/iss.png",
+          image: "",
         },
         animation: ["iss-orbit", "astronaut-wave", "aurora-glow"],
       },
@@ -116,7 +116,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Boat at night. Fishermen with static radio. Solara above with faint auroras.",
-          image: "/images/fishermen.png",
+          image: "",
         },
         animation: ["boat-rock", "radio-static", "solara-dim"],
       },
@@ -128,7 +128,7 @@ I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin 
         illustration: {
           description:
             "Farm fields with tractor and satellite signals. Farmer looking up at Solara.",
-          image: "/images/farm.png",
+          image: "",
         },
         animation: ["tractor-move", "signal-flicker", "wheat-sway"],
       },
@@ -142,7 +142,7 @@ In a small village, Rahim and his sister Afsana looked up at the sky. The calm w
         illustration: {
           description:
             "Children in fields looking up. Sun glowing faintly with rippling sky.",
-          image: "/images/warning.png",
+          image: "",
         },
         animation: ["sun-flicker", "sky-ripple", "children-gaze"],
       },
@@ -156,7 +156,7 @@ But even Solara looked uncertain.`,
         illustration: {
           description:
             "Birds fleeing, villagers holding hands. Earth faintly shaking.",
-          image: "/images/tremor.png",
+          image: "",
         },
         animation: ["birds-fly", "ground-shake", "solara-worry"],
       },
@@ -169,7 +169,7 @@ It was beautiful, but powerful. The villagers gasped in awe.`,
         narrationTone: "Excited, awe-filled.",
         illustration: {
           description: "Aurora waves covering sky above village huts.",
-          image: "/images/storm-awakens.png",
+          image: "",
         },
         animation: ["aurora-flow", "stars-twinkle", "villagers-gasp"],
       },
@@ -183,7 +183,7 @@ The auroras danced brighter, but Earth’s shield stood strong.`,
         illustration: {
           description:
             "Earth with glowing shield arcs, children watching amazed.",
-          image: "/images/magnetic-shield.png",
+          image: "",
         },
         animation: ["shield-pulse", "aurora-brighten", "children-smile"],
       },
@@ -197,7 +197,7 @@ And Solara smiled again, knowing she hadn’t come to harm but to remind them of
         illustration: {
           description:
             "Children pointing at glowing auroras over river. Solara smiling softly.",
-          image: "/images/night-colors.png",
+          image: "",
         },
         animation: ["aurora-gradient", "stars-glow", "solara-smile"],
       },
@@ -210,7 +210,7 @@ Every burst of energy is a reminder of the bond between us—Sun and Earth, ligh
         narrationTone: "Wise, gentle.",
         illustration: {
           description: "Sun smiling, rays wrapping Earth protectively.",
-          image: "/images/lesson.png",
+          image: "",
         },
         animation: ["ray-pulse", "light-wave"],
       },
@@ -223,7 +223,7 @@ If we protect our rivers, forests, and air, the sky will always share its magic 
         narrationTone: "Hopeful, inspiring.",
         illustration: {
           description: "Children planting saplings while auroras glow above.",
-          image: "/images/promise.png",
+          image: "",
         },
         animation: ["sapling-grow", "leaf-fall", "aurora-bless"],
       },
@@ -237,7 +237,7 @@ Peace settled over the village, but the memory of the colors remained in their h
         illustration: {
           description:
             "Starry night sky, villagers resting, children still gazing upward.",
-          image: "/images/sky-calms.png",
+          image: "",
         },
         animation: ["aurora-fade", "stars-twinkle"],
       },
@@ -251,7 +251,7 @@ She whispered, 'Thank you for listening, little dreamers. Until we meet again.'`
         illustration: {
           description:
             "Golden sunrise over green fields, children waving at the sun.",
-          image: "/images/dawn.png",
+          image: "",
         },
         animation: ["sunrise", "light-spread", "children-wave"],
       },
@@ -265,7 +265,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Open diary glowing with drawings of auroras, Earth, and Sun smiling together.",
-          image: "/images/diary.png",
+          image: "",
         },
         animation: ["diary-glow", "page-turn", "pen-write"],
       },

@@ -52,12 +52,6 @@ export default function StoriesPage() {
                 >
                   🎬 Video
                 </a>
-                <Link
-                  href={`/stories/${story.id}/audiobook`}
-                  className="px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-500"
-                >
-                  🔊 Audiobook
-                </Link>
               </div>
             </div>
           </div>
