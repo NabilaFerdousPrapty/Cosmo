@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Open+Sans:wght@400;600&family=Indie+Flower&display=swap');
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -124,4 +124,62 @@
 
 * {
   cursor: none !important;
+}
+
+@keyframes phoneRing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(5deg);
+  }
+
+  20% {
+    transform: rotate(-5deg);
+  }
+
+  30% {
+    transform: rotate(5deg);
+  }
+
+  40% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  75% {
+    transform: rotate(-2deg);
+  }
 }

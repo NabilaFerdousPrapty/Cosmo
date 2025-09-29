@@ -13,16 +13,157 @@ export const stories: Story[] = [
     pages: [
       {
         id: 1,
-        title: "My Diary Begins",
-        text: `Dear Diary,
-I am Solara, a solar storm born from the fiery heart of the Sun. Today, I begin my journey through the vast sky between my home and Earth. I carry both light and power, and along the way, I will tell you how I touch the lives of everyone below.`,
-        narrationTone: "Calm, magical, like a bedtime story opening.",
+        title: "Meet Ella",
+        text: `Once upon a time, there was a park ranger named Ella. Ella loved working in the national park, where the trees were tall, the air was fresh, and the wildlife roamed freely. Every day, she helped visitors explore the park, keeping it safe and clean. Ella knew all the hidden trails and loved watching the changing colors of the leaves in the fall and the twinkling stars at night.
+
+But one evening, as Ella was finishing her patrol, something magical happened.`,
+        narrationTone: "Calm, magical, bedtime story opening.",
         illustration: {
           description:
-            "Big glowing Sun with golden-orange flames. Solara with a scarf smiling beside her diary.",
-          image: "/sun.png",
+            "Ella standing in a forest clearing under a starry sky. The first hints of auroras begin above the treetops.",
+          image: "/stories/story2/img/park-ranger.png",
         },
-        animation: ["sun-glow", "solara-wave", "diary-flip"],
+        animation: ["stars-twinkle", "aurora-faint"],
+      },
+      {
+        id: 2,
+        title: "The Sky Lights Up",
+        text: `As Ella walked back to the ranger station, she noticed the sky glowing. First, it was a faint green, then bright pinks and purples began to swirl across the horizon.
+
+'What is that light?' Ella wondered, her heart racing with excitement.
+
+The sky wasn’t dark anymore. It was filled with shimmering colors, moving and changing like a magical light show. Ella had seen auroras in books, but she had never witnessed one in person.`,
+        narrationTone: "Excited, full of wonder.",
+        illustration: {
+          description:
+            "Ella gazing at vibrant auroras swirling above the forest, wide-eyed with awe.",
+          image: "/stories/story1/img/aurora-borealis.png",
+        },
+        animation: ["aurora-swirls", "forest-glow"],
+      },
+      {
+        id: 3,
+        title: "The Call from Professor Astro",
+        text: `Just then, Ella’s phone rang. It was her friend, Professor Astro, an expert in space science who loved to teach Ella about the wonders of space weather.
+
+'Ella!' Professor Astro said, excited. 'You’re seeing the auroras! They happen when space weather from the Sun reaches Earth!'
+
+'Auroras?' Ella asked, puzzled but curious. 'What’s space weather?'
+
+'Space weather is caused by solar flares,' Professor Astro explained. 'The Sun sends out bursts of energy, and when they reach Earth, they cause these beautiful lights in the sky. It’s a form of energy from the Sun, called solar wind, that interacts with our atmosphere and magnetic field to create the auroras.'`,
+        narrationTone: "Explaining, friendly teacher-like.",
+        illustration: {
+          description:
+            "Ella on the phone, auroras glowing overhead. A thought bubble shows solar flares reaching Earth.",
+          image: "/stories/story1/img/parabolic-antenna.png",
+        },
+        animation: ["phone-ring", "thought-bubble"],
+      },
+      {
+        id: 4,
+        title: "The Solar Flares",
+        text: `Ella’s eyes widened in amazement. 'So, the Sun is responsible for these beautiful lights?' she asked.
+
+'Yes, exactly!' Professor Astro said. 'Solar flares are powerful bursts of energy from the Sun. When they travel through space, they reach Earth and interact with our planet’s magnetic field, creating auroras that light up the sky.'
+
+'That’s incredible!' Ella said, amazed. 'I had no idea the Sun could do that!'`,
+        narrationTone: "Amazed, curious.",
+        illustration: {
+          description:
+            "Diagram of solar flares bursting from the Sun, traveling to Earth. Auroras glowing in the background.",
+          image: "/stories/story1/img/solar-flare.png",
+        },
+        animation: ["solar-flare", "aurora-brighten"],
+      },
+      {
+        id: 5,
+        title: "The Impact on Technology",
+        text: `Professor Astro continued, 'The auroras are beautiful, but solar flares can also affect technology. Solar flares can mess with things like satellites, GPS, and even power grids on Earth.'
+
+'So, space weather isn’t just about pretty lights—it can mess with our gadgets?' Ella asked.
+
+'Yes,' said Professor Astro, 'solar flares can cause disruptions in technology, especially things that rely on satellites, like GPS systems and communication networks.'`,
+        narrationTone: "Informative, thoughtful.",
+        illustration: {
+          description:
+            "Satellites in space glitching from solar flares. Ella looking thoughtful under glowing auroras.",
+          image: "/stories/story2/img/digital.png",
+        },
+        animation: ["satellite-glitch", "signal-flicker"],
+      },
+      {
+        id: 6,
+        title: "A Ranger’s Challenge",
+        text: `Ella thought about how important technology was in her job. 'I use GPS to help me navigate the park and communicate with my team. What if space weather causes a problem during a rescue mission?'
+
+'That’s why we need to pay attention to space weather forecasts,' Professor Astro said. 'They help us predict when solar flares and other space weather events might happen, so we can be prepared.'
+
+Ella nodded. 'I’ll have to keep an eye on the space weather reports from now on!'`,
+        narrationTone: "Practical, serious.",
+        illustration: {
+          description:
+            "Ella checking a space weather forecast on her phone. Bright auroras glow above the forest.",
+          image: "/stories/story1/img/astronaut.png",
+        },
+        animation: ["phone-glow", "aurora-wave"],
+      },
+      {
+        id: 7,
+        title: "The Sun’s Power and Beauty",
+        text: `Even though solar flares could sometimes cause problems with technology, Ella couldn’t stop staring at the auroras above her. 'The Sun’s energy is so powerful!' she thought. 'It creates such beautiful sights in the sky, but it also affects the world in ways we can’t always see.'
+
+'Space weather is both beautiful and powerful,' Professor Astro said. 'It’s a reminder of how connected we are to the Sun and how its energy impacts us every day.'`,
+        narrationTone: "Dreamy, reflective.",
+        illustration: {
+          description:
+            "Ella gazing at auroras, peaceful expression. The colors of the lights reflect in her eyes.",
+          image: "/stories/story2/img/sun-power.png",
+        },
+        animation: ["aurora-shimmer", "eye-reflection"],
+      },
+      {
+        id: 8,
+        title: "A Ranger’s Reflection",
+        text: `Looking out over the park, Ella felt grateful for the Sun. 'The Sun not only gives us light and warmth,' she said, 'but it also helps plants grow, powers technology, and creates these magical auroras. It’s amazing how the Sun’s energy impacts everything around us!'
+
+Ella smiled as she realized how much she had learned. Space weather wasn’t just something far away—it touched her work, her garden, and even the wildlife in her park.`,
+        narrationTone: "Grateful, warm.",
+        illustration: {
+          description:
+            "Ella sitting on a hilltop, watching auroras over a forest filled with wildlife. The Sun sets golden in the distance.",
+          image: "/stories/story2/img/thanks.png",
+        },
+        animation: ["sunset-fade", "wildlife-move"],
+      },
+      {
+        id: 9,
+        title: "Ella’s Creative Solution",
+        text: `Ella felt inspired by the beauty of the auroras and the Sun’s energy. She thought about how she could use the Sun’s power to make her job easier. 'Maybe I could use solar energy to power my radio and GPS, especially during space weather events!'
+
+She spent the next few weeks building a solar-powered gadget to help her stay connected. 'If the Sun can give us auroras, it can help me with my park tools, too!' Ella said with a grin.`,
+        narrationTone: "Hopeful, inventive.",
+        illustration: {
+          description:
+            "Ella working at her ranger station on a solar-powered gadget, auroras glowing outside her window.",
+          image: "/stories/story2/img/think-out-of-the-box.png",
+        },
+        animation: ["gadget-glow", "aurora-inspire"],
+      },
+      {
+        id: 10,
+        title: "What We Learned",
+        text: `Ella learned that space weather, like solar flares, could be beautiful and powerful. It could create auroras in the sky, but it could also affect the technology that helped her do her job as a park ranger.
+
+'The Sun’s energy touches everything,' Ella said, 'whether it’s helping plants grow, powering our gadgets, or lighting up the sky. Space weather is just another part of our world!'
+
+With a smile, Ella looked up at the auroras one last time, knowing the Sun’s energy would continue to surprise and inspire her every day.`,
+        narrationTone: "Closing, uplifting.",
+        illustration: {
+          description:
+            "Ella standing in her park as the Sun sets, gazing at auroras. Nature around her glows with life.",
+          image: "/stories/story2/img/knowledge.png",
+        },
+        animation: ["aurora-fade", "sunset-rise"],
       },
     ],
   },
