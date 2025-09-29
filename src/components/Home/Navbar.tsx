@@ -21,7 +21,7 @@ export function NavbarHome() {
 
     {
       name: "Stories",
-      link: "/stories",
+      link: "/Stories",
     },
     {
       name: "Aurora Cast",

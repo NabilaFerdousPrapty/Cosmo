@@ -1,7 +1,6 @@
-// app/stories/data.t
-
 import { Story } from "./types";
 
+// app/stories/data.ts
 export const stories: Story[] = [
   {
     id: "solar-diary",

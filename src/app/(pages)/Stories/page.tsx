@@ -33,7 +33,7 @@ export default function StoriesPage() {
               {/* Buttons */}
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
-                  href={`/stories/${story.id}/1`}
+                  href={`/Stories/${story.id}/1`}
                   className="px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500"
                 >
                   📖 Read
