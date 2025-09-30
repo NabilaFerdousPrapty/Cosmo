@@ -1,7 +1,7 @@
 "use client";
 import SolaraStory from "@/components/AuroraCast/SolaraStory";
 import { FocusCards } from "@/components/ui/focus-cards";
-
+import { Particles } from "@/components/ui/particles";
 export default function AuroraCast() {
   const cards = [
     {
@@ -33,7 +33,8 @@ export default function AuroraCast() {
   ];
 
   return (
-    <main className="p-8 bg-black text-white min-h-screen">
+    <main className="p-8 bg-black text-white min-h-screen relative">
+      <Particles className="absolute inset-0 z-0" />
       <SolaraStory />
 
       <div className="mt-20">
