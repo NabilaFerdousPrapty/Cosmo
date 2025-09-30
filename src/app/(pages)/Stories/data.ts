@@ -975,7 +975,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     coverImage: "https://i.ibb.co.com/R4N9DLvF/6.png",
     pdfUrl:
       "https://drive.google.com/file/d/17nEhcCIIaHuFgTFn3hqOMfw52rz8Apv0/preview",
-    videoUrl: "/vid/farmer-ben.mp4",
+
     pages: [
       {
         id: 1,
@@ -985,7 +985,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Farmer Ben standing outside his farmhouse holding a pitchfork, with animals nearby. The morning sun rises behind him and the sky glows with auroras.",
-          image: "/stories/ben/img/page1.png",
+          image: "/stories/story1/img/farmer.png",
         },
         animation: ["sunrise-glow", "aurora-faint"],
       },
@@ -997,7 +997,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Ben holding his phone with Professor Lisa on the screen. The sky is full of colorful auroras swirling above the farm.",
-          image: "/stories/ben/img/page2.png",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
         animation: ["phone-ring", "aurora-dance"],
       },
@@ -1009,7 +1009,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing the Sun sending a solar flare to Earth, which causes glowing auroras in the atmosphere.",
-          image: "/stories/ben/img/page3.png",
+          image: "/stories/story1/img/sattelite-dish.png",
         },
         animation: ["flare-travel", "aurora-glow"],
       },
@@ -1021,7 +1021,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Ben standing next to his tractor, looking confused at the GPS error message. Auroras still shine in the sky.",
-          image: "/stories/ben/img/page4.png",
+          image: "/stories/story1/img/storm.png",
         },
         animation: ["gps-error", "aurora-faint"],
       },
@@ -1033,7 +1033,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Ben plowing the field manually with a smile. The sun sets behind him and auroras glow in the sky. Farm animals follow along peacefully.",
-          image: "/stories/ben/img/page5.png",
+          image: "/stories/img/no-gps.png",
         },
         animation: ["tractor-move", "aurora-dance"],
       },
@@ -1045,7 +1045,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Night sky calming, auroras fading. Farmer Ben relaxing on his porch, enjoying the peaceful farm.",
-          image: "/stories/ben/img/page6.png",
+          image: "/stories/story1/img/moon.png",
         },
         animation: ["aurora-fade", "porch-light"],
       },
@@ -1057,7 +1057,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing a solar flare bursting from the Sun, traveling through space, and impacting Earth's magnetic field.",
-          image: "/stories/ben/img/page7.png",
+          image: "/stories/story1/img/solar-flare.png",
         },
         animation: ["flare-burst", "magnetic-field-glow"],
       },
@@ -1069,7 +1069,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Ben looking up at the Sun thoughtfully. Farm animals graze peacefully while auroras glow in the background.",
-          image: "/stories/ben/img/page8.png",
+          image: "/stories/story1/img/solar-storm.png",
         },
         animation: ["sun-glow", "aurora-soft"],
       },
@@ -1081,7 +1081,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Ben in front of his farmhouse at twilight, auroras fading in the sky. He smiles, knowing he’s learned something new.",
-          image: "/stories/ben/img/page9.png",
+          image: "/stories/img/atmospheric-conditions.png",
         },
         animation: ["twilight-glow", "aurora-last-streak"],
       },
@@ -1093,7 +1093,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Ben sitting on his porch, looking at a starry sky. Auroras are fading, leaving a peaceful night full of possibilities.",
-          image: "/stories/ben/img/page10.png",
+          image: "/stories/story1/img/cloudy.png",
         },
         animation: ["stars-twinkle", "aurora-fade"],
       },
@@ -1107,7 +1107,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     coverImage: "https://i.ibb.co.com/0RvVrC06/7.png",
     pdfUrl:
       "https://drive.google.com/file/d/1SBnQ9k_-0wv_ItZEd2D8AjVEHHjTRqnF/preview",
-    videoUrl: "/vid/lily.mp4",
+
     pages: [
       {
         id: 1,
@@ -1117,7 +1117,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Lily standing in a snowy landscape, holding her camera, surrounded by tall pine trees. The sky above begins to glow with soft green and purple light.",
-          image: "/stories/lily/img/page1.png",
+          image: "/stories/img/photographer.png",
         },
         animation: ["camera-focus", "aurora-faint"],
       },
@@ -1129,7 +1129,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Lily setting up her camera, eagerly looking at the sky. The first faint hints of auroras appear as green streaks across the dark sky.",
-          image: "/stories/lily/img/page2.png",
+          image: "/stories/story1/img/cloudy-night.png",
         },
         animation: ["aurora-faint", "camera-adjust"],
       },
@@ -1141,7 +1141,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "The sky above Lily is filled with vibrant auroras swirling in colorful patterns. Lily holds her camera, capturing the magical moment with joy.",
-          image: "/stories/lily/img/page3.png",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
         animation: ["aurora-dance", "camera-flash"],
       },
@@ -1153,7 +1153,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing the Sun sending solar flares and CMEs toward Earth. The atmosphere glows with colorful auroras created by the Sun’s energy.",
-          image: "/stories/lily/img/page4.png",
+          image: "/stories/img/northern-lights.png",
         },
         animation: ["flare-travel", "aurora-glow"],
       },
@@ -1165,7 +1165,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Lily sitting on a snowbank, looking at her camera with auroras above. A thought bubble shows a satellite and GPS system being affected by solar energy.",
-          image: "/stories/lily/img/page5.png",
+          image: "/stories/img/atmospheric-conditions.png",
         },
         animation: ["aurora-flicker", "satellite-energy-lines"],
       },
@@ -1177,7 +1177,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Lily walking back to her cozy cabin, with the last of the auroras gently fading behind her. Snowflakes fall around her.",
-          image: "/stories/lily/img/page6.png",
+          image: "/stories/story1/img/storm.png",
         },
         animation: ["aurora-fade", "snow-fall"],
       },
@@ -1189,7 +1189,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Lily standing outside her cabin, looking up at a calm, starry sky. Her camera rests on her shoulder, and the sky is peaceful.",
-          image: "/stories/lily/img/page7.png",
+          image: "/stories/story2/img/knowledge.png",
         },
         animation: ["stars-twinkle", "aurora-faint"],
       },
@@ -1201,7 +1201,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Illustration of the Sun with rays extending toward Earth, showing energy reaching the planet and creating a glowing atmosphere.",
-          image: "/stories/lily/img/page8.png",
+          image: "/stories/img/solar-energy.png",
         },
         animation: ["sun-rays", "aurora-glow"],
       },
@@ -1213,7 +1213,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Colorful diagram showing solar flares and CMEs bursting from the Sun. Particles travel through space and interact with Earth's magnetic field, creating auroras.",
-          image: "/stories/lily/img/page9.png",
+          image: "/stories/story1/img/solar-flare.png",
         },
         animation: ["flare-burst", "aurora-dance"],
       },
@@ -1225,7 +1225,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Lily sitting inside her cabin, looking at photographs of the Northern Lights. Warm light inside, snow outside, peaceful starlit sky through the window.",
-          image: "/stories/lily/img/page10.png",
+          image: "/stories/story1/img/parabolic-antenna.png",
         },
         animation: ["cabin-light", "stars-twinkle"],
       },
@@ -1239,7 +1239,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     coverImage: "https://i.ibb.co.com/4CnZh7W/8.png",
     pdfUrl:
       "https://drive.google.com/file/d/1fNSubGCYk_wf_SvnfXD923jmufKE1Tol/preview",
-    videoUrl: "/vid/leo.mp4",
+
     pages: [
       {
         id: 1,
@@ -1249,7 +1249,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo sitting in his boat, looking out at the calm sea. The sky above is still dark, but colorful auroras are beginning to appear in the distance.",
-          image: "/stories/leo/img/page1.png",
+          image: "/stories/story1/img/fisherman.png",
         },
         animation: ["aurora-faint", "water-ripple"],
       },
@@ -1261,7 +1261,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo in his boat, looking up at the vibrant auroras dancing across the sky. The ocean reflects the colorful lights, and the boat drifts peacefully.",
-          image: "/stories/leo/img/page2.png",
+          image: "/stories/img/northern-lights.png",
         },
         animation: ["aurora-dance", "water-reflect"],
       },
@@ -1273,7 +1273,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo sitting in his boat with his phone in hand, speaking with Professor Lisa. The auroras above swirl brightly, with soft waves rippling below the boat.",
-          image: "/stories/leo/img/page3.png",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
         animation: ["aurora-glow", "water-wave"],
       },
@@ -1285,7 +1285,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing solar flares coming from the Sun and traveling through space toward Earth. The Earth glows where auroras appear, with energy particles moving toward it.",
-          image: "/stories/leo/img/page4.png",
+          image: "/stories/img/atmospheric-conditions.png",
         },
         animation: ["flare-travel", "aurora-glow"],
       },
@@ -1297,7 +1297,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo staring out at the ocean, with auroras glowing above. The ocean reflects the lights, and small waves ripple gently in the water.",
-          image: "/stories/leo/img/page5.png",
+          image: "/solar-system.png",
         },
         animation: ["aurora-faint", "water-ripple"],
       },
@@ -1309,7 +1309,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo looking at his GPS screen showing an error message. The compass needle spins wildly. The auroras continue to glow above.",
-          image: "/stories/leo/img/page6.png",
+          image: "/stories/story1/img/weapons.png",
         },
         animation: ["gps-error", "compass-spin", "aurora-glow"],
       },
@@ -1321,7 +1321,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo fishing from his boat, with the beautiful auroras above. The water below is calm, and the boat drifts along peacefully.",
-          image: "/stories/leo/img/page7.png",
+          image: "/stories/img/no-gps.png",
         },
         animation: ["aurora-dance", "water-calm"],
       },
@@ -1333,7 +1333,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "The night sky is calm, with the last of the auroras gently fading. Leo sits back in his boat, smiling as the stars twinkle. The calm sea reflects the stars.",
-          image: "/stories/leo/img/page8.png",
+          image: "/stories/story1/img/cloudy.png",
         },
         animation: ["aurora-fade", "stars-twinkle"],
       },
@@ -1345,7 +1345,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo holding his fishing rod with a peaceful smile, looking at the stars above. The calm ocean reflects fading auroras, and the boat gently drifts.",
-          image: "/stories/leo/img/page9.png",
+          image: "/stories/story2/img/knowledge.png",
         },
         animation: ["stars-twinkle", "water-reflect"],
       },
@@ -1357,7 +1357,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Leo’s boat sailing back to shore, with the last auroras glowing softly. He looks up at the starry sky with a contented smile, while the ocean reflects twinkling stars.",
-          image: "/stories/leo/img/page10.png",
+          image: "/stories/story1/img/parabolic-antenna.png",
         },
         animation: ["aurora-fade", "stars-twinkle", "water-reflect"],
       },
@@ -1371,7 +1371,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     coverImage: "https://i.ibb.co.com/8DrcVp2m/9.png",
     pdfUrl:
       "https://drive.google.com/file/d/1I9R9LZEEavsW0Ot9mgEIpULeEXd5JuLL/preview",
-    videoUrl: "/vid/max.mp4",
+
     pages: [
       {
         id: 1,
@@ -1381,7 +1381,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max in his kitchen, stirring a pot on the stove with his apron on. Through the window, the sky glows faintly with auroras.",
-          image: "/stories/max/img/page1.png",
+          image: "/stories/img/cooking.png",
         },
         animation: ["aurora-faint", "kitchen-light-flicker"],
       },
@@ -1393,7 +1393,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max looks up at the flickering lights, holding a knife in one hand. His phone is ringing on the counter, and through the window, the auroras glow softly.",
-          image: "/stories/max/img/page2.png",
+          image: "/stories/img/interview.png",
         },
         animation: ["light-flicker", "aurora-soft"],
       },
@@ -1405,7 +1405,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max talking on the phone with Lisa, with a thought bubble showing solar energy traveling from the Sun to Earth. Auroras start glowing in the sky.",
-          image: "/stories/max/img/page3.png",
+          image: "/stories/img/atmospheric-conditions.png",
         },
         animation: ["aurora-start", "energy-burst"],
       },
@@ -1417,7 +1417,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing solar flares and CMEs coming from the Sun, traveling through space toward Earth. Earth’s atmosphere glows with auroras. Max looks amazed.",
-          image: "/stories/max/img/page4.png",
+          image: "/stories/story1/img/solar-flare.png",
         },
         animation: ["flare-burst", "aurora-glow"],
       },
@@ -1429,7 +1429,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max opening the oven door, looking surprised as the oven light flickers and doesn’t heat up. Auroras glow outside the window.",
-          image: "/stories/max/img/page5.png",
+          image: "/stories/img/no-fire.png",
         },
         animation: ["oven-flicker", "aurora-glow"],
       },
@@ -1441,7 +1441,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max cooking on the stove, stirring a big pot of soup. Auroras glow softly outside his kitchen window, filling the room with warm, colorful light.",
-          image: "/stories/max/img/page6.png",
+          image: "/stories/img/idea.png",
         },
         animation: ["stir-soup", "aurora-glow"],
       },
@@ -1453,7 +1453,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing solar storms affecting Earth’s atmosphere, with satellites, GPS systems, and auroras glowing in the background.",
-          image: "/stories/max/img/page7.png",
+          image: "/stories/story1/img/solar-storm.png",
         },
         animation: ["aurora-glow", "satellite-effect"],
       },
@@ -1465,7 +1465,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max sitting at the dinner table with a bowl of soup, smiling as the auroras fade. Kitchen lights are bright again, stars twinkle outside.",
-          image: "/stories/max/img/page8.png",
+          image: "/stories/story1/img/moon.png",
         },
         animation: ["aurora-fade", "stars-twinkle"],
       },
@@ -1477,7 +1477,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max standing in his kitchen, looking out the window at the peaceful night sky. He has a peaceful smile, with his cooking tools on the counter.",
-          image: "/stories/max/img/page9.png",
+          image: "/stories/story2/img/knowledge.png",
         },
         animation: ["aurora-fade", "stars-twinkle"],
       },
@@ -1489,7 +1489,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Max sitting contentedly at his table, with his bowl of soup, looking out the window at the stars and the faint remnants of auroras. He smiles, grateful for the wonders of space.",
-          image: "/stories/max/img/page10.png",
+          image: "/stories/img/sungift.png",
         },
         animation: ["aurora-fade", "stars-twinkle", "warm-light"],
       },
@@ -1502,7 +1502,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
       "Captain Mark experiences a solar storm on the International Space Station and learns how space weather affects Earth and astronauts.",
     coverImage: "/stories/mark/img/cover.png",
     pdfUrl: "/pdfs/story-mark.pdf",
-    videoUrl: "/vid/mark.mp4",
+
     pages: [
       {
         id: 1,
@@ -1633,7 +1633,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
       "Luna, a passionate botanist, faces a mysterious villain who tries to steal the Sun’s energy, while auroras light up her garden.",
     coverImage: "https://i.ibb.co/newcoverimage/luna.png",
     pdfUrl: "/pdfs/story-luna.pdf",
-    videoUrl: "/vid/story-luna.mp4",
+
     pages: [
       {
         id: 0,
