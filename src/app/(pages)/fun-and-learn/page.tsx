@@ -136,8 +136,8 @@ export default function FunAndLearn() {
     {
       id: 1,
       question:
-        "I'm a giant ball of gas that gives you light and heat. What am I?",
-      hint: "I'm the center of our solar system!",
+        "I&apos;m a giant ball of gas that gives you light and heat. What am I?",
+      hint: "I&apos;m the center of our solar system!",
       answer: "The Sun",
       explanation:
         "The Sun is a star made of hot gases that provides light and heat to all planets in our solar system!",
@@ -151,14 +151,14 @@ export default function FunAndLearn() {
       hint: "You can find me in your classroom!",
       answer: "A Map",
       explanation:
-        "A map shows cities, forests, and water bodies, but they're just drawings, not the real things!",
+        "A map shows cities, forests, and water bodies, but they&apos;re just drawings, not the real things!",
       image: "/r2.png",
       category: "earth",
     },
     {
       id: 3,
       question:
-        "I'm not alive, but I can grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?",
+        "I&apos;m not alive, but I can grow; I don&apos;t have lungs, but I need air; I don&apos;t have a mouth, but water kills me. What am I?",
       hint: "You can make me with bubbles!",
       answer: "Fire",
       explanation:
@@ -172,10 +172,6 @@ export default function FunAndLearn() {
     if (!solvedRiddles.includes(riddleId)) {
       setSolvedRiddles([...solvedRiddles, riddleId]);
     }
-  };
-
-  const handleMysteryBoxClick = (type: string) => {
-    alert(`You discovered a ${type}! 🎉`);
   };
 
   return (
@@ -258,7 +254,7 @@ export default function FunAndLearn() {
         {activeTab === "facts" && (
           <div className="min-h-screen flex flex-col justify-center py-12 px-4 bg-gradient-to-br from-zinc-900 to-black relative">
             {" "}
-           <Particles className="absolute inset-0 z-0" />
+            <Particles className="absolute inset-0 z-0" />
             <div className="text-center mb-12">
               <h2 className="text-5xl font-extrabold font-display text-yellow-300 mb-4 drop-shadow-lg">
                 Mind-Blowing Facts! 💫
@@ -303,7 +299,8 @@ export default function FunAndLearn() {
                       that all other planets could fit inside it! 🌌
                     </p>
                     <p className="text-sm mt-2">
-                      Did you know Jupiter has 95 moons? That's a busy planet!
+                      Did you know Jupiter has 95 moons? That&apos;s a busy
+                      planet!
                     </p>
                   </div>
                 }
@@ -325,7 +322,7 @@ export default function FunAndLearn() {
                     </p>
                     <p className="text-sm mt-2">
                       In space, astronauts grow about 2 inches taller because
-                      there's no gravity pushing down on their spines!
+                      there&apos;s no gravity pushing down on their spines!
                     </p>
                   </div>
                 }
@@ -347,8 +344,8 @@ export default function FunAndLearn() {
                       system - Olympus Mons! 🏔️
                     </p>
                     <p className="text-sm mt-2">
-                      It's 3 times taller than Mount Everest and would cover the
-                      entire state of Arizona!
+                      It&apos;s 3 times taller than Mount Everest and would
+                      cover the entire state of Arizona!
                     </p>
                   </div>
                 }
@@ -454,11 +451,11 @@ export default function FunAndLearn() {
                     </p>
                     <p>
                       You discovered an <strong>asteroid made of metal</strong>{" "}
-                      worth more than Earth's economy! 💰
+                      worth more than Earth&apos;s economy! 💰
                     </p>
                     <p className="text-sm mt-2">
                       Some asteroids are so valuable that scientists call them
-                      'flying gold mines'!
+                      &apos;flying gold mines&apos;!
                     </p>
                   </div>
                 }
@@ -518,12 +515,12 @@ export default function FunAndLearn() {
                       🌕 One Small Step!
                     </p>
                     <p>
-                      You found Neil Armstrong's{" "}
+                      You found Neil Armstrong&apos;s{" "}
                       <strong>first footprint on the Moon</strong> from 1969! 👣
                     </p>
                     <p className="text-sm mt-2">
                       That footprint will last for millions of years because
-                      there's no wind or rain on the Moon!
+                      there&apos;s no wind or rain on the Moon!
                     </p>
                   </div>
                 }
@@ -540,8 +537,8 @@ export default function FunAndLearn() {
                       🍽️ Space Kitchen!
                     </p>
                     <p>
-                      You invented <strong>space ice cream</strong> that doesn't
-                      melt in zero gravity! 🍦
+                      You invented <strong>space ice cream</strong> that
+                      doesn&apos;t melt in zero gravity! 🍦
                     </p>
                     <p className="text-sm mt-2">
                       Astronauts use magnetic spoons and drink from sealed bags
@@ -637,7 +634,7 @@ export default function FunAndLearn() {
                     <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
                       <p className="text-sm text-gray-300">
                         <span className="text-green-400">✨ Fun Fact:</span>{" "}
-                        Jupiter has 95 moons - that's a busy planet!
+                        Jupiter has 95 moons - tha&apos;s a busy planet!
                       </p>
                     </div>
                   </div>
@@ -664,7 +661,7 @@ export default function FunAndLearn() {
                     <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
                       <p className="text-sm text-gray-300">
                         <span className="text-cyan-400">⚡ Mind Blown:</span> If
-                        you watched someone fall into a black hole, they'd
+                        you watched someone fall into a black hole, they&apos;d
                         appear to freeze at the edge forever!
                       </p>
                     </div>
