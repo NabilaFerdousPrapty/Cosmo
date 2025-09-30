@@ -1,3 +1,4 @@
+import { Link } from "lucide-react";
 import { Particles } from "../ui/particles";
 
 // components/HomeSections/StoriesSection.tsx
@@ -14,12 +15,12 @@ export default function StoriesSection() {
           space weather through fun, interactive stories designed for young
           explorers.
         </p>
-        <a
+        <Link
           href="/Stories"
           className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold rounded-2xl text-lg hover:scale-105 transition-transform"
         >
           Explore Stories 🚀
-        </a>
+        </Link>
       </div>
     </section>
   );
