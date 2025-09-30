@@ -1512,7 +1512,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Captain Mark floating inside the ISS, looking at his space weather monitor. Earth is visible through the large window. The monitor shows a warning about a solar storm.",
-          image: "/stories/mark/img/page1.png",
+          image: "/stories/story1/img/astronaut.png",
         },
         animation: ["monitor-beep", "earth-glow"],
       },
@@ -1524,7 +1524,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Captain Mark talking to Professor Lisa on video call. Solar flares are visible coming from the Sun. Earth is visible through the ISS window.",
-          image: "/stories/mark/img/page2.png",
+          image: "/stories/img/atmospheric-conditions.png",
         },
         animation: ["solar-flare-burst", "video-call-flicker"],
       },
@@ -1536,7 +1536,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing solar flares and CMEs coming from the Sun and traveling through space toward Earth.",
-          image: "/stories/mark/img/page3.png",
+          image: "/stories/story1/img/solar-flare.png",
         },
         animation: ["flare-burst", "particle-travel"],
       },
@@ -1548,7 +1548,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Bright solar flare bursts from the Sun. Earth below shows glitches in communication lines. Captain Mark looks at his monitor showing an error.",
-          image: "/stories/mark/img/page4.png",
+          image: "/stories/story1/img/storm.png",
         },
         animation: ["flare-intense", "monitor-flicker"],
       },
@@ -1560,7 +1560,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Diagram showing solar storms affecting satellites and GPS systems on Earth with energy lines traveling from space.",
-          image: "/stories/mark/img/page5.png",
+          image: "/stories/img/network.png",
         },
         animation: ["energy-lines", "satellite-glow"],
       },
@@ -1572,7 +1572,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Captain Mark floating inside the ISS, smiling as he looks at protective shields. Outside, solar storm energy is blocked by the shields.",
-          image: "/stories/mark/img/page6.png",
+          image: "/stories/img/shield.png",
         },
         animation: ["shield-glow", "solar-energy-block"],
       },
@@ -1584,7 +1584,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Auroras glowing above Earth in greens, purples, and pinks. Captain Mark watches from the ISS window, mesmerized.",
-          image: "/stories/mark/img/page7.png",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
         animation: ["aurora-dance", "earth-glow"],
       },
@@ -1596,7 +1596,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Captain Mark looking out of the ISS window at calm Earth. Auroras faded, stars twinkle in the sky.",
-          image: "/stories/mark/img/page8.png",
+          image: "/stories/story1/img/cloudy.png",
         },
         animation: ["aurora-fade", "stars-twinkle"],
       },
@@ -1608,7 +1608,7 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Captain Mark floating near the ISS window, looking at peaceful Earth. The Sun shines calmly in the distance.",
-          image: "/stories/mark/img/page9.png",
+          image: "/stories/story2/img/knowledge.png",
         },
         animation: ["earth-glow", "sun-calm"],
       },
@@ -1620,140 +1620,141 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
         illustration: {
           description:
             "Captain Mark at his station, looking up at starry sky outside. Earth peaceful below, ISS floats in space.",
-          image: "/stories/mark/img/page10.png",
+          image: "/stories/story1/img/cloudy.png",
         },
         animation: ["stars-twinkle", "earth-glow", "station-hover"],
       },
     ],
   },
   {
-    id: "luna-the-botanist-and-the-cosmic-thief",
-    title: "Luna the Botanist and the Cosmic Thief",
+    id: "lila-sun-shadow",
+    title: "Lila the Scientist and the Shadow of the Sun",
     description:
-      "Luna, a passionate botanist, faces a mysterious villain who tries to steal the Sun’s energy, while auroras light up her garden.",
-    coverImage: "https://i.ibb.co/newcoverimage/luna.png",
-    pdfUrl: "/pdfs/story-luna.pdf",
+      "Lila, a brilliant young scientist, discovers the beauty and dangers of the Sun’s power when a mysterious villain tries to steal its energy.",
+    coverImage: "/stories/lila/img/cover.png",
+    pdfUrl: "/pdfs/story-lila.pdf",
+    videoUrl: "/vid/story-lila.mp4",
 
     pages: [
       {
-        id: 0,
-        title: "Cover Page",
-        text: "Luna the Botanist and the Cosmic Thief",
-        narrationTone: "Magical, mysterious, inviting.",
-        illustration: {
-          description:
-            "Luna, the botanist, standing in her glowing garden at night, colorful auroras lighting up the sky. Shadows in the distance hint at a mysterious figure approaching.",
-          image: "/stories/story-luna/img/cover.png",
-        },
-        animation: ["aurora-glow", "garden-bloom", "shadow-move"],
-      },
-      {
         id: 1,
-        title: "Meet Luna",
-        text: "Luna was a botanist who loved experimenting with rare plants. Her garden was her sanctuary, filled with flowers that seemed to reach for the stars. Every day, she nurtured them with care. But one evening, while watering her moonlit garden, she noticed something unusual—the sky shimmered with auroras, but a dark figure lurked at the edge of her garden.",
-        narrationTone: "Gentle, curious, tense.",
+        title: "Meet Lila",
+        text: "Lila was a scientist who loved studying the Sun. Every day, she cared for her garden and tested her solar inventions that helped plants grow stronger. She believed the Sun was a friend, a magical giver of life. But one evening, as she watered her plants, the sky changed. The blue faded into swirling colors—greens, purples, and pinks. Lila gasped.",
+        narrationTone: "Calm, magical, curious.",
         illustration: {
           description:
-            "Luna in her garden, holding a watering can. Auroras swirl above, while a shadowy figure hides behind trees at the edge of the garden.",
-          image: "/stories/story-luna/img/luna-garden.png",
+            "Lila watering her plants in her garden. Above her, the first bright streaks of auroras appear. Her eyes are wide with wonder.",
+          image: "/stories/img/scientistg.png",
         },
-        animation: ["aurora-begin", "shadow-flicker", "plants-sway"],
+        animation: ["stars-twinkle", "aurora-faint"],
       },
       {
         id: 2,
-        title: "A Strange Glow",
-        text: "The auroras above seemed brighter than usual, almost as if they were trying to warn Luna. She squinted at the figure moving between the plants. 'Who’s there?' she whispered. Suddenly, the lights dimmed in a strange way, as if someone was trying to steal the Sun’s energy itself!",
-        narrationTone: "Suspenseful, fearful, emotional.",
+        title: "The Mysterious Glow",
+        text: "The colors in the sky danced like ribbons. 'It’s so beautiful… but why now?' Lila whispered. Suddenly, her solar gadgets flickered. The lights dimmed, and her lab screens blinked red. Something was wrong.",
+        narrationTone: "Curious, slightly tense.",
         illustration: {
           description:
-            "Luna looking up at glowing auroras, eyes wide with fear. A faint, mysterious figure cloaked in shadows is moving through the garden.",
-          image: "/stories/story-luna/img/luna-glow.png",
+            "The auroras swirl dramatically. Lila’s solar gadgets in the garden glow, then flicker. Lila kneels beside them, looking worried.",
+          image: "/stories/img/northern-lights.png",
         },
-        animation: ["aurora-intense", "shadow-slide", "plants-sway"],
+        animation: ["aurora-dance", "gadgets-flicker"],
       },
       {
         id: 3,
-        title: "The Cosmic Thief Appears",
-        text: "Luna’s heart raced. From the shadows stepped a figure—the Cosmic Thief! 'Give me the Sun’s energy!' the thief demanded. Luna took a step back. 'You can’t take the Sun’s energy! It keeps everything alive, including my plants!' she shouted.",
-        narrationTone: "Dramatic, tense, heroic.",
+        title: "The Villain Appears",
+        text: "A deep laugh echoed through the night. From the shadows stepped Umbra, a villain who wanted to steal the Sun’s power for himself. 'Your Sun is weak, Lila,' Umbra sneered. 'With this storm, I’ll control its energy!' Lila’s heart raced. She knew she had to protect her garden, her inventions, and even the Sun’s gift itself.",
+        narrationTone: "Dark, dramatic.",
         illustration: {
           description:
-            "The Cosmic Thief, a dark figure with glowing hands, hovering above the garden. Luna stands in front of her plants protectively. The auroras swirl wildly in the sky.",
-          image: "/stories/story-luna/img/thief-appears.png",
+            "Umbra, cloaked in black shadows, appears behind Lila. His hands spark with dark energy. Lila stands protectively in front of her glowing plants.",
+          image: "/stories/img/villain.png",
         },
-        animation: ["aurora-spin", "thief-glow", "plants-shake"],
+        animation: ["shadow-rise", "plants-glow"],
       },
       {
         id: 4,
-        title: "Luna Calls Professor Sol",
-        text: "Thinking quickly, Luna pulled out her phone and called Professor Sol, her mentor in astronomy. 'Professor Sol! The Cosmic Thief is trying to steal the Sun’s energy!' she cried. Professor Sol’s voice was calm but urgent: 'Luna, you must protect your garden. Use the energy of the Sun wisely. The auroras are a guide—they’ll show you how!'",
-        narrationTone: "Urgent, instructive, emotional.",
+        title: "Call from Professor Sol",
+        text: "Lila’s phone rang. It was Professor Sol, her mentor. 'Lila! That’s not just a storm—it’s a solar flare. Umbra is trying to twist the Sun’s energy for his own power. You must stop him!' 'But how?' Lila asked, fear in her voice. 'Remember, the Sun’s true gift is life. Use that gift to fight back,' Sol encouraged.",
+        narrationTone: "Urgent, supportive.",
         illustration: {
           description:
-            "Luna on her phone, determined, with auroras glowing brightly above. Professor Sol appears in a small call window, explaining guidance.",
-          image: "/stories/story-luna/img/luna-call.png",
+            "Lila clutching her phone, Professor Sol’s face glowing on the screen. Behind her, Umbra spreads his dark energy across the garden.",
+          image: "/stories/img/interview.png",
         },
-        animation: ["aurora-bright", "phone-glow", "plants-sway"],
+        animation: ["phone-glow", "shadow-spread"],
       },
       {
         id: 5,
-        title: "The Battle of Energy",
-        text: "Luna concentrated. She extended her hands to the sky, connecting with the aurora’s energy. Light streamed down into her garden, surrounding her plants with a golden glow. The Cosmic Thief tried to grab it, but Luna’s love and care for her garden made the energy strong and untouchable.",
-        narrationTone: "Heroic, emotional, magical.",
+        title: "The Sun’s Gift",
+        text: "Lila steadied her breath. 'The Sun gives life… it helps my plants grow strong,' she thought. She touched the leaves of her flowers, and they glowed with golden light. 'The Sun is with me,' she whispered.",
+        narrationTone: "Hopeful, magical.",
         illustration: {
           description:
-            "Luna glowing with golden aurora energy, protecting her plants. The Cosmic Thief reaches out but is pushed back by the radiant light.",
-          image: "/stories/story-luna/img/battle-energy.png",
+            "Lila’s hands glow as she touches the plants. The flowers bloom brighter, radiating golden energy. Umbra steps back, shielding his eyes.",
+          image: "/stories/img/sungift.png",
         },
-        animation: ["light-beam", "aurora-protect", "thief-retreat"],
+        animation: ["flower-glow", "umbra-shield"],
       },
       {
         id: 6,
-        title: "The Villain’s Defeat",
-        text: "The Cosmic Thief screamed and vanished into the night, unable to steal the Sun’s energy. Luna breathed a sigh of relief. Tears of joy filled her eyes as she saw her garden safe, glowing brighter than ever with auroras reflecting the Sun’s energy.",
-        narrationTone: "Emotional, triumphant, relieved.",
+        title: "Umbra’s Attack",
+        text: "‘Foolish girl!’ Umbra shouted, sending a wave of shadow crashing into the garden. The plants bent, and her solar panels sparked. Lila stumbled but didn’t fall. Tears filled her eyes—not from fear, but from love for her garden. 'I won’t let you take the Sun’s gift!'",
+        narrationTone: "Tense, emotional.",
         illustration: {
           description:
-            "Luna hugging her plants, auroras shimmering above. The shadow of the thief fades away in the distance.",
-          image: "/stories/story-luna/img/thief-defeat.png",
+            "Umbra casting a massive shadowy wave across the garden. Lila stands firm, holding onto a glowing flower, tears glistening on her face.",
+          image: "/stories/story1/img/weapons.png",
         },
-        animation: ["aurora-glow", "plants-shine", "shadow-fade"],
+        animation: ["shadow-wave", "flower-glow"],
       },
       {
         id: 7,
-        title: "A Lesson in Courage",
-        text: "Luna realized something important: the Sun’s energy is precious, and protecting life requires courage and love. 'I’ll always care for my garden, and I’ll never let anyone harm the Sun’s gift,' she said, feeling stronger than ever.",
-        narrationTone: "Reflective, uplifting, inspiring.",
+        title: "Lila’s Shield of Light",
+        text: "The auroras above grew stronger. Lila raised her hands, and the light from her plants rose into the sky, forming a shield. The shield clashed with Umbra’s darkness, filling the night with sparks of color. The storm raged, but Lila’s love for life was stronger.",
+        narrationTone: "Epic, powerful.",
         illustration: {
           description:
-            "Luna standing tall in her garden, auroras glowing gently above, a peaceful and proud expression on her face.",
-          image: "/stories/story-luna/img/luna-courage.png",
+            "Lila standing tall, beams of golden and green light shooting upward, forming a glowing shield against Umbra’s shadow attack.",
+          image: "/stories/img/solar-energy.png",
         },
-        animation: ["aurora-soft", "plants-sway", "light-glow"],
+        animation: ["light-shield", "shadow-clash"],
       },
       {
         id: 8,
-        title: "Auroras of Hope",
-        text: "As the night ended, the auroras danced across the sky one last time, a reminder that even in darkness, light and energy can protect what we love. Luna felt connected to the Sun, her garden, and the universe itself.",
-        narrationTone: "Magical, peaceful, emotional.",
+        title: "The Beautiful Aurora",
+        text: "As the shield grew, Umbra’s shadow began to fade. The garden glowed, and the auroras above danced brighter than ever. Umbra screamed as the light washed over him, dissolving his shadows. 'No! The Sun belongs to me!' 'No,' Lila said softly. 'The Sun belongs to all of us.'",
+        narrationTone: "Triumphant, firm.",
         illustration: {
           description:
-            "Luna sitting among her glowing plants, looking up at the auroras shimmering above the night sky.",
-          image: "/stories/story-luna/img/aurora-hope.png",
+            "Umbra disintegrating into the night as Lila’s shield grows stronger. The auroras swirl magnificently above, lighting up the garden.",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
-        animation: ["aurora-dance", "plants-glow", "sky-twinkle"],
+        animation: ["umbra-fade", "aurora-bright"],
       },
       {
         id: 9,
-        title: "What We Learned",
-        text: "Luna learned that energy, like the Sun’s, is powerful and precious. It can create life, beauty, and hope—but it must be protected from those who would misuse it. 'Love, care, and courage can make even the strongest energy safe,' Luna whispered to herself.",
-        narrationTone: "Concluding, reflective, inspiring.",
+        title: "The Calm After the Storm",
+        text: "The storm passed. The garden stood taller than ever, glowing in the soft aurora light. Lila sank to her knees, exhausted but proud. Professor Sol’s voice came through her phone again. 'You did it, Lila. You showed that the Sun’s power is meant for life, not destruction.' Lila smiled through her tears. 'I only protected what I loved.'",
+        narrationTone: "Peaceful, warm.",
         illustration: {
           description:
-            "Luna standing in her fully glowing garden, auroras above, looking proud and thoughtful, with the night calm and peaceful.",
-          image: "/stories/story-luna/img/luna-ending.png",
+            "Lila kneeling in the glowing garden, holding a bright flower. Her phone screen shows Professor Sol smiling proudly.",
+          image: "/stories/story1/img/cloudy.png",
         },
-        animation: ["aurora-fade", "plants-shine", "sky-calm"],
+        animation: ["garden-glow", "phone-smile"],
+      },
+      {
+        id: 10,
+        title: "What We Learned",
+        text: "Lila learned that the Sun’s power can create storms, but it also gives life, light, and hope. Even when shadows try to steal it, love and courage shine brighter. As she looked up at the fading auroras, Lila whispered, 'The Sun’s gift is for everyone. I’ll keep protecting it—always.'",
+        narrationTone: "Reflective, inspiring.",
+        illustration: {
+          description:
+            "Lila standing in her vibrant garden at sunrise, smiling with determination. The auroras fade into dawn, and the world looks peaceful again.",
+          image: "/stories/story2/img/knowledge.png",
+        },
+        animation: ["sunrise-glow", "aurora-fade"],
       },
     ],
   },
