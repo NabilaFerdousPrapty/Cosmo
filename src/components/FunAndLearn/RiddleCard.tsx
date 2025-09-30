@@ -134,7 +134,7 @@ export const RiddleCard: React.FC<RiddleCardProps> = ({
             <div className="flex flex-col items-center justify-center p-4">
               <div className="text-5xl mb-4">Try again!</div>
               <p className="text-lg text-gray-700">
-                That&apos;s not {riddle.answer}. Don't give up!
+                That&apos;s not {riddle.answer}. Don&apos;t give up!
               </p>
             </div>
           ),
@@ -232,7 +232,7 @@ export const RiddleCard: React.FC<RiddleCardProps> = ({
               <span className="text-6xl">✅</span>
             </div>
             <p className="text-white font-bold text-lg sm:text-xl font-display mb-2 drop-shadow">
-              It's {riddle.answer}!
+              It&apos;s {riddle.answer}!
             </p>
             <p className="text-blue-100 text-sm font-story-text mb-4 drop-shadow">
               {riddle.explanation}
