@@ -15,13 +15,13 @@ export const funFacts: FunFact[] = [
   {
     id: "sun-hot",
     theme: "solar",
-    title: "The Sun's Secret Fire",
+    title: "The Sun&apos;s Secret Fire",
     shortPrompt: "What makes our Sun so super hot? 🔥",
     emoji: "☀️",
     imageFront: "/sun.png", // Example image
     imageBack: "/sun.png", // Example image
     factText:
-      "The Sun makes its own heat by squishing tiny atoms together really, really fast! It's like billions of tiny explosions happening all the time, making energy that warms our whole planet!",
+      "The Sun makes its own heat by squishing tiny atoms together really, really fast! It&apos;s like billions of tiny explosions happening all the time, making energy that warms our whole planet!",
     readAloudAudioUrl: "/audio/facts/sun_hot.mp3",
   },
   {
@@ -33,7 +33,7 @@ export const funFacts: FunFact[] = [
     imageFront: "/stories/story1/img/astronaut.png",
     imageBack: "/stories/story1/img/astronaut.png",
     factText:
-      "Yes! Without Earth's gravity pushing down on their spine, astronauts can actually stretch up to 2 inches taller! But don't worry, they shrink back down when they return to Earth!",
+      "Yes! Without Earth&apos;s gravity pushing down on their spine, astronauts can actually stretch up to 2 inches taller! But don&apos;t worry, they shrink back down when they return to Earth!",
     readAloudAudioUrl: "/audio/facts/astronaut_grow.mp3",
   },
   {
@@ -50,13 +50,13 @@ export const funFacts: FunFact[] = [
   {
     id: "jupiter-storm",
     theme: "general-space",
-    title: "Jupiter's Giant Storm",
+    title: "Jupiter&apos;s Giant Storm",
     shortPrompt: "Which planet has a storm bigger than Earth? 🌀",
     emoji: "🪐",
     imageFront: "/jupiter.png",
     imageBack: "/jupiter.png",
     factText:
-      "Jupiter has a 'Great Red Spot' which is a super-giant hurricane that's been raging for hundreds of years! It's so big, three Earths could fit inside it!",
+      "Jupiter has a &apos;Great Red Spot&apos; which is a super-giant hurricane that&apos;s been raging for hundreds of years! It&apos;s so big, three Earths could fit inside it!",
   },
   {
     id: "stars-more",
@@ -67,17 +67,17 @@ export const funFacts: FunFact[] = [
     imageFront: "/stories/story1/img/star.png",
     imageBack: "/stories/story1/img/star.png",
     factText:
-      "There are more stars in the universe than grains of sand on all the beaches on Earth! Can you imagine counting them all? That's a lot of sparkling lights!",
+      "There are more stars in the universe than grains of sand on all the beaches on Earth! Can you imagine counting them all? That&apos;s a lot of sparkling lights!",
   },
   {
     id: "solar-system-edge",
     theme: "solar",
     title: "Edge of Our Home",
-    shortPrompt: "How far is the 'end' of our solar system? 🔭",
+    shortPrompt: "How far is the &apos;end&apos; of our solar system? 🔭",
     emoji: "🌌",
     imageFront: "/solar-system.png",
     imageBack: "/solar-system.png",
     factText:
-      "Our solar system stretches super far, almost a light-year away! That's so far that even light takes a whole year to travel from one end to the other! It's called the Oort Cloud.",
+      "Our solar system stretches super far, almost a light-year away! That&apos;s so far that even light takes a whole year to travel from one end to the other! It&apos;s called the Oort Cloud.",
   },
 ];
