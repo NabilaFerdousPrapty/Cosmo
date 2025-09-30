@@ -395,7 +395,7 @@ export default function FunAndLearn() {
                 {solvedRiddles.length > 0 &&
                   solvedRiddles.length === riddles.length && (
                     <p className="text-yellow-300 text-lg mt-3 font-story-text animate-pulse">
-                      🏆 WOW! You're a Riddle Master! 🚀
+                      🏆 WOW! You&apos;re a Riddle Master! 🚀
                     </p>
                   )}
               </div>
