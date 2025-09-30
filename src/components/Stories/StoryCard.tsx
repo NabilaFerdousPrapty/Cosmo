@@ -22,7 +22,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
           <img
             src={coverImage}
             alt={title}
-            className="w-full h-40 object-cover rounded-t-xl group-hover/card:shadow-xl"
+            className="w-full h-80 object-cover rounded-t-xl group-hover/card:shadow-xl"
           />
         </CardItem>
 

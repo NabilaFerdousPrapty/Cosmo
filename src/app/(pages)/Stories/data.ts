@@ -307,10 +307,10 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
     title: "Zoey the Gardener and the Sun’s Gift",
     description:
       "A magical story of Zoey discovering the Sun’s energy and the beauty of auroras.",
-    coverImage: "/stories/zoey/img/zoey-cover.png",
+    coverImage: "https://i.ibb.co.com/gFFWxhNw/zoey.png",
     pdfUrl:
       "https://drive.google.com/file/d/1s1Jjf2CpvhR3N6chNhqjfOpX7an1cN3x/preview",
-    videoUrl: "/vids/zoey-story.mp4",
+
     pages: [
       {
         id: 1,
@@ -320,7 +320,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey standing in her colorful garden, watering plants, while the sky above her starts to glow with the first hints of auroras. Flowers and vegetables fill the garden around her.",
-          image: "/stories/zoey/img/page1.png",
+          image: "/stories/img/farmerg.png",
         },
         animation: ["plants-sway", "aurora-begin"],
       },
@@ -332,7 +332,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey standing with her watering can in hand, staring up in awe at the swirling auroras above her. The sky is filled with colorful lights, and the plants around her seem to glow in the soft light.",
-          image: "/stories/zoey/img/page2.png",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
         animation: ["aurora-dance", "light-glow"],
       },
@@ -344,7 +344,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey on the phone with Professor Sol, holding the phone to her ear while looking up at the colorful auroras. A simple diagram next to Zoey shows solar flares from the Sun reaching Earth.",
-          image: "/stories/zoey/img/page3.png",
+          image: "/stories/img/interview.png",
         },
         animation: ["phone-ring", "aurora-bright"],
       },
@@ -356,7 +356,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey standing in her garden, smiling as she listens to Professor Sol. The glowing auroras swirl above her garden, and the plants seem to stretch and grow in response to the sunlight.",
-          image: "/stories/zoey/img/page4.png",
+          image: "/stories/img/sungift.png",
         },
         animation: ["plants-grow", "aurora-sparkle"],
       },
@@ -368,7 +368,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey walking through her garden, gently touching the leaves of a plant, with the auroras still glowing above. The sunlight filters through the plants, showing how they are growing and thriving.",
-          image: "/stories/zoey/img/page5.png",
+          image: "/stories/img/garden.png",
         },
         animation: ["sunlight-filter", "aurora-soft"],
       },
@@ -380,7 +380,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey thinking creatively in her garden, with a solar panel in the background next to her house. The auroras glow above, and the garden is thriving under the bright sunlight.",
-          image: "/stories/zoey/img/page6.png",
+          image: "/stories/story1/img/solar-flare.png",
         },
         animation: ["sunlight-bright", "aurora-flow"],
       },
@@ -392,7 +392,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "A simple diagram showing solar flares shooting from the Sun, with lines of energy traveling through space, reaching Earth. On the side, a small image shows satellites and power grids being impacted by solar flares.",
-          image: "/stories/zoey/img/page7.png",
+          image: "/stories/img/solar-energy.png",
         },
         animation: ["flare-burst", "signal-glitch"],
       },
@@ -404,7 +404,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey working in her garden at night, using tools to add a solar shield to her solar-powered gadgets. The auroras glow softly in the sky above, casting a gentle light on her work.",
-          image: "/stories/zoey/img/page8.png",
+          image: "/stories/story1/img/tech.png",
         },
         animation: ["tool-hammer", "aurora-glow"],
       },
@@ -416,7 +416,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey proudly looking at her solar-powered gadgets working perfectly in the garden. The auroras are visible in the sky, and the garden is thriving, with plants growing tall and strong under the Sun’s energy.",
-          image: "/stories/zoey/img/page9.png",
+          image: "/stories/img/crystal-ball.png",
         },
         animation: ["gadgets-glow", "aurora-bright"],
       },
@@ -428,7 +428,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Zoey standing in the middle of her beautiful garden, with the auroras glowing above her and the Sun setting in the distance. The garden is full of life, and Zoey is smiling, surrounded by the energy of the Sun.",
-          image: "/stories/zoey/img/page10.png",
+          image: "/stories/story1/img/globe.png",
         },
         animation: ["sunset-glow", "aurora-fade"],
       },
@@ -441,7 +441,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
       "Maya, a creative street artist, discovers the beauty of solar flares and auroras, turning the night sky into her cosmic inspiration for a masterpiece mural in the city.",
     coverImage: "https://i.ibb.co.com/album/maya-cover.png",
     pdfUrl: "/pdfs/story-maya.pdf",
-    videoUrl: "/vid/maya-story.mp4",
+
     pages: [
       {
         id: 1,
