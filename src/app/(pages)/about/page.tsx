@@ -2,6 +2,7 @@ import { Particles } from "@/components/ui/particles";
 import { Sun } from "lucide-react";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const page = () => {
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-white">
@@ -21,12 +22,12 @@ const page = () => {
             happening up there? At Sunflare, we turn those big questions into
             exciting adventures!
           </p>
-          <a
-            href="/games" 
+          <Link
+            href="/games"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-blue-500 px-8 py-4 text-xl font-bold text-white shadow-xl ring-2 ring-transparent transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-blue-600 hover:ring-pink-300 active:scale-95"
           >
             Explore the Flares! ✨
-          </a>
+          </Link>
         </section>
 
         {/* 2. Section: What is Sunflare? */}
@@ -308,12 +309,12 @@ const page = () => {
           <p className="text-2xl text-yellow-300 mb-6">
             Ready for another solar adventure?
           </p>
-          <a
-            href="/Stories" 
+          <Link
+            href="/Stories"
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-teal-500 px-8 py-4 text-xl font-bold text-white shadow-xl ring-2 ring-transparent transition-all duration-300 hover:scale-105 hover:from-green-600 hover:to-teal-600 hover:ring-lime-300 active:scale-95"
           >
             Start Reading Now! 🚀
-          </a>
+          </Link>
           <p className="mt-10 text-sm text-gray-500">
             © {new Date().getFullYear()} Sunflare. All rights reserved.
           </p>
