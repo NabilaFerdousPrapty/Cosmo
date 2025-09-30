@@ -65,8 +65,10 @@ export default function CMEDodger() {
 
     // Set canvas dimensions
     const resizeCanvas = () => {
+      const isMobile = window.innerWidth < 768; // Check if mobile
       canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      // Increase height for mobile devices
+      canvas.height = isMobile ? 500 : 400; // 500px on mobile, 400px on desktop
     };
 
     window.addEventListener("resize", resizeCanvas);
@@ -112,7 +114,8 @@ export default function CMEDodger() {
           x: Math.random() * 100,
           y: -10,
           speed: 1 + Math.random() * 2 + level * 0.5,
-          size: 30 + Math.random() * 40,
+          // Reduced particle size: from 30-70 to 20-40
+          size: 20 + Math.random() * 20, // Smaller particles: 20-40px instead of 30-70px
           emoji:
             particleEmojis[Math.floor(Math.random() * particleEmojis.length)],
         });
@@ -133,7 +136,7 @@ export default function CMEDodger() {
             Math.pow(particleCanvasY - playerCanvasY, 2)
         );
 
-        // Check collision
+        // Check collision (with smaller particles)
         if (distance < particle.size / 2 + PLAYER_SIZE / 2) {
           setLives((prev) => {
             const newLives = prev - 1;
@@ -146,14 +149,14 @@ export default function CMEDodger() {
           return false;
         }
 
-        // Draw particle as emoji with glow
+        // Draw particle as emoji with glow (smaller size)
         ctx.font = `${particle.size}px Arial`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
         // Glow effect
         ctx.shadowColor = "#ff4444";
-        ctx.shadowBlur = 15;
+        ctx.shadowBlur = 10; // Slightly reduced glow for smaller particles
         ctx.fillText(particle.emoji, particleCanvasX, particleCanvasY);
         ctx.shadowBlur = 0;
 
@@ -235,9 +238,16 @@ export default function CMEDodger() {
           </div>
         </div>
 
-        {/* Game Canvas */}
-        <div className="bg-black rounded-3xl p-2 border-4 border-gray-700 mb-6 aspect-video relative">
-          <canvas ref={canvasRef} className="w-full h-full rounded-2xl" />
+        {/* Game Canvas with increased mobile height */}
+        <div className="bg-black rounded-3xl p-2 border-4 border-gray-700 mb-6 relative">
+          {/* Mobile: min-h-[500px], Desktop: min-h-[400px] */}
+          <div className="min-h-[400px] md:min-h-[300px] lg:min-h-[400px]">
+            <canvas
+              ref={canvasRef}
+              className="w-full h-full rounded-2xl"
+              style={{ minHeight: "400px" }}
+            />
+          </div>
 
           {/* Touch Instruction Overlay */}
           {isPlaying && (
@@ -320,7 +330,9 @@ export default function CMEDodger() {
           </h4>
           <div className="grid grid-cols-5 gap-2 text-center">
             {particleEmojis.map((emoji, index) => (
-              <div key={index} className="text-3xl animate-pulse">
+              <div key={index} className="text-2xl animate-pulse">
+                {" "}
+                {/* Slightly smaller in guide too */}
                 {emoji}
               </div>
             ))}
