@@ -279,7 +279,7 @@ export default function FunAndLearn() {
               {/* Make sure you have this image */}
             </div>
             <h3 className="font-story-text text-2xl text-gray-700 mb-2">
-              You've solved all the riddles! Amazing work!
+              You&apos;ve solved all the riddles! Amazing work!
             </h3>
             <p className="text-lg text-gray-600">
               Your brain is super strong! Keep exploring!
