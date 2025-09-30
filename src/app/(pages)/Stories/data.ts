@@ -439,8 +439,9 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
     title: "Maya the Street Artist and the Cosmic Canvas",
     description:
       "Maya, a creative street artist, discovers the beauty of solar flares and auroras, turning the night sky into her cosmic inspiration for a masterpiece mural in the city.",
-    coverImage: "https://i.ibb.co.com/album/maya-cover.png",
-    pdfUrl: "/pdfs/story-maya.pdf",
+    coverImage: "https://i.ibb.co.com/Z3LWGF3/4.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/1-tLjsg23uVV0AKnPt3Thw3Ob_ddV1WT2/preview",
 
     pages: [
       {
@@ -451,7 +452,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Maya standing in front of a bare city wall with paint cans. The skyline is visible, and above, the sky glows faintly with mysterious colors.",
-          image: "/stories/maya/img/page1.png",
+          image: "/stories/img/artist.png",
         },
         animation: ["stars-twinkle", "sky-shimmer"],
       },
@@ -463,7 +464,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Auroras swirl and shimmer above the city. Maya gazes upward in awe, her spray can forgotten in her hand.",
-          image: "/stories/maya/img/page2.png",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
         animation: ["aurora-dance", "light-pulse"],
       },
@@ -475,7 +476,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Maya on her phone, listening intently. Behind her, auroras glow across the sky. A small diagram shows solar flares traveling from the Sun to Earth.",
-          image: "/stories/maya/img/page3.png",
+          image: "/solar-system.png",
         },
         animation: ["phone-glow", "solarflare-diagram"],
       },
@@ -487,7 +488,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Maya looking at the city wall, her eyes glowing with inspiration. Above her, swirling auroras stretch across the night sky.",
-          image: "/stories/maya/img/page4.png",
+          image: "/stories/img/universe.png",
         },
         animation: ["aurora-swirls", "wall-glow"],
       },
@@ -499,7 +500,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Maya spray-painting a vibrant mural that mimics the auroras. Colors splash across the wall, glowing in the night.",
-          image: "/stories/maya/img/page5.png",
+          image: "/stories/story1/img/moon.png",
         },
         animation: ["paint-spray", "aurora-reflect"],
       },
@@ -511,7 +512,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Next to Maya’s mural, a diagram shows the Sun’s rays helping plants grow, powering satellites, and creating auroras.",
-          image: "/stories/maya/img/page6.png",
+          image: "/stories/story1/img/parabolic-antenna.png",
         },
         animation: ["sunbeam-rays", "icon-glow"],
       },
@@ -523,7 +524,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Maya standing proudly in front of her completed mural. Above, auroras glow across the night sky, matching her artwork.",
-          image: "/stories/maya/img/page7.png",
+          image: "/stories/img/paint.png",
         },
         animation: ["city-lights-twinkle", "mural-glow"],
       },
@@ -535,7 +536,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Maya looking at her mural while auroras glow overhead, with diagrams of the Sun subtly blended into the artwork.",
-          image: "/stories/maya/img/page8.png",
+          image: "/stories/story1/img/star.png",
         },
         animation: ["sun-symbol-glow", "aurora-soft-fade"],
       },
@@ -547,7 +548,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "A crowd admiring Maya’s mural, smiling and pointing at the cosmic colors. The auroras faintly shimmer above in daylight.",
-          image: "/stories/maya/img/page9.png",
+          image: "/stories/img/half-moon.png",
         },
         animation: ["crowd-cheer", "light-glimmer"],
       },
@@ -559,7 +560,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Maya gazing up at the auroras with her spray can, her mural glowing beside her. The night feels alive with cosmic magic.",
-          image: "/stories/maya/img/page10.png",
+          image: "/stories/img/canvas.png",
         },
         animation: ["aurora-bright", "star-twinkle"],
       },
@@ -570,9 +571,10 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
     title: "Miko the Inventor and the Solar Surprise",
     description:
       "Miko, a young inventor, discovers how solar flares and auroras affect Earth and technology, inspiring him to create a new invention powered by the Sun’s energy.",
-    coverImage: "https://i.ibb.co.com/album/miko-cover.png",
-    pdfUrl: "/pdfs/story-miko.pdf",
-    videoUrl: "/vid/miko-story.mp4",
+    coverImage: "https://i.ibb.co.com/4qq5XMs/5.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/18GIEV_Mx-AY0Mtq1QfjBnAi0OfHeiM4U/preview",
+
     pages: [
       {
         id: 1,
@@ -582,7 +584,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko sitting at his workbench surrounded by gadgets, gears, and blueprints. Through the window, the night sky begins to glow with soft auroras.",
-          image: "/stories/miko/img/page1.png",
+          image: "/stories/img/scientist.png",
         },
         animation: ["tools-clink", "aurora-faint"],
       },
@@ -594,7 +596,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko standing at the window, eyes wide with amazement. Outside, the sky glows with swirling auroras in green, pink, and purple. The workshop is lit by their glow.",
-          image: "/stories/miko/img/page2.png",
+          image: "/stories/story1/img/aurora-borealis.png",
         },
         animation: ["aurora-dance", "light-flicker"],
       },
@@ -606,7 +608,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko on the phone, listening intently. Outside the window, the auroras shimmer. A small diagram shows solar flares bursting from the Sun and reaching Earth.",
-          image: "/stories/miko/img/page3.png",
+          image: "/stories/img/interview.png",
         },
         animation: ["phone-ring", "solarflare-diagram"],
       },
@@ -618,7 +620,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko looking puzzled at his solar-powered clock with a blank screen. Tools are scattered on his bench, and auroras glow outside.",
-          image: "/stories/miko/img/page4.png",
+          image: "/stories/img/sungift.png",
         },
         animation: ["clock-fade", "aurora-bright"],
       },
@@ -630,7 +632,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko working hard at his bench, attaching a glowing solar shield to his clock. The auroras shine through the window as he focuses on his work.",
-          image: "/stories/miko/img/page5.png",
+          image: "/stories/story2/img/think-out-of-the-box.png",
         },
         animation: ["gear-turn", "spark-glow"],
       },
@@ -642,7 +644,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko proudly holding his working solar-powered clock, which ticks brightly. His workshop is softly lit by both the invention and the auroras outside.",
-          image: "/stories/miko/img/page6.png",
+          image: "/stories/img/innovation.png",
         },
         animation: ["clock-tick", "light-glow"],
       },
@@ -654,7 +656,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko sitting at his bench, jotting notes in a notebook while his solar-powered clock ticks beside him. Auroras still shimmer softly outside.",
-          image: "/stories/miko/img/page7.png",
+          image: "/stories/story2/img/knowledge.png",
         },
         animation: ["pen-write", "aurora-fade"],
       },
@@ -666,7 +668,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "A diagram shows solar flares leaving the Sun, reaching satellites and Earth’s magnetic field, causing auroras. Miko studies the diagram with interest.",
-          image: "/stories/miko/img/page8.png",
+          image: "/stories/story1/img/tech.png",
         },
         animation: ["flare-burst", "diagram-glow"],
       },
@@ -678,7 +680,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko gazing thoughtfully out the window at auroras. A subtle overlay shows rays of solar energy traveling from the Sun to Earth.",
-          image: "/stories/miko/img/page9.png",
+          image: "/stories/img/solar-energy.png",
         },
         animation: ["energy-rays", "aurora-soft"],
       },
@@ -690,7 +692,7 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
         illustration: {
           description:
             "Miko standing proudly beside his working solar-powered clock, gazing out the window at glowing auroras. His workshop is filled with creative inventions.",
-          image: "/stories/miko/img/page10.png",
+          image: "/stories/img/idea.png",
         },
         animation: ["aurora-bright", "star-twinkle"],
       },
@@ -970,8 +972,9 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     title: "Farmer Ben and the Solar Storm",
     description:
       "Farmer Ben discovers how solar flares and space weather affect the farm and everyday life, learning about auroras and the Sun’s energy.",
-    coverImage: "/stories/ben/img/cover.png",
-    pdfUrl: "/pdfs/story-farmer-ben.pdf",
+    coverImage: "https://i.ibb.co.com/R4N9DLvF/6.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/17nEhcCIIaHuFgTFn3hqOMfw52rz8Apv0/preview",
     videoUrl: "/vid/farmer-ben.mp4",
     pages: [
       {
@@ -1101,8 +1104,9 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     title: "Lily the Photographer and the Northern Lights",
     description:
       "Lily, a young photographer, discovers the Northern Lights and learns how space weather affects Earth and technology.",
-    coverImage: "/stories/lily/img/cover.png",
-    pdfUrl: "/pdfs/story-lily.pdf",
+    coverImage: "https://i.ibb.co.com/0RvVrC06/7.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/1SBnQ9k_-0wv_ItZEd2D8AjVEHHjTRqnF/preview",
     videoUrl: "/vid/lily.mp4",
     pages: [
       {
@@ -1232,8 +1236,9 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     title: "Leo the Fisherman and the Cosmic Tides",
     description:
       "Leo, a fisherman, discovers how space weather affects Earth, the sky, the ocean, and technology while observing the Northern Lights.",
-    coverImage: "/stories/leo/img/cover.png",
-    pdfUrl: "/pdfs/story-leo.pdf",
+    coverImage: "https://i.ibb.co.com/4CnZh7W/8.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/1fNSubGCYk_wf_SvnfXD923jmufKE1Tol/preview",
     videoUrl: "/vid/leo.mp4",
     pages: [
       {
@@ -1363,8 +1368,9 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     title: "Max the Chef and the Solar Surprise",
     description:
       "Max the Chef discovers how space weather can affect Earth, electricity, and technology while witnessing the auroras from his kitchen.",
-    coverImage: "/stories/max/img/cover.png",
-    pdfUrl: "/pdfs/story-max.pdf",
+    coverImage: "https://i.ibb.co.com/8DrcVp2m/9.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/1I9R9LZEEavsW0Ot9mgEIpULeEXd5JuLL/preview",
     videoUrl: "/vid/max.mp4",
     pages: [
       {
