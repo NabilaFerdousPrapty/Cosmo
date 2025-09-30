@@ -1500,8 +1500,9 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     title: "Captain Mark and the Space Storm",
     description:
       "Captain Mark experiences a solar storm on the International Space Station and learns how space weather affects Earth and astronauts.",
-    coverImage: "/stories/mark/img/cover.png",
-    pdfUrl: "/pdfs/story-mark.pdf",
+    coverImage: "https://i.ibb.co.com/fLM1M2B/11.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/1g6omNTeW77fwCwRT_bKbO1dk_J7LbTmJ/preview",
 
     pages: [
       {
@@ -1631,9 +1632,9 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
     title: "Lila the Scientist and the Shadow of the Sun",
     description:
       "Lila, a brilliant young scientist, discovers the beauty and dangers of the Sun’s power when a mysterious villain tries to steal its energy.",
-    coverImage: "/stories/lila/img/cover.png",
-    pdfUrl: "/pdfs/story-lila.pdf",
-    videoUrl: "/vid/story-lila.mp4",
+    coverImage: "https://i.ibb.co.com/v4HJ3f9c/12.png",
+    pdfUrl:
+      "https://drive.google.com/file/d/1fCrEr7M4SCNwU5N-f3rZDDPD3_tK96a-/preview",
 
     pages: [
       {

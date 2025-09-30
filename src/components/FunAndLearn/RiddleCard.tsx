@@ -2,10 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image"; // Make sure Next.js Image is imported
-
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+import Image from "next/image";
 
 interface Riddle {
   id: number;
@@ -13,23 +10,21 @@ interface Riddle {
   hint: string;
   answer: string;
   explanation: string;
-  image: string; // URL to a relevant image/icon
+  image: string;
   category: "space" | "earth" | "animals";
   colorPalette: {
-    // New: for card styling
-    front: { from: string; to: string }; // Tailwind class parts, e.g., "from-blue-500", "to-blue-600"
+    front: { from: string; to: string };
     back: { from: string; to: string };
-    border: string; // Tailwind class, e.g., "border-cyan-400"
-    text: string; // Tailwind class, e.g., "text-blue-100"
-    emoji: string; // Emoji for this riddle's general theme
+    border: string;
+    text: string;
+    emoji: string;
   };
 }
-const MySwal = withReactContent(Swal);
 
 interface RiddleCardProps {
   riddle: Riddle;
   onReveal: (riddleId: number) => void;
-  isSolved: boolean; // New prop to indicate if this riddle is solved
+  isSolved: boolean;
 }
 
 export const RiddleCard: React.FC<RiddleCardProps> = ({
@@ -37,241 +32,134 @@ export const RiddleCard: React.FC<RiddleCardProps> = ({
   onReveal,
   isSolved,
 }) => {
-  const [isFlipped, setIsFlipped] = useState(isSolved); // Card starts flipped if solved
+  const [showAnswer, setShowAnswer] = useState(isSolved);
   const [showHint, setShowHint] = useState(false);
 
-  // Auto-flip if it's already solved
-  React.useEffect(() => {
-    if (isSolved && !isFlipped) {
-      setIsFlipped(true);
-    }
-  }, [isSolved, isFlipped]);
-
-  const handleFlip = () => {
-    if (isSolved) return; // Cannot flip back if already solved
-
-    setIsFlipped(!isFlipped);
-    if (isFlipped) {
-      // If flipping back to front, hide hint
-      setShowHint(false);
-    }
+  const handleShowAnswer = () => {
+    setShowAnswer(true);
+    onReveal(riddle.id);
   };
 
-  const handleGuess = async () => {
-    if (isSolved) return;
+  const handleShowHint = () => {
+    setShowHint(true);
+  };
 
-    setShowHint(false); // Hide hint before asking for answer
-
-    const { value: answerInput } = await MySwal.fire({
-      title: (
-        <span className="font-display text-2xl text-blue-700">
-          What&apos;s your guess? 🤔
-        </span>
-      ),
-      input: "text",
-      inputPlaceholder: "Type your answer here...",
-      showCancelButton: true,
-      confirmButtonText: "Guess!",
-      confirmButtonColor: "#4CAF50",
-      cancelButtonText: "Cancel",
-      cancelButtonColor: "#EF4444",
-      customClass: {
-        popup: "rounded-3xl shadow-xl border-4 border-yellow-300",
-        input: "font-story-text text-lg",
-        confirmButton: "font-bold",
-        cancelButton: "font-bold",
-      },
-      buttonsStyling: false,
-      inputValidator: (value) => {
-        if (!value) {
-          return "You need to write something!";
-        }
-      },
-    });
-
-    if (answerInput) {
-      // Simple case-insensitive comparison
-      const isCorrect =
-        answerInput.toLowerCase().trim() === riddle.answer.toLowerCase().trim();
-
-      if (isCorrect) {
-        MySwal.fire({
-          title: (
-            <span className="font-display text-4xl text-green-700 animate-pulse">
-              🎉 Correct! 🎉
-            </span>
-          ),
-          html: (
-            <div className="flex flex-col items-center justify-center p-4">
-              <div className="text-6xl mb-4 animate-bounceCustom">✅</div>
-              <h3 className="font-story-text text-xl text-gray-700 mb-2">
-                You solved it! It&apos;s {riddle.answer}!
-              </h3>
-              <p className="text-lg text-gray-600 mb-4">{riddle.explanation}</p>
-            </div>
-          ),
-          icon: "success",
-          confirmButtonText: "Awesome!",
-          confirmButtonColor: "#4CAF50",
-          customClass: {
-            popup: "rounded-3xl shadow-xl border-4 border-green-400",
-            title: "sweet-alert-title",
-            htmlContainer: "sweet-alert-html-container",
-            confirmButton: "font-bold",
-          },
-          buttonsStyling: false,
-        });
-        onReveal(riddle.id); // Trigger parent to mark as solved
-        setIsFlipped(true); // Flip card to reveal answer permanently
-      } else {
-        MySwal.fire({
-          title: (
-            <span className="font-display text-3xl text-red-700">
-              ❌ Not quite! ❌
-            </span>
-          ),
-          html: (
-            <div className="flex flex-col items-center justify-center p-4">
-              <div className="text-5xl mb-4">Try again!</div>
-              <p className="text-lg text-gray-700">
-                That&apos;s not {riddle.answer}. Don&apos;t give up!
-              </p>
-            </div>
-          ),
-          icon: "error",
-          confirmButtonText: "Keep Trying!",
-          confirmButtonColor: "#EF4444",
-          customClass: {
-            popup: "rounded-3xl shadow-xl border-4 border-red-400",
-            title: "sweet-alert-title",
-            htmlContainer: "sweet-alert-html-container",
-            confirmButton: "font-bold",
-          },
-          buttonsStyling: false,
-        });
-      }
-    }
+  const handleCloseHint = () => {
+    setShowHint(false);
   };
 
   return (
-    <div
-      className={`relative h-[380px] w-full p-3 cursor-pointer group
-	        ${isSolved ? "animate-none" : "hover:animate-jiggle"}
-	        transform-gpu transition-transform duration-700 [transform-style:preserve-3d]
-	      `}
-      style={{ transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
-      onClick={handleFlip} // Allow the whole card to flip on click
-    >
-      {/* Front of the Card (Unsolved Riddle) */}
+    <div className="relative w-full max-w-sm mx-auto">
+      {/* Main Card */}
       <div
-        className={`absolute inset-0 p-6 rounded-3xl shadow-2xl
-	                    flex flex-col items-center justify-center text-center
-	                    [backface-visibility:hidden]
-	                    ${riddle.colorPalette.front.from} ${
-          riddle.colorPalette.front.to
-        } bg-gradient-to-br
-	                    ${riddle.colorPalette.border} border-4
-	                    ${isSolved ? "grayscale opacity-70" : ""}
-	        `}
+        className={`
+        relative p-6 rounded-3xl shadow-2xl border-4 min-h-[400px]
+        flex flex-col items-center justify-center text-center
+        transition-all duration-300 transform hover:scale-105
+        ${
+          showAnswer
+            ? `${riddle.colorPalette.back.from} ${riddle.colorPalette.back.to} bg-gradient-to-br ${riddle.colorPalette.border}`
+            : `${riddle.colorPalette.front.from} ${riddle.colorPalette.front.to} bg-gradient-to-br ${riddle.colorPalette.border}`
+        }
+        ${isSolved ? "ring-4 ring-yellow-400 ring-opacity-50" : ""}
+      `}
       >
-        <div className="relative w-24 h-24 mb-3 flex items-center justify-center">
-          {/* UNCOMMENTED IMAGE */}
-          <Image
-            src={riddle.image}
-            alt={riddle.question} // Use question for alt text
-            width={96} // Larger image size
-            height={96}
-            className="drop-shadow-lg"
-            priority={true} // Priority loading for visible cards
-          />
+        {/* Riddle Number Badge */}
+        <div className="absolute -top-3 -left-3 bg-yellow-400 text-gray-800 font-bold px-4 py-1 rounded-full text-sm shadow-lg">
+          #{riddle.id}
         </div>
-        <p className="text-yellow-100 font-bold text-lg mb-3 drop-shadow">
-          Riddle #{riddle.id}
-        </p>
-        <p
-          className={`${riddle.colorPalette.text} font-semibold text-xl font-story-text mb-4 drop-shadow`}
-        >
-          {riddle.question}
-        </p>
-        {!isSolved && (
-          <div className="flex space-x-4 mt-auto">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowHint(!showHint);
-              }}
-              className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-full shadow-md transition-colors text-sm"
-            >
-              💡 {showHint ? "Hide Hint" : "Hint"}
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                handleGuess();
-              }}
-              className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full shadow-md transition-colors text-sm"
-            >
-              Guess! 🚀
-            </button>
+
+        {/* Solved Badge */}
+        {isSolved && (
+          <div className="absolute -top-3 -right-3 bg-green-500 text-white font-bold px-3 py-1 rounded-full text-sm shadow-lg flex items-center gap-1">
+            ✅ Solved!
           </div>
         )}
-      </div>
 
-      {/* Back of the Card (Solved/Answer Revealed) */}
-      <div
-        className={`absolute inset-0 p-6 rounded-3xl shadow-2xl
-	                    flex flex-col items-center justify-center text-center
-	                    [backface-visibility:hidden] [transform:rotateY(180deg)]
-	                    ${riddle.colorPalette.back.from} ${riddle.colorPalette.back.to} bg-gradient-to-br
-	                    ${riddle.colorPalette.border} border-4
-	      `}
-      >
-        {isSolved ? (
-          <>
-            <div className="relative w-20 h-20 mb-3 flex items-center justify-center animate-bounce">
-              <span className="text-6xl">✅</span>
-            </div>
-            <p className="text-white font-bold text-lg sm:text-xl font-display mb-2 drop-shadow">
-              It&apos;s {riddle.answer}!
-            </p>
-            <p className="text-blue-100 text-sm font-story-text mb-4 drop-shadow">
+        {/* Content based on state */}
+        {showAnswer ? (
+          // Answer View
+          <div className="space-y-4 animate-fadeIn">
+            <div className="text-6xl mb-2 animate-bounce">🎉</div>
+            <h3 className="text-2xl font-bold text-white drop-shadow">
+              It's {riddle.answer}!
+            </h3>
+            <p className="text-blue-100 text-lg leading-relaxed">
               {riddle.explanation}
             </p>
-            <span className="absolute bottom-4 right-4 text-3xl animate-spin-slow">
-              🌟
-            </span>{" "}
-          </>
+            <div className="text-4xl mt-4 animate-pulse">
+              {riddle.colorPalette.emoji}
+            </div>
+          </div>
         ) : (
-          <div className="flex flex-col items-center justify-center h-full">
-            <span className="text-5xl mb-4 text-gray-300">🤔</span>
-            <p className="text-gray-300 font-story-text text-lg">
-              Solve the riddle first!
+          // Question View
+          <div className="space-y-6 w-full">
+            {/* Image */}
+            <div className="relative w-32 h-32 mx-auto">
+              <Image
+                src={riddle.image}
+                alt={riddle.question}
+                width={128}
+                height={128}
+                className="drop-shadow-lg animate-float"
+                priority={true}
+              />
+            </div>
+
+            {/* Question */}
+            <p
+              className={`text-xl font-bold leading-tight ${riddle.colorPalette.text} drop-shadow`}
+            >
+              {riddle.question}
             </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col gap-3 w-full max-w-xs mx-auto">
+              <button
+                onClick={handleShowHint}
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
+              >
+                <span className="text-xl">💡</span>
+                Need a Hint?
+              </button>
+
+              <button
+                onClick={handleShowAnswer}
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
+              >
+                <span className="text-xl">👀</span>
+                Show Answer
+              </button>
+            </div>
           </div>
         )}
       </div>
 
-      {/* Hint Overlay (Conditional) */}
-      {showHint && !isSolved && (
-        <div
-          className="absolute inset-0 p-4 rounded-3xl flex items-center justify-center
-	                     bg-yellow-800 bg-opacity-95 backdrop-blur-sm z-20
-	                     border-4 border-yellow-300 animate-fadeIn"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="text-center">
-            <p className="text-yellow-100 text-lg font-bold mb-2">Hint:</p>
-            <p className="text-white text-xl font-story-text">{riddle.hint}</p>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowHint(false);
-              }}
-              className="mt-4 px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold rounded-full transition-colors"
-            >
-              Got it!
-            </button>
+      {/* Hint Popup */}
+      {showHint && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 animate-fadeIn">
+          <div className="bg-yellow-100 border-4 border-yellow-400 rounded-3xl p-6 max-w-sm mx-auto shadow-2xl">
+            <div className="text-center space-y-4">
+              <div className="text-5xl animate-pulse">💡</div>
+              <h3 className="text-2xl font-bold text-yellow-800">Hint!</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                {riddle.hint}
+              </p>
+              <button
+                onClick={handleCloseHint}
+                className="w-full py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-lg"
+              >
+                Got it! 👍
+              </button>
+            </div>
           </div>
+        </div>
+      )}
+
+      {/* Celebration for solved riddles */}
+      {isSolved && !showAnswer && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-6xl animate-bounce">🌟</div>
         </div>
       )}
     </div>
