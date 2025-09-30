@@ -8,7 +8,8 @@ export const stories: Story[] = [
     description:
       "Ella, a park ranger, standing on a hill in a national park at night, gazing up at the glowing auroras in the sky. The stars twinkle brightly above, and the forest below is bathed in soft, colorful light",
     coverImage: "https://i.ibb.co.com/gLgG3Tvx/ella.png",
-    pdfUrl: "/pdfs/story 1 ella.pdf",
+    pdfUrl:
+      "https://drive.google.com/file/d/1hTljY76Ub1k4pNQokOzoPFBX0Yk-TdaY/preview",
     videoUrl: "/vid/story1.mp4",
     pages: [
       {
@@ -173,7 +174,8 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
     description:
       "Skyler, a brave pilot, discovers the magic of auroras while flying at night and learns about the Sun’s powerful role in creating space weather.",
     coverImage: "https://i.ibb.co.com/gbnsDJ05/skyler.png",
-    pdfUrl: "/pdfs/story2.pdf",
+    pdfUrl:
+      "https://drive.google.com/file/d/1pvy3oxuS1Ps17Tn2crjXkn2QD0_g78Um/preview",
     videoUrl: "/vid/story2.mp4",
 
     pages: [
@@ -299,170 +301,17 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
       },
     ],
   },
-  {
-    id: "solar-garden-story",
-    title: "Zoey the Gardener and the Sun’s Gift",
-    description:
-      "Zoey, the gardener, standing in her beautiful garden while colorful auroras glow above her.",
-    coverImage: "https://i.ibb.co.com/sX4bbWw/zoey.png",
-    pdfUrl: "/pdfs/story2-zoey.pdf",
-    videoUrl: "/vid/story2.mp4",
-    pages: [
-      {
-        id: 0,
-        title: "Cover Page",
-        text: "Zoey the Gardener and the Sun’s Gift",
-        narrationTone: "Bright, magical, inviting.",
-        illustration: {
-          description:
-            "Zoey, the gardener, standing in her beautiful garden while colorful auroras glow above her.",
-          image: "/stories/story2/img/zoey-cover.png",
-        },
-        animation: ["aurora-glow", "garden-bloom"],
-      },
-      {
-        id: 1,
-        title: "Meet Zoey",
-        text: "Once upon a time, there was a kind gardener named Zoey. Zoey loved to plant flowers, herbs, and vegetables. Every morning, she would go out into her garden and water the plants, making sure they were strong and healthy. She loved watching her garden grow as the days passed. But one afternoon, as Zoey was tending to her flowers, something magical happened.\nShe looked up and saw that the sky wasn’t just blue anymore. It was glowing with bright colors—greens, pinks, and purples! 'What is that light?' Zoey wondered, amazed by the beauty of the sky.",
-        narrationTone: "Gentle, warm, and magical.",
-        illustration: {
-          description:
-            "Zoey standing in her colorful garden, watering plants, while the sky above her starts to glow with the first hints of auroras. Flowers and vegetables fill the garden around her.",
-          image: "/stories/story2/img/zoey-garden.png",
-        },
-        animation: ["plants-sway", "aurora-begin"],
-      },
-      {
-        id: 2,
-        title: "A Glow in the Garden",
-        text: "As Zoey watched, the glowing colors in the sky began to swirl and dance. 'It looks like the sky is alive!' Zoey whispered to herself. The bright greens, pinks, and purples twirled across the sky like a magical light show. Zoey was so excited—she had never seen the sky like this before!\nShe stopped watering the plants and stood still, her eyes wide with wonder. 'What could it be?' she thought. The colors above her shimmered, creating the most beautiful light show she had ever seen.",
-        narrationTone: "Excited, full of wonder.",
-        illustration: {
-          description:
-            "Zoey standing with her watering can in hand, staring up in awe at the swirling auroras above her. The sky is filled with colorful lights, and the plants around her seem to glow in the soft light.",
-          image: "/stories/story2/img/zoey-aurora.png",
-        },
-        animation: ["aurora-dance", "light-glow"],
-      },
-      {
-        id: 3,
-        title: "The Call from Professor Sol",
-        text: "Just then, Zoey’s phone rang. It was her friend, Professor Sol, who loved to teach Zoey about space and science.\n'Zoey!' Professor Sol said excitedly. 'You’re seeing the auroras! They happen when space weather from the Sun reaches Earth!'\n'Space weather?' Zoey asked, puzzled. 'What does that mean?'\n'Space weather is caused by the Sun sending out bursts of energy, called solar flares. When these flares reach Earth, they interact with the gases in our atmosphere and create those beautiful lights in the sky, called auroras!'",
-        narrationTone: "Explaining, educational, curious.",
-        illustration: {
-          description:
-            "Zoey on the phone with Professor Sol, holding the phone to her ear while looking up at the colorful auroras. A simple diagram next to Zoey shows solar flares from the Sun reaching Earth.",
-          image: "/stories/story2/img/zoey-phone.png",
-        },
-        animation: ["phone-ring", "aurora-bright"],
-      },
-      {
-        id: 4,
-        title: "The Sun’s Special Gift",
-        text: "Zoey thought for a moment. 'So, the Sun is making the sky glow like that?' she asked, amazed. 'That’s incredible!'\n'Yes,' Professor Sol replied. 'The Sun is always sending out energy to Earth in the form of solar flares and solar wind. These things help power our planet and keep everything growing! The energy from the Sun is essential for life on Earth—without it, plants wouldn’t be able to grow.'\nZoey smiled, feeling even more connected to her garden. She had always known the Sun was important, but now she understood just how powerful its energy really was!",
-        narrationTone: "Revealing, joyful, thoughtful.",
-        illustration: {
-          description:
-            "Zoey standing in her garden, smiling as she listens to Professor Sol. The glowing auroras swirl above her garden, and the plants seem to stretch and grow in response to the sunlight.",
-          image: "/stories/story2/img/zoey-gift.png",
-        },
-        animation: ["plants-grow", "aurora-sparkle"],
-      },
-      {
-        id: 5,
-        title: "A Gardener’s Connection to the Sun",
-        text: "Zoey looked at her garden, thinking about everything Professor Sol had just said. 'The Sun helps my garden grow strong and healthy,' Zoey thought, 'and it’s the same energy that’s causing these beautiful lights in the sky!'\n'The Sun’s energy gives my plants the light they need to grow,' Zoey continued, 'and now I see that space weather is just another way the Sun helps us!'",
-        narrationTone: "Peaceful, connected, reflective.",
-        illustration: {
-          description:
-            "Zoey walking through her garden, gently touching the leaves of a plant, with the auroras still glowing above. The sunlight filters through the plants, showing how they are growing and thriving.",
-          image: "/stories/story2/img/zoey-connected.png",
-        },
-        animation: ["sunlight-filter", "aurora-soft"],
-      },
-      {
-        id: 6,
-        title: "The Gift of Solar Energy",
-        text: "Zoey thought about how solar energy worked in her garden. 'Just like solar panels use sunlight to create electricity, the Sun’s energy helps power everything on Earth,' she said out loud. 'It gives my plants the food they need to grow, and it even powers my home!'\n'And now, I know that space weather from the Sun gives us those magical auroras to enjoy!'\nZoey smiled. 'I think I’ll be able to make even more amazing inventions in my garden to harness the power of the Sun.'",
-        narrationTone: "Inventive, inspired, thoughtful.",
-        illustration: {
-          description:
-            "Zoey thinking creatively in her garden, with a solar panel in the background next to her house. The auroras glow above, and the garden is thriving under the bright sunlight.",
-          image: "/stories/story2/img/zoey-solar.png",
-        },
-        animation: ["sunlight-bright", "aurora-flow"],
-      },
-      {
-        id: 7,
-        title: "Solar Flares and Their Power",
-        text: "Professor Sol’s voice came through the phone again. 'Zoey, the Sun’s energy isn’t just helpful for growing plants. Solar flares can also cause beautiful auroras in the sky, but they can sometimes mess with things like power grids or satellite communications.'\n'Solar flares can interfere with technology on Earth,' Professor Sol continued, 'but don’t worry! Even though they’re powerful, they’re not harmful to us directly. We just have to be careful about the things that rely on solar energy.'",
-        narrationTone: "Educational, careful, reassuring.",
-        illustration: {
-          description:
-            "A simple diagram showing solar flares shooting from the Sun, with lines of energy traveling through space, reaching Earth. On the side, a small image shows satellites and power grids being impacted by solar flares.",
-          image: "/stories/story2/img/zoey-flares.png",
-        },
-        animation: ["flare-burst", "signal-glitch"],
-      },
-      {
-        id: 8,
-        title: "Zoey’s Creative Idea",
-        text: "Zoey thought for a moment. 'If solar flares can affect technology,' she said, 'maybe I can come up with an invention to protect my garden’s solar-powered gadgets from solar flares!'\nZoey worked late into the evening, building a special solar shield for her garden’s equipment. 'If the Sun can power my garden, it can also make sure my gadgets work safely,' she said, excited by the new project.",
-        narrationTone: "Creative, determined, inspired.",
-        illustration: {
-          description:
-            "Zoey working in her garden at night, using tools to add a solar shield to her solar-powered gadgets. The auroras glow softly in the sky above, casting a gentle light on her work.",
-          image: "/stories/story2/img/zoey-invention.png",
-        },
-        animation: ["tool-hammer", "aurora-glow"],
-      },
-      {
-        id: 9,
-        title: "The Magic of the Sun",
-        text: "As Zoey finished her work, she stepped back and looked at her garden. The solar shield worked perfectly, keeping her gadgets safe from any disruptions caused by space weather.\n'The Sun’s magic really is everywhere!' Zoey said with a smile. 'From growing my plants to powering my gadgets, the Sun’s energy makes everything possible.'\nZoey felt connected to the Sun and all the plants in her garden. 'Space weather is just another part of nature’s big plan!'",
-        narrationTone: "Grateful, magical, uplifting.",
-        illustration: {
-          description:
-            "Zoey proudly looking at her solar-powered gadgets working perfectly in the garden. The auroras are visible in the sky, and the garden is thriving, with plants growing tall and strong under the Sun’s energy.",
-          image: "/stories/story2/img/zoey-magic.png",
-        },
-        animation: ["gadgets-glow", "aurora-bright"],
-      },
-      {
-        id: 10,
-        title: "What We Learned",
-        text: "Zoey learned that space weather, like solar flares, isn’t something to fear. It can bring beautiful auroras to the sky, and with a little creativity, it can even inspire new inventions to help her garden thrive. She also learned that the Sun’s energy is a gift that powers life on Earth in more ways than one.\n'The Sun is always giving us surprises!' Zoey said, 'Whether it’s beautiful lights in the sky or energy to help us grow, the Sun’s magic is always with us.'",
-        narrationTone: "Concluding, warm, magical.",
-        illustration: {
-          description:
-            "Zoey standing in the middle of her beautiful garden, with the auroras glowing above her and the Sun setting in the distance. The garden is full of life, and Zoey is smiling, surrounded by the energy of the Sun.",
-          image: "/stories/story2/img/zoey-ending.png",
-        },
-        animation: ["sunset-glow", "aurora-fade"],
-      },
-    ],
-  },
+
   {
     id: "zoey-gardener-story",
     title: "Zoey the Gardener and the Sun’s Gift",
     description:
       "A magical story of Zoey discovering the Sun’s energy and the beauty of auroras.",
     coverImage: "/stories/zoey/img/zoey-cover.png",
-    pdfUrl: "/pdfs/zoey-story.pdf",
+    pdfUrl:
+      "https://drive.google.com/file/d/1s1Jjf2CpvhR3N6chNhqjfOpX7an1cN3x/preview",
     videoUrl: "/vids/zoey-story.mp4",
     pages: [
-      {
-        id: 0,
-        title: "Cover Page",
-        text: "Zoey the Gardener and the Sun’s Gift",
-        narrationTone: "Bright, magical, inviting.",
-        illustration: {
-          description:
-            "Zoey, the gardener, standing in her beautiful garden while colorful auroras glow above her.",
-          image: "/stories/zoey/img/cover.png",
-        },
-        animation: ["aurora-glow", "garden-bloom"],
-      },
       {
         id: 1,
         title: "Meet Zoey",
@@ -853,7 +702,8 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
     description:
       "Follow Solara, a playful solar storm, as she travels from the Sun to Earth.",
     coverImage: "https://i.ibb.co.com/ZRMj3MZs/sola.png",
-    pdfUrl: "/pdfs/solara.pdf",
+    pdfUrl:
+      "https://drive.google.com/file/d/1WJhvHlBgZmyPNm4JNnvEaA3AXCiJQbJd/preview",
     pages: [
       {
         id: 1,
@@ -1767,6 +1617,137 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
           image: "/stories/mark/img/page10.png",
         },
         animation: ["stars-twinkle", "earth-glow", "station-hover"],
+      },
+    ],
+  },
+  {
+    id: "luna-the-botanist-and-the-cosmic-thief",
+    title: "Luna the Botanist and the Cosmic Thief",
+    description:
+      "Luna, a passionate botanist, faces a mysterious villain who tries to steal the Sun’s energy, while auroras light up her garden.",
+    coverImage: "https://i.ibb.co/newcoverimage/luna.png",
+    pdfUrl: "/pdfs/story-luna.pdf",
+    videoUrl: "/vid/story-luna.mp4",
+    pages: [
+      {
+        id: 0,
+        title: "Cover Page",
+        text: "Luna the Botanist and the Cosmic Thief",
+        narrationTone: "Magical, mysterious, inviting.",
+        illustration: {
+          description:
+            "Luna, the botanist, standing in her glowing garden at night, colorful auroras lighting up the sky. Shadows in the distance hint at a mysterious figure approaching.",
+          image: "/stories/story-luna/img/cover.png",
+        },
+        animation: ["aurora-glow", "garden-bloom", "shadow-move"],
+      },
+      {
+        id: 1,
+        title: "Meet Luna",
+        text: "Luna was a botanist who loved experimenting with rare plants. Her garden was her sanctuary, filled with flowers that seemed to reach for the stars. Every day, she nurtured them with care. But one evening, while watering her moonlit garden, she noticed something unusual—the sky shimmered with auroras, but a dark figure lurked at the edge of her garden.",
+        narrationTone: "Gentle, curious, tense.",
+        illustration: {
+          description:
+            "Luna in her garden, holding a watering can. Auroras swirl above, while a shadowy figure hides behind trees at the edge of the garden.",
+          image: "/stories/story-luna/img/luna-garden.png",
+        },
+        animation: ["aurora-begin", "shadow-flicker", "plants-sway"],
+      },
+      {
+        id: 2,
+        title: "A Strange Glow",
+        text: "The auroras above seemed brighter than usual, almost as if they were trying to warn Luna. She squinted at the figure moving between the plants. 'Who’s there?' she whispered. Suddenly, the lights dimmed in a strange way, as if someone was trying to steal the Sun’s energy itself!",
+        narrationTone: "Suspenseful, fearful, emotional.",
+        illustration: {
+          description:
+            "Luna looking up at glowing auroras, eyes wide with fear. A faint, mysterious figure cloaked in shadows is moving through the garden.",
+          image: "/stories/story-luna/img/luna-glow.png",
+        },
+        animation: ["aurora-intense", "shadow-slide", "plants-sway"],
+      },
+      {
+        id: 3,
+        title: "The Cosmic Thief Appears",
+        text: "Luna’s heart raced. From the shadows stepped a figure—the Cosmic Thief! 'Give me the Sun’s energy!' the thief demanded. Luna took a step back. 'You can’t take the Sun’s energy! It keeps everything alive, including my plants!' she shouted.",
+        narrationTone: "Dramatic, tense, heroic.",
+        illustration: {
+          description:
+            "The Cosmic Thief, a dark figure with glowing hands, hovering above the garden. Luna stands in front of her plants protectively. The auroras swirl wildly in the sky.",
+          image: "/stories/story-luna/img/thief-appears.png",
+        },
+        animation: ["aurora-spin", "thief-glow", "plants-shake"],
+      },
+      {
+        id: 4,
+        title: "Luna Calls Professor Sol",
+        text: "Thinking quickly, Luna pulled out her phone and called Professor Sol, her mentor in astronomy. 'Professor Sol! The Cosmic Thief is trying to steal the Sun’s energy!' she cried. Professor Sol’s voice was calm but urgent: 'Luna, you must protect your garden. Use the energy of the Sun wisely. The auroras are a guide—they’ll show you how!'",
+        narrationTone: "Urgent, instructive, emotional.",
+        illustration: {
+          description:
+            "Luna on her phone, determined, with auroras glowing brightly above. Professor Sol appears in a small call window, explaining guidance.",
+          image: "/stories/story-luna/img/luna-call.png",
+        },
+        animation: ["aurora-bright", "phone-glow", "plants-sway"],
+      },
+      {
+        id: 5,
+        title: "The Battle of Energy",
+        text: "Luna concentrated. She extended her hands to the sky, connecting with the aurora’s energy. Light streamed down into her garden, surrounding her plants with a golden glow. The Cosmic Thief tried to grab it, but Luna’s love and care for her garden made the energy strong and untouchable.",
+        narrationTone: "Heroic, emotional, magical.",
+        illustration: {
+          description:
+            "Luna glowing with golden aurora energy, protecting her plants. The Cosmic Thief reaches out but is pushed back by the radiant light.",
+          image: "/stories/story-luna/img/battle-energy.png",
+        },
+        animation: ["light-beam", "aurora-protect", "thief-retreat"],
+      },
+      {
+        id: 6,
+        title: "The Villain’s Defeat",
+        text: "The Cosmic Thief screamed and vanished into the night, unable to steal the Sun’s energy. Luna breathed a sigh of relief. Tears of joy filled her eyes as she saw her garden safe, glowing brighter than ever with auroras reflecting the Sun’s energy.",
+        narrationTone: "Emotional, triumphant, relieved.",
+        illustration: {
+          description:
+            "Luna hugging her plants, auroras shimmering above. The shadow of the thief fades away in the distance.",
+          image: "/stories/story-luna/img/thief-defeat.png",
+        },
+        animation: ["aurora-glow", "plants-shine", "shadow-fade"],
+      },
+      {
+        id: 7,
+        title: "A Lesson in Courage",
+        text: "Luna realized something important: the Sun’s energy is precious, and protecting life requires courage and love. 'I’ll always care for my garden, and I’ll never let anyone harm the Sun’s gift,' she said, feeling stronger than ever.",
+        narrationTone: "Reflective, uplifting, inspiring.",
+        illustration: {
+          description:
+            "Luna standing tall in her garden, auroras glowing gently above, a peaceful and proud expression on her face.",
+          image: "/stories/story-luna/img/luna-courage.png",
+        },
+        animation: ["aurora-soft", "plants-sway", "light-glow"],
+      },
+      {
+        id: 8,
+        title: "Auroras of Hope",
+        text: "As the night ended, the auroras danced across the sky one last time, a reminder that even in darkness, light and energy can protect what we love. Luna felt connected to the Sun, her garden, and the universe itself.",
+        narrationTone: "Magical, peaceful, emotional.",
+        illustration: {
+          description:
+            "Luna sitting among her glowing plants, looking up at the auroras shimmering above the night sky.",
+          image: "/stories/story-luna/img/aurora-hope.png",
+        },
+        animation: ["aurora-dance", "plants-glow", "sky-twinkle"],
+      },
+      {
+        id: 9,
+        title: "What We Learned",
+        text: "Luna learned that energy, like the Sun’s, is powerful and precious. It can create life, beauty, and hope—but it must be protected from those who would misuse it. 'Love, care, and courage can make even the strongest energy safe,' Luna whispered to herself.",
+        narrationTone: "Concluding, reflective, inspiring.",
+        illustration: {
+          description:
+            "Luna standing in her fully glowing garden, auroras above, looking proud and thoughtful, with the night calm and peaceful.",
+          image: "/stories/story-luna/img/luna-ending.png",
+        },
+        animation: ["aurora-fade", "plants-shine", "sky-calm"],
       },
     ],
   },
