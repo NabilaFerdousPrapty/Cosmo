@@ -1,4 +1,4 @@
-import { Link } from "lucide-react";
+import Link from "next/link";
 import { Particles } from "../ui/particles";
 
 // components/HomeSections/StoriesSection.tsx

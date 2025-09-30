@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Particles } from "../ui/particles";
 
 // components/HomeSections/AuroraCastSection.tsx
@@ -13,12 +14,12 @@ export default function AuroraCastSection() {
           Real-time space weather forecast! Check live solar activity data and
           see if you can spot Northern Lights tonight.
         </p>
-        <a
+        <Link
           href="/aurora-cast"
           className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-cyan-500 text-white font-bold rounded-2xl text-lg hover:scale-105 transition-transform"
         >
           View Forecast 🛰️
-        </a>
+        </Link>
       </div>
     </section>
   );

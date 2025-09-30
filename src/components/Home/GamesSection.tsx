@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Particles } from "../ui/particles";
 
 // components/HomeSections/GamesSection.tsx
@@ -13,12 +14,12 @@ export default function GamesSection() {
           Play exciting space adventures! Dodge solar storms, explore planets,
           and protect Earth from space weather in fun interactive games.
         </p>
-        <a
+        <Link
           href="/games"
           className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl text-lg hover:scale-105 transition-transform"
         >
           Play Games 👾
-        </a>
+        </Link>
       </div>
     </section>
   );
