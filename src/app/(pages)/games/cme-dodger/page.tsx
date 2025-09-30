@@ -336,8 +336,8 @@ export default function CMEDodger() {
             🌞 Fun Space Fact
           </h4>
           <p className="text-center text-gray-300 text-sm">
-            The Sun sends out particles called "solar wind" that can create
-            beautiful auroras but can also be dangerous for spacecraft!
+            The Sun sends out particles called &quot;solar wind&quot; that can
+            create beautiful auroras but can also be dangerous for spacecraft!
           </p>
         </div>
       </div>
