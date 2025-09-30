@@ -15,7 +15,7 @@ export const StoryCard: React.FC<StoryCardProps> = ({
   description,
 }) => {
   return (
-    <CardContainer className="inter-var h-[500px]">
+    <CardContainer className="inter-var">
       <CardBody className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-yellow-500 transition-all duration-300 relative group/card w-auto sm:w-[22rem] h-auto">
         {/* Cover */}
         <CardItem translateZ="60" className="w-full">

@@ -17,7 +17,7 @@ export default function StoriesPage() {
         </div>
 
         {/* Stories Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
           {stories.map((story) => (
             <Link
               key={story.id}

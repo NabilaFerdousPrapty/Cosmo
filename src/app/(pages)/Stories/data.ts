@@ -168,6 +168,686 @@ With a smile, Ella looked up at the auroras one last time, knowing the Sun’s e
     ],
   },
   {
+    id: "skyler-story",
+    title: "Skyler and the Dancing Lights",
+    description:
+      "Skyler, a brave pilot, discovers the magic of auroras while flying at night and learns about the Sun’s powerful role in creating space weather.",
+    coverImage: "https://i.ibb.co.com/gbnsDJ05/skyler.png",
+    pdfUrl: "/pdfs/story2.pdf",
+    videoUrl: "/vid/story2.mp4",
+
+    pages: [
+      {
+        id: 1,
+        title: "Meet Skyler",
+        text: "Once upon a time, there was a brave pilot named Skyler. Skyler loved flying high in the sky, above the clouds, where the air was fresh and the view was breathtaking. She flew all around the world, taking people to far-off places, and she had seen all sorts of things—clouds that looked like fluffy cotton candy, sunsets that painted the sky in gold and pink, and even the stars sparkling brightly at night.\n\nBut one evening, Skyler was flying through the night sky when something magical happened. She looked out of the window and saw something she had never seen before. The sky below was glowing with beautiful colors, like the sky was alive and dancing!",
+        narrationTone: "Adventurous, magical discovery.",
+        illustration: {
+          description:
+            "Skyler in the cockpit of her plane, flying through a starry night sky. The first signs of auroras begin to glow faintly below the clouds.",
+          image: "/pilot.png",
+        },
+        animation: ["plane-flying", "aurora-faint"],
+      },
+      {
+        id: 2,
+        title: "The Lights in the Sky",
+        text: "Skyler’s eyes widened in amazement. The sky wasn’t dark anymore—it was filled with swirling colors! There were greens, pinks, and purples all dancing together like a magical light show. 'What is that light?' Skyler wondered, tapping her fingers on the dashboard.\n\n'It looks like the sky is dancing!' Skyler whispered to herself, feeling like she was flying through a dream.",
+        narrationTone: "Amazed, dreamy, curious.",
+        illustration: {
+          description:
+            "Skyler gazing out of the window at the bright auroras swirling below. The sky is filled with vibrant greens, pinks, and purples, and the cockpit glows with the reflection of the colorful lights.",
+          image: "/stories/story1/img/cloudy.png",
+        },
+        animation: ["aurora-bright", "cockpit-glow"],
+      },
+      {
+        id: 3,
+        title: "The Call from Professor Nova",
+        text: "Just then, Skyler’s radio crackled to life. It was her friend, Professor Nova, who studied space weather. 'Skyler!' Professor Nova said excitedly, 'You’re seeing the auroras!'\n\n'Auroras?' Skyler asked, confused but curious. 'What are those?'\n\n'Ah! The auroras are one of the most beautiful things in space weather!' Professor Nova explained. 'They happen when the Sun sends out bursts of energy called solar flares. These flares travel all the way to Earth and make the sky light up in dazzling colors!'",
+        narrationTone: "Excited, informative, friendly.",
+        illustration: {
+          description:
+            "Skyler holding the radio, looking surprised, with the auroras glowing outside. A small, friendly image of Professor Nova appears on the radio screen.",
+          image: "/stories/story1/img/aurora-borealis.png",
+        },
+        animation: ["radio-static", "aurora-glow"],
+      },
+      {
+        id: 4,
+        title: "The Solar Flares",
+        text: "Skyler blinked. 'So, the Sun is responsible for this light show?'\n\nProfessor Nova chuckled. 'Yes! The Sun is very powerful. Sometimes, it sends out bursts of energy called solar flares. These flares are like giant fireworks that explode from the Sun and travel through space. When they reach Earth, they interact with the atmosphere and magnetic field, and that’s when you get the beautiful auroras in the sky!'\n\n'Wow!' Skyler exclaimed. 'I never knew the Sun could do that!'",
+        narrationTone: "Curious, amazed, educational.",
+        illustration: {
+          description:
+            "A diagram showing solar flares bursting from the Sun, with lines of energy traveling through space towards Earth, where they interact with the magnetic field, creating auroras.",
+          image: "/stories/story1/img/solar-flare.png",
+        },
+        animation: ["sun-flare", "energy-lines", "aurora-appear"],
+      },
+      {
+        id: 5,
+        title: "A Solar Surprise",
+        text: "As Skyler watched the auroras, something strange happened. The radio in her cockpit started to crackle and buzz, and her GPS screen started flickering. 'Hmm, that’s odd,' Skyler thought.\n\nThen she remembered what Professor Nova had said: 'Solar flares can sometimes mess with technology. They can affect radios, satellites, and GPS systems!'\n\n'Uh-oh,' Skyler said. 'Looks like the Sun is causing some trouble with my tech!'",
+        narrationTone: "Surprised, slightly worried, playful.",
+        illustration: {
+          description:
+            "Skyler looking worried at the crackling radio and flickering GPS screen in her cockpit, with the glowing auroras still visible outside the window.",
+          image: "/stories/story1/img/earthquake.png",
+        },
+        animation: ["radio-buzz", "gps-flicker", "aurora-bright"],
+      },
+      {
+        id: 6,
+        title: "The Impact on Technology",
+        text: "Professor Nova’s voice came through the radio again. 'Don’t worry, Skyler. This is a normal part of space weather. Solar flares can interfere with things like radio signals and GPS, which is why your radio and GPS are acting up. But it’s also why we get to see these beautiful lights!'\n\n'That’s cool, but a little tricky too!' Skyler said. 'It’s like the Sun’s energy is both helping me see this amazing light show and causing some problems with my instruments!'",
+        narrationTone: "Reassuring, informative, light-hearted.",
+        illustration: {
+          description:
+            "Skyler trying to use the radio and GPS, but both are showing static and glitches. The auroras continue to dance in the sky outside, creating a mix of awe and mild frustration for Skyler.",
+          image: "/stories/img/interview.png",
+        },
+        animation: ["gps-glitch", "radio-static", "aurora-dance"],
+      },
+      {
+        id: 7,
+        title: "The Power of the Sun",
+        text: "'It’s incredible!' Skyler said, staring at the auroras. 'The Sun is so far away, yet its energy can travel all the way to Earth and cause this.'\n\nProfessor Nova laughed. 'Exactly! The Sun is 93 million miles away, but its energy still reaches us and has a big impact on our planet. Solar flares, solar winds, and the Sun’s magnetic field all create space weather, which affects Earth in so many ways.'\n\n'It’s like a big cosmic dance happening all around us!' Skyler said, feeling inspired.",
+        narrationTone: "Inspirational, awe-filled, cosmic.",
+        illustration: {
+          description:
+            "Skyler gazing out the cockpit window, lost in wonder as the colorful auroras glow. A line from the Sun to Earth is shown, symbolizing the journey of the Sun's energy traveling through space.",
+          image: "/sun.png",
+        },
+        animation: ["sun-energy-line", "aurora-glow"],
+      },
+      {
+        id: 8,
+        title: "Riding the Waves of Space Weather",
+        text: "Even though the solar flares were making her GPS go haywire, Skyler didn’t mind. She decided to sail through the night by the stars, just like sailors did in the old days.\n\n'This is just like an adventure!' Skyler grinned, enjoying the quiet beauty of the night sky and the glowing auroras below. 'It’s like I’m part of something bigger, something magical!'",
+        narrationTone: "Adventurous, uplifting, magical.",
+        illustration: {
+          description:
+            "Skyler navigating her plane through the night sky, using the stars for guidance, with the glowing auroras lighting the way beneath her.",
+          image: "/stories/story1/img/parabolic-antenna.png",
+        },
+        animation: ["plane-glide", "stars-twinkle", "aurora-light"],
+      },
+      {
+        id: 9,
+        title: "The Beauty of Space Weather",
+        text: "As Skyler flew, she marveled at how space weather wasn’t just about technology problems—it was also about the beauty the Sun brings to the Earth. 'The auroras are incredible! They remind me how the Sun’s power can create such amazing things, like this light show!'\n\nSkyler smiled as she realized that, while solar flares and space weather can cause some trouble, they also make the world a more magical place.",
+        narrationTone: "Peaceful, reflective, appreciative.",
+        illustration: {
+          description:
+            "Skyler gazing out the window, feeling peaceful as she watches the auroras continue to swirl in the night sky, the stars twinkling above her.",
+          image: "/stories/img/day-and-night.png",
+        },
+        animation: ["aurora-slow-dance", "stars-twinkle"],
+      },
+      {
+        id: 10,
+        title: "What We Learned",
+        text: "Skyler learned that space weather—like solar flares and auroras—can affect technology, like GPS and radio signals. But she also learned that space weather creates beautiful sights in the sky that are both magical and mysterious.\n\n'The Sun is full of surprises!' Skyler said with a smile. 'Its energy touches everything on Earth in ways we can’t always see—but when we do, it’s something amazing!'\n\nSkyler couldn’t wait to see what other surprises the Sun would send next. But for now, she was content, flying through the glowing sky, feeling part of something bigger than herself.",
+        narrationTone: "Concluding, hopeful, magical.",
+        illustration: {
+          description:
+            "Skyler flying peacefully through the night sky with the auroras glowing beneath her. The sky is calm, and the stars shine brightly, leaving a sense of wonder and awe.",
+          image: "/stories/story1/img/tech.png",
+        },
+        animation: ["plane-flying", "aurora-glow", "stars-shine"],
+      },
+    ],
+  },
+  {
+    id: "solar-garden-story",
+    title: "Zoey the Gardener and the Sun’s Gift",
+    description:
+      "Zoey, the gardener, standing in her beautiful garden while colorful auroras glow above her.",
+    coverImage: "https://i.ibb.co.com/sX4bbWw/zoey.png",
+    pdfUrl: "/pdfs/story2-zoey.pdf",
+    videoUrl: "/vid/story2.mp4",
+    pages: [
+      {
+        id: 0,
+        title: "Cover Page",
+        text: "Zoey the Gardener and the Sun’s Gift",
+        narrationTone: "Bright, magical, inviting.",
+        illustration: {
+          description:
+            "Zoey, the gardener, standing in her beautiful garden while colorful auroras glow above her.",
+          image: "/stories/story2/img/zoey-cover.png",
+        },
+        animation: ["aurora-glow", "garden-bloom"],
+      },
+      {
+        id: 1,
+        title: "Meet Zoey",
+        text: "Once upon a time, there was a kind gardener named Zoey. Zoey loved to plant flowers, herbs, and vegetables. Every morning, she would go out into her garden and water the plants, making sure they were strong and healthy. She loved watching her garden grow as the days passed. But one afternoon, as Zoey was tending to her flowers, something magical happened.\nShe looked up and saw that the sky wasn’t just blue anymore. It was glowing with bright colors—greens, pinks, and purples! 'What is that light?' Zoey wondered, amazed by the beauty of the sky.",
+        narrationTone: "Gentle, warm, and magical.",
+        illustration: {
+          description:
+            "Zoey standing in her colorful garden, watering plants, while the sky above her starts to glow with the first hints of auroras. Flowers and vegetables fill the garden around her.",
+          image: "/stories/story2/img/zoey-garden.png",
+        },
+        animation: ["plants-sway", "aurora-begin"],
+      },
+      {
+        id: 2,
+        title: "A Glow in the Garden",
+        text: "As Zoey watched, the glowing colors in the sky began to swirl and dance. 'It looks like the sky is alive!' Zoey whispered to herself. The bright greens, pinks, and purples twirled across the sky like a magical light show. Zoey was so excited—she had never seen the sky like this before!\nShe stopped watering the plants and stood still, her eyes wide with wonder. 'What could it be?' she thought. The colors above her shimmered, creating the most beautiful light show she had ever seen.",
+        narrationTone: "Excited, full of wonder.",
+        illustration: {
+          description:
+            "Zoey standing with her watering can in hand, staring up in awe at the swirling auroras above her. The sky is filled with colorful lights, and the plants around her seem to glow in the soft light.",
+          image: "/stories/story2/img/zoey-aurora.png",
+        },
+        animation: ["aurora-dance", "light-glow"],
+      },
+      {
+        id: 3,
+        title: "The Call from Professor Sol",
+        text: "Just then, Zoey’s phone rang. It was her friend, Professor Sol, who loved to teach Zoey about space and science.\n'Zoey!' Professor Sol said excitedly. 'You’re seeing the auroras! They happen when space weather from the Sun reaches Earth!'\n'Space weather?' Zoey asked, puzzled. 'What does that mean?'\n'Space weather is caused by the Sun sending out bursts of energy, called solar flares. When these flares reach Earth, they interact with the gases in our atmosphere and create those beautiful lights in the sky, called auroras!'",
+        narrationTone: "Explaining, educational, curious.",
+        illustration: {
+          description:
+            "Zoey on the phone with Professor Sol, holding the phone to her ear while looking up at the colorful auroras. A simple diagram next to Zoey shows solar flares from the Sun reaching Earth.",
+          image: "/stories/story2/img/zoey-phone.png",
+        },
+        animation: ["phone-ring", "aurora-bright"],
+      },
+      {
+        id: 4,
+        title: "The Sun’s Special Gift",
+        text: "Zoey thought for a moment. 'So, the Sun is making the sky glow like that?' she asked, amazed. 'That’s incredible!'\n'Yes,' Professor Sol replied. 'The Sun is always sending out energy to Earth in the form of solar flares and solar wind. These things help power our planet and keep everything growing! The energy from the Sun is essential for life on Earth—without it, plants wouldn’t be able to grow.'\nZoey smiled, feeling even more connected to her garden. She had always known the Sun was important, but now she understood just how powerful its energy really was!",
+        narrationTone: "Revealing, joyful, thoughtful.",
+        illustration: {
+          description:
+            "Zoey standing in her garden, smiling as she listens to Professor Sol. The glowing auroras swirl above her garden, and the plants seem to stretch and grow in response to the sunlight.",
+          image: "/stories/story2/img/zoey-gift.png",
+        },
+        animation: ["plants-grow", "aurora-sparkle"],
+      },
+      {
+        id: 5,
+        title: "A Gardener’s Connection to the Sun",
+        text: "Zoey looked at her garden, thinking about everything Professor Sol had just said. 'The Sun helps my garden grow strong and healthy,' Zoey thought, 'and it’s the same energy that’s causing these beautiful lights in the sky!'\n'The Sun’s energy gives my plants the light they need to grow,' Zoey continued, 'and now I see that space weather is just another way the Sun helps us!'",
+        narrationTone: "Peaceful, connected, reflective.",
+        illustration: {
+          description:
+            "Zoey walking through her garden, gently touching the leaves of a plant, with the auroras still glowing above. The sunlight filters through the plants, showing how they are growing and thriving.",
+          image: "/stories/story2/img/zoey-connected.png",
+        },
+        animation: ["sunlight-filter", "aurora-soft"],
+      },
+      {
+        id: 6,
+        title: "The Gift of Solar Energy",
+        text: "Zoey thought about how solar energy worked in her garden. 'Just like solar panels use sunlight to create electricity, the Sun’s energy helps power everything on Earth,' she said out loud. 'It gives my plants the food they need to grow, and it even powers my home!'\n'And now, I know that space weather from the Sun gives us those magical auroras to enjoy!'\nZoey smiled. 'I think I’ll be able to make even more amazing inventions in my garden to harness the power of the Sun.'",
+        narrationTone: "Inventive, inspired, thoughtful.",
+        illustration: {
+          description:
+            "Zoey thinking creatively in her garden, with a solar panel in the background next to her house. The auroras glow above, and the garden is thriving under the bright sunlight.",
+          image: "/stories/story2/img/zoey-solar.png",
+        },
+        animation: ["sunlight-bright", "aurora-flow"],
+      },
+      {
+        id: 7,
+        title: "Solar Flares and Their Power",
+        text: "Professor Sol’s voice came through the phone again. 'Zoey, the Sun’s energy isn’t just helpful for growing plants. Solar flares can also cause beautiful auroras in the sky, but they can sometimes mess with things like power grids or satellite communications.'\n'Solar flares can interfere with technology on Earth,' Professor Sol continued, 'but don’t worry! Even though they’re powerful, they’re not harmful to us directly. We just have to be careful about the things that rely on solar energy.'",
+        narrationTone: "Educational, careful, reassuring.",
+        illustration: {
+          description:
+            "A simple diagram showing solar flares shooting from the Sun, with lines of energy traveling through space, reaching Earth. On the side, a small image shows satellites and power grids being impacted by solar flares.",
+          image: "/stories/story2/img/zoey-flares.png",
+        },
+        animation: ["flare-burst", "signal-glitch"],
+      },
+      {
+        id: 8,
+        title: "Zoey’s Creative Idea",
+        text: "Zoey thought for a moment. 'If solar flares can affect technology,' she said, 'maybe I can come up with an invention to protect my garden’s solar-powered gadgets from solar flares!'\nZoey worked late into the evening, building a special solar shield for her garden’s equipment. 'If the Sun can power my garden, it can also make sure my gadgets work safely,' she said, excited by the new project.",
+        narrationTone: "Creative, determined, inspired.",
+        illustration: {
+          description:
+            "Zoey working in her garden at night, using tools to add a solar shield to her solar-powered gadgets. The auroras glow softly in the sky above, casting a gentle light on her work.",
+          image: "/stories/story2/img/zoey-invention.png",
+        },
+        animation: ["tool-hammer", "aurora-glow"],
+      },
+      {
+        id: 9,
+        title: "The Magic of the Sun",
+        text: "As Zoey finished her work, she stepped back and looked at her garden. The solar shield worked perfectly, keeping her gadgets safe from any disruptions caused by space weather.\n'The Sun’s magic really is everywhere!' Zoey said with a smile. 'From growing my plants to powering my gadgets, the Sun’s energy makes everything possible.'\nZoey felt connected to the Sun and all the plants in her garden. 'Space weather is just another part of nature’s big plan!'",
+        narrationTone: "Grateful, magical, uplifting.",
+        illustration: {
+          description:
+            "Zoey proudly looking at her solar-powered gadgets working perfectly in the garden. The auroras are visible in the sky, and the garden is thriving, with plants growing tall and strong under the Sun’s energy.",
+          image: "/stories/story2/img/zoey-magic.png",
+        },
+        animation: ["gadgets-glow", "aurora-bright"],
+      },
+      {
+        id: 10,
+        title: "What We Learned",
+        text: "Zoey learned that space weather, like solar flares, isn’t something to fear. It can bring beautiful auroras to the sky, and with a little creativity, it can even inspire new inventions to help her garden thrive. She also learned that the Sun’s energy is a gift that powers life on Earth in more ways than one.\n'The Sun is always giving us surprises!' Zoey said, 'Whether it’s beautiful lights in the sky or energy to help us grow, the Sun’s magic is always with us.'",
+        narrationTone: "Concluding, warm, magical.",
+        illustration: {
+          description:
+            "Zoey standing in the middle of her beautiful garden, with the auroras glowing above her and the Sun setting in the distance. The garden is full of life, and Zoey is smiling, surrounded by the energy of the Sun.",
+          image: "/stories/story2/img/zoey-ending.png",
+        },
+        animation: ["sunset-glow", "aurora-fade"],
+      },
+    ],
+  },
+  {
+    id: "zoey-gardener-story",
+    title: "Zoey the Gardener and the Sun’s Gift",
+    description:
+      "A magical story of Zoey discovering the Sun’s energy and the beauty of auroras.",
+    coverImage: "/stories/zoey/img/zoey-cover.png",
+    pdfUrl: "/pdfs/zoey-story.pdf",
+    videoUrl: "/vids/zoey-story.mp4",
+    pages: [
+      {
+        id: 0,
+        title: "Cover Page",
+        text: "Zoey the Gardener and the Sun’s Gift",
+        narrationTone: "Bright, magical, inviting.",
+        illustration: {
+          description:
+            "Zoey, the gardener, standing in her beautiful garden while colorful auroras glow above her.",
+          image: "/stories/zoey/img/cover.png",
+        },
+        animation: ["aurora-glow", "garden-bloom"],
+      },
+      {
+        id: 1,
+        title: "Meet Zoey",
+        text: "Once upon a time, there was a kind gardener named Zoey. Zoey loved to plant flowers, herbs, and vegetables. Every morning, she would go out into her garden and water the plants, making sure they were strong and healthy. She loved watching her garden grow as the days passed. But one afternoon, as Zoey was tending to her flowers, something magical happened.\nShe looked up and saw that the sky wasn’t just blue anymore. It was glowing with bright colors—greens, pinks, and purples! 'What is that light?' Zoey wondered, amazed by the beauty of the sky.",
+        narrationTone: "Gentle, warm, magical.",
+        illustration: {
+          description:
+            "Zoey standing in her colorful garden, watering plants, while the sky above her starts to glow with the first hints of auroras. Flowers and vegetables fill the garden around her.",
+          image: "/stories/zoey/img/page1.png",
+        },
+        animation: ["plants-sway", "aurora-begin"],
+      },
+      {
+        id: 2,
+        title: "A Glow in the Garden",
+        text: "As Zoey watched, the glowing colors in the sky began to swirl and dance. 'It looks like the sky is alive!' Zoey whispered to herself. The bright greens, pinks, and purples twirled across the sky like a magical light show. Zoey was so excited—she had never seen the sky like this before!\nShe stopped watering the plants and stood still, her eyes wide with wonder. 'What could it be?' she thought. The colors above her shimmered, creating the most beautiful light show she had ever seen.",
+        narrationTone: "Excited, full of wonder.",
+        illustration: {
+          description:
+            "Zoey standing with her watering can in hand, staring up in awe at the swirling auroras above her. The sky is filled with colorful lights, and the plants around her seem to glow in the soft light.",
+          image: "/stories/zoey/img/page2.png",
+        },
+        animation: ["aurora-dance", "light-glow"],
+      },
+      {
+        id: 3,
+        title: "The Call from Professor Sol",
+        text: "Just then, Zoey’s phone rang. It was her friend, Professor Sol, who loved to teach Zoey about space and science.\n'Zoey!' Professor Sol said excitedly. 'You’re seeing the auroras! They happen when space weather from the Sun reaches Earth!'\n'Space weather?' Zoey asked, puzzled. 'What does that mean?'\n'Space weather is caused by the Sun sending out bursts of energy, called solar flares. When these flares reach Earth, they interact with the gases in our atmosphere and create those beautiful lights in the sky, called auroras!'",
+        narrationTone: "Educational, curious.",
+        illustration: {
+          description:
+            "Zoey on the phone with Professor Sol, holding the phone to her ear while looking up at the colorful auroras. A simple diagram next to Zoey shows solar flares from the Sun reaching Earth.",
+          image: "/stories/zoey/img/page3.png",
+        },
+        animation: ["phone-ring", "aurora-bright"],
+      },
+      {
+        id: 4,
+        title: "The Sun’s Special Gift",
+        text: "Zoey thought for a moment. 'So, the Sun is making the sky glow like that?' she asked, amazed. 'That’s incredible!'\n'Yes,' Professor Sol replied. 'The Sun is always sending out energy to Earth in the form of solar flares and solar wind. These things help power our planet and keep everything growing! The energy from the Sun is essential for life on Earth—without it, plants wouldn’t be able to grow.'\nZoey smiled, feeling even more connected to her garden. She had always known the Sun was important, but now she understood just how powerful its energy really was!",
+        narrationTone: "Revealing, joyful.",
+        illustration: {
+          description:
+            "Zoey standing in her garden, smiling as she listens to Professor Sol. The glowing auroras swirl above her garden, and the plants seem to stretch and grow in response to the sunlight.",
+          image: "/stories/zoey/img/page4.png",
+        },
+        animation: ["plants-grow", "aurora-sparkle"],
+      },
+      {
+        id: 5,
+        title: "A Gardener’s Connection to the Sun",
+        text: "Zoey looked at her garden, thinking about everything Professor Sol had just said. 'The Sun helps my garden grow strong and healthy,' Zoey thought, 'and it’s the same energy that’s causing these beautiful lights in the sky!'\n'The Sun’s energy gives my plants the light they need to grow,' Zoey continued, 'and now I see that space weather is just another way the Sun helps us!'",
+        narrationTone: "Peaceful, reflective.",
+        illustration: {
+          description:
+            "Zoey walking through her garden, gently touching the leaves of a plant, with the auroras still glowing above. The sunlight filters through the plants, showing how they are growing and thriving.",
+          image: "/stories/zoey/img/page5.png",
+        },
+        animation: ["sunlight-filter", "aurora-soft"],
+      },
+      {
+        id: 6,
+        title: "The Gift of Solar Energy",
+        text: "Zoey thought about how solar energy worked in her garden. 'Just like solar panels use sunlight to create electricity, the Sun’s energy helps power everything on Earth,' she said out loud. 'It gives my plants the food they need to grow, and it even powers my home!'\n'And now, I know that space weather from the Sun gives us those magical auroras to enjoy!'\nZoey smiled. 'I think I’ll be able to make even more amazing inventions in my garden to harness the power of the Sun.'",
+        narrationTone: "Inspired, inventive.",
+        illustration: {
+          description:
+            "Zoey thinking creatively in her garden, with a solar panel in the background next to her house. The auroras glow above, and the garden is thriving under the bright sunlight.",
+          image: "/stories/zoey/img/page6.png",
+        },
+        animation: ["sunlight-bright", "aurora-flow"],
+      },
+      {
+        id: 7,
+        title: "Solar Flares and Their Power",
+        text: "Professor Sol’s voice came through the phone again. 'Zoey, the Sun’s energy isn’t just helpful for growing plants. Solar flares can also cause beautiful auroras in the sky, but they can sometimes mess with things like power grids or satellite communications.'\n'Solar flares can interfere with technology on Earth,' Professor Sol continued, 'but don’t worry! Even though they’re powerful, they’re not harmful to us directly. We just have to be careful about the things that rely on solar energy.'",
+        narrationTone: "Careful, informative.",
+        illustration: {
+          description:
+            "A simple diagram showing solar flares shooting from the Sun, with lines of energy traveling through space, reaching Earth. On the side, a small image shows satellites and power grids being impacted by solar flares.",
+          image: "/stories/zoey/img/page7.png",
+        },
+        animation: ["flare-burst", "signal-glitch"],
+      },
+      {
+        id: 8,
+        title: "Zoey’s Creative Idea",
+        text: "Zoey thought for a moment. 'If solar flares can affect technology,' she said, 'maybe I can come up with an invention to protect my garden’s solar-powered gadgets from solar flares!'\nZoey worked late into the evening, building a special solar shield for her garden’s equipment. 'If the Sun can power my garden, it can also make sure my gadgets work safely,' she said, excited by the new project.",
+        narrationTone: "Creative, determined.",
+        illustration: {
+          description:
+            "Zoey working in her garden at night, using tools to add a solar shield to her solar-powered gadgets. The auroras glow softly in the sky above, casting a gentle light on her work.",
+          image: "/stories/zoey/img/page8.png",
+        },
+        animation: ["tool-hammer", "aurora-glow"],
+      },
+      {
+        id: 9,
+        title: "The Magic of the Sun",
+        text: "As Zoey finished her work, she stepped back and looked at her garden. The solar shield worked perfectly, keeping her gadgets safe from any disruptions caused by space weather.\n'The Sun’s magic really is everywhere!' Zoey said with a smile. 'From growing my plants to powering my gadgets, the Sun’s energy makes everything possible.'\nZoey felt connected to the Sun and all the plants in her garden. 'Space weather is just another part of nature’s big plan!'",
+        narrationTone: "Grateful, uplifting.",
+        illustration: {
+          description:
+            "Zoey proudly looking at her solar-powered gadgets working perfectly in the garden. The auroras are visible in the sky, and the garden is thriving, with plants growing tall and strong under the Sun’s energy.",
+          image: "/stories/zoey/img/page9.png",
+        },
+        animation: ["gadgets-glow", "aurora-bright"],
+      },
+      {
+        id: 10,
+        title: "What We Learned",
+        text: "Zoey learned that space weather, like solar flares, isn’t something to fear. It can bring beautiful auroras to the sky, and with a little creativity, it can even inspire new inventions to help her garden thrive. She also learned that the Sun’s energy is a gift that powers life on Earth in more ways than one.\n'The Sun is always giving us surprises!' Zoey said, 'Whether it’s beautiful lights in the sky or energy to help us grow, the Sun’s magic is always with us.'",
+        narrationTone: "Concluding, warm, magical.",
+        illustration: {
+          description:
+            "Zoey standing in the middle of her beautiful garden, with the auroras glowing above her and the Sun setting in the distance. The garden is full of life, and Zoey is smiling, surrounded by the energy of the Sun.",
+          image: "/stories/zoey/img/page10.png",
+        },
+        animation: ["sunset-glow", "aurora-fade"],
+      },
+    ],
+  },
+  {
+    id: "cosmic-canvas",
+    title: "Maya the Street Artist and the Cosmic Canvas",
+    description:
+      "Maya, a creative street artist, discovers the beauty of solar flares and auroras, turning the night sky into her cosmic inspiration for a masterpiece mural in the city.",
+    coverImage: "https://i.ibb.co.com/album/maya-cover.png",
+    pdfUrl: "/pdfs/story-maya.pdf",
+    videoUrl: "/vid/maya-story.mp4",
+    pages: [
+      {
+        id: 1,
+        title: "Meet Maya",
+        text: "Maya was a street artist who loved bringing color to the world. Her murals could be found on buildings, alleys, and even buses. She loved painting scenes that made people smile, from giant flowers to colorful animals. But one night, as Maya was about to begin her newest mural, something unusual caught her eye. The sky above her started to shimmer in a way she had never seen before.",
+        narrationTone: "Curious, warm, bedtime introduction.",
+        illustration: {
+          description:
+            "Maya standing in front of a bare city wall with paint cans. The skyline is visible, and above, the sky glows faintly with mysterious colors.",
+          image: "/stories/maya/img/page1.png",
+        },
+        animation: ["stars-twinkle", "sky-shimmer"],
+      },
+      {
+        id: 2,
+        title: "The Cosmic Light Show",
+        text: "The sky wasn’t just dark anymore—it was alive with colors! Green, purple, and pink swirled above like an artist’s palette spilled across the heavens. 'What is that?' Maya whispered. The lights seemed to pulse, moving like they were dancing in the night sky. It was as if the universe itself was putting on a light show, just for her.",
+        narrationTone: "Magical and awe-filled.",
+        illustration: {
+          description:
+            "Auroras swirl and shimmer above the city. Maya gazes upward in awe, her spray can forgotten in her hand.",
+          image: "/stories/maya/img/page2.png",
+        },
+        animation: ["aurora-dance", "light-pulse"],
+      },
+      {
+        id: 3,
+        title: "The Call from Leo",
+        text: "Maya quickly called her friend Leo, a scientist who loved explaining the mysteries of the universe. 'Maya, you’re seeing the auroras!' Leo exclaimed. 'It’s space weather caused by solar flares from the Sun. The Sun sends bursts of energy toward Earth, and when they hit our atmosphere, they create these beautiful lights in the sky!' Maya was amazed. 'So the Sun is painting the sky?' she asked. 'Exactly,' said Leo. 'It’s nature’s own light show!'",
+        narrationTone: "Excited and explanatory.",
+        illustration: {
+          description:
+            "Maya on her phone, listening intently. Behind her, auroras glow across the sky. A small diagram shows solar flares traveling from the Sun to Earth.",
+          image: "/stories/maya/img/page3.png",
+        },
+        animation: ["phone-glow", "solarflare-diagram"],
+      },
+      {
+        id: 4,
+        title: "The Cosmic Canvas",
+        text: "'Wow,' Maya said, 'The Sun’s energy is so powerful, it’s creating this amazing light show!' Leo replied, 'Yes! When solar flares hit Earth’s atmosphere, they create these magical auroras.' Maya’s eyes sparkled with inspiration. 'If the sky can be this colorful, why not paint it?' she thought. The blank wall in front of her now felt like a canvas for the universe itself.",
+        narrationTone: "Inspired, thoughtful.",
+        illustration: {
+          description:
+            "Maya looking at the city wall, her eyes glowing with inspiration. Above her, swirling auroras stretch across the night sky.",
+          image: "/stories/maya/img/page4.png",
+        },
+        animation: ["aurora-swirls", "wall-glow"],
+      },
+      {
+        id: 5,
+        title: "Painting the Sky’s Colors",
+        text: "Maya picked up her spray paint cans and began working on her mural. With every spray, she felt like she was capturing the cosmic light show on Earth. Green, pink, and purple colors blended beautifully on the wall. 'This is magic,' Maya whispered. 'It’s like I’m painting the sky itself!'",
+        narrationTone: "Energetic, creative.",
+        illustration: {
+          description:
+            "Maya spray-painting a vibrant mural that mimics the auroras. Colors splash across the wall, glowing in the night.",
+          image: "/stories/maya/img/page5.png",
+        },
+        animation: ["paint-spray", "aurora-reflect"],
+      },
+      {
+        id: 6,
+        title: "The Power of Space Weather",
+        text: "As Maya painted, she realized that space weather wasn’t just about lights in the sky. The Sun’s energy powered plants, fueled technology, and even influenced Earth’s weather! 'It’s like everything is connected to the Sun,' Maya mused as she added rays of sunlight and auroras into her mural.",
+        narrationTone: "Educational but inspiring.",
+        illustration: {
+          description:
+            "Next to Maya’s mural, a diagram shows the Sun’s rays helping plants grow, powering satellites, and creating auroras.",
+          image: "/stories/maya/img/page6.png",
+        },
+        animation: ["sunbeam-rays", "icon-glow"],
+      },
+      {
+        id: 7,
+        title: "The City’s New Masterpiece",
+        text: "When Maya stepped back, she gasped. The mural glowed with vibrant energy, blending the city’s lights with the cosmic auroras above. It was as if the universe had become part of the city itself.",
+        narrationTone: "Proud, uplifting.",
+        illustration: {
+          description:
+            "Maya standing proudly in front of her completed mural. Above, auroras glow across the night sky, matching her artwork.",
+          image: "/stories/maya/img/page7.png",
+        },
+        animation: ["city-lights-twinkle", "mural-glow"],
+      },
+      {
+        id: 8,
+        title: "A Lesson in Light",
+        text: "Maya realized that the Sun’s energy wasn’t just far away in space. It was part of life on Earth too—from glowing skies to the power in their homes. 'The Sun connects everything,' she thought. 'And tonight, it connected me to the universe in the most magical way.'",
+        narrationTone: "Reflective, calm.",
+        illustration: {
+          description:
+            "Maya looking at her mural while auroras glow overhead, with diagrams of the Sun subtly blended into the artwork.",
+          image: "/stories/maya/img/page8.png",
+        },
+        animation: ["sun-symbol-glow", "aurora-soft-fade"],
+      },
+      {
+        id: 9,
+        title: "The Cosmic Connection",
+        text: "The next day, people gathered around Maya’s mural. Children pointed at the colors, adults smiled, and everyone felt a little closer to the sky. Her art had captured not just the beauty of the auroras, but the connection between Earth and the Sun.",
+        narrationTone: "Joyful and communal.",
+        illustration: {
+          description:
+            "A crowd admiring Maya’s mural, smiling and pointing at the cosmic colors. The auroras faintly shimmer above in daylight.",
+          image: "/stories/maya/img/page9.png",
+        },
+        animation: ["crowd-cheer", "light-glimmer"],
+      },
+      {
+        id: 10,
+        title: "The Sky is Her Canvas",
+        text: "That night, Maya looked up at the auroras once more. 'The universe is the greatest artist,' she whispered. And with her spray can in hand, she smiled, knowing the sky would always be her canvas.",
+        narrationTone: "Dreamy, bedtime closing.",
+        illustration: {
+          description:
+            "Maya gazing up at the auroras with her spray can, her mural glowing beside her. The night feels alive with cosmic magic.",
+          image: "/stories/maya/img/page10.png",
+        },
+        animation: ["aurora-bright", "star-twinkle"],
+      },
+    ],
+  },
+  {
+    id: "solar-surprise",
+    title: "Miko the Inventor and the Solar Surprise",
+    description:
+      "Miko, a young inventor, discovers how solar flares and auroras affect Earth and technology, inspiring him to create a new invention powered by the Sun’s energy.",
+    coverImage: "https://i.ibb.co.com/album/miko-cover.png",
+    pdfUrl: "/pdfs/story-miko.pdf",
+    videoUrl: "/vid/miko-story.mp4",
+    pages: [
+      {
+        id: 1,
+        title: "Meet Miko",
+        text: "Once upon a time, there was a young inventor named Miko. Miko loved building things! Whether it was a robot that could dance or a clock that ran on sunlight, Miko’s ideas were always full of surprises. He spent hours tinkering with gadgets and learning how things worked. One night, Miko was working on a new invention when something strange happened.",
+        narrationTone: "Curious, warm, bedtime introduction.",
+        illustration: {
+          description:
+            "Miko sitting at his workbench surrounded by gadgets, gears, and blueprints. Through the window, the night sky begins to glow with soft auroras.",
+          image: "/stories/miko/img/page1.png",
+        },
+        animation: ["tools-clink", "aurora-faint"],
+      },
+      {
+        id: 2,
+        title: "The Lights in the Sky",
+        text: "As Miko tinkered with his tools, the lights in the room flickered. 'Hmm, that’s odd,' he thought. He looked outside and saw the sky glowing with bright colors—greens, pinks, and purples. 'It looks like the sky is dancing!' Miko whispered in awe. The lights twirled across the sky, and Miko had never seen anything like it before.",
+        narrationTone: "Magical and wonder-filled.",
+        illustration: {
+          description:
+            "Miko standing at the window, eyes wide with amazement. Outside, the sky glows with swirling auroras in green, pink, and purple. The workshop is lit by their glow.",
+          image: "/stories/miko/img/page2.png",
+        },
+        animation: ["aurora-dance", "light-flicker"],
+      },
+      {
+        id: 3,
+        title: "The Call from Professor Nova",
+        text: "Just then, Miko’s phone rang. It was his friend, Professor Nova, an expert in space science. 'Miko, you’re seeing the auroras!' said Professor Nova excitedly. 'They happen when the Sun sends out solar flares to Earth. It’s a form of space weather!' 'Space weather?' Miko asked. 'Yes! Solar flares are bursts of energy from the Sun. When they reach Earth, they make the gases in the atmosphere glow, creating the beautiful auroras you're seeing.' Miko’s eyes sparkled. 'So the Sun is responsible for this light show?' 'Exactly!' Nova said.",
+        narrationTone: "Excited and educational.",
+        illustration: {
+          description:
+            "Miko on the phone, listening intently. Outside the window, the auroras shimmer. A small diagram shows solar flares bursting from the Sun and reaching Earth.",
+          image: "/stories/miko/img/page3.png",
+        },
+        animation: ["phone-ring", "solarflare-diagram"],
+      },
+      {
+        id: 4,
+        title: "A Solar Surprise",
+        text: "Miko thought for a moment. 'So the Sun is causing the sky to glow like that? Wow!' But then, he noticed something strange—the battery on his solar-powered clock wasn’t working. The screen was blank, even though it should have been charged. 'Could space weather be affecting my gadgets?' Miko wondered. 'I’ve heard solar flares can mess with electronics, but I didn’t think it would happen here!' He scratched his head. 'I need to make sure this doesn’t happen again.'",
+        narrationTone: "Curious and problem-solving.",
+        illustration: {
+          description:
+            "Miko looking puzzled at his solar-powered clock with a blank screen. Tools are scattered on his bench, and auroras glow outside.",
+          image: "/stories/miko/img/page4.png",
+        },
+        animation: ["clock-fade", "aurora-bright"],
+      },
+      {
+        id: 5,
+        title: "The Creative Solution",
+        text: "Miko had an idea. 'If solar flares can make the sky glow, maybe they can help power my inventions!' he thought. 'What if I could create something that captures the Sun’s energy and stores it safely?' He worked late into the night, adding a shiny solar shield to his inventions. This shield would protect them and collect energy directly from the Sun, keeping his gadgets safe and powered.",
+        narrationTone: "Innovative and determined.",
+        illustration: {
+          description:
+            "Miko working hard at his bench, attaching a glowing solar shield to his clock. The auroras shine through the window as he focuses on his work.",
+          image: "/stories/miko/img/page5.png",
+        },
+        animation: ["gear-turn", "spark-glow"],
+      },
+      {
+        id: 6,
+        title: "The Glow of Innovation",
+        text: "By morning, Miko’s invention worked perfectly! The solar-powered clock began ticking again, powered by the Sun’s energy, even in the middle of the night. 'It worked!' Miko cheered. He realized that while space weather could cause problems, it could also inspire new ideas. Smiling at the glowing auroras, he whispered, 'The Sun’s power just sparked my best invention yet.'",
+        narrationTone: "Triumphant and joyful.",
+        illustration: {
+          description:
+            "Miko proudly holding his working solar-powered clock, which ticks brightly. His workshop is softly lit by both the invention and the auroras outside.",
+          image: "/stories/miko/img/page6.png",
+        },
+        animation: ["clock-tick", "light-glow"],
+      },
+      {
+        id: 7,
+        title: "What We Learned",
+        text: "Miko learned that space weather, like solar flares, can affect technology—but with creativity, it could become a source of inspiration. 'The Sun may be far away,' Miko said, smiling, 'but its magic is always with us. Who knows what other surprises it might bring for my inventions!'",
+        narrationTone: "Encouraging and thoughtful.",
+        illustration: {
+          description:
+            "Miko sitting at his bench, jotting notes in a notebook while his solar-powered clock ticks beside him. Auroras still shimmer softly outside.",
+          image: "/stories/miko/img/page7.png",
+        },
+        animation: ["pen-write", "aurora-fade"],
+      },
+      {
+        id: 8,
+        title: "Solar Flares and Technology",
+        text: "Miko remembered what Professor Nova had said: solar flares can affect satellites, GPS, and even power grids. 'Space weather can cause problems,' Miko thought, 'but it also gives us these beautiful auroras.' He realized the Sun’s energy was powerful and sometimes tricky—both a challenge and a gift.",
+        narrationTone: "Explanatory and balanced.",
+        illustration: {
+          description:
+            "A diagram shows solar flares leaving the Sun, reaching satellites and Earth’s magnetic field, causing auroras. Miko studies the diagram with interest.",
+          image: "/stories/miko/img/page8.png",
+        },
+        animation: ["flare-burst", "diagram-glow"],
+      },
+      {
+        id: 9,
+        title: "The Sun’s Magical Energy",
+        text: "Even though solar flares sometimes caused problems, Miko admired the Sun’s incredible power. 'The Sun’s energy can travel across space and still affect Earth,' he thought. 'It creates auroras and connects everything to space. That’s amazing!' His curiosity about the universe grew stronger.",
+        narrationTone: "Reflective and inspiring.",
+        illustration: {
+          description:
+            "Miko gazing thoughtfully out the window at auroras. A subtle overlay shows rays of solar energy traveling from the Sun to Earth.",
+          image: "/stories/miko/img/page9.png",
+        },
+        animation: ["energy-rays", "aurora-soft"],
+      },
+      {
+        id: 10,
+        title: "Miko’s Next Invention",
+        text: "That night, Miko looked at the glowing auroras and smiled. His solar-powered clock ticked happily beside him. 'I wonder what the Sun will send next,' he thought. With his invention complete, Miko felt ready for new surprises. The sky was full of wonders, and the Sun’s energy would always inspire his next great idea.",
+        narrationTone: "Dreamy, closing bedtime tone.",
+        illustration: {
+          description:
+            "Miko standing proudly beside his working solar-powered clock, gazing out the window at glowing auroras. His workshop is filled with creative inventions.",
+          image: "/stories/miko/img/page10.png",
+        },
+        animation: ["aurora-bright", "star-twinkle"],
+      },
+    ],
+  },
+  {
     id: "solar-diary",
     title: "The Diary of a Solar Storm",
     description:
@@ -432,6 +1112,661 @@ Every storm, every light, every dawn—was part of Earth and Solara’s eternal 
           image: "/stories/story1/img/diary.png",
         },
         animation: ["diary-glow", "page-turn", "pen-write"],
+      },
+    ],
+  },
+  {
+    id: "farmer-solar-storm",
+    title: "Farmer Ben and the Solar Storm",
+    description:
+      "Farmer Ben discovers how solar flares and space weather affect the farm and everyday life, learning about auroras and the Sun’s energy.",
+    coverImage: "/stories/ben/img/cover.png",
+    pdfUrl: "/pdfs/story-farmer-ben.pdf",
+    videoUrl: "/vid/farmer-ben.mp4",
+    pages: [
+      {
+        id: 1,
+        title: "Meet Farmer Ben",
+        text: "Farmer Ben loved his farm. He woke up early every day to take care of his animals, plant crops, and watch the sun rise. But today was different. As he stepped outside, he saw something strange in the sky. 'What’s that glow?' Ben wondered. 'It looks like the sky is dancing!'",
+        narrationTone: "Friendly, curious, engaging for children.",
+        illustration: {
+          description:
+            "Farmer Ben standing outside his farmhouse holding a pitchfork, with animals nearby. The morning sun rises behind him and the sky glows with auroras.",
+          image: "/stories/ben/img/page1.png",
+        },
+        animation: ["sunrise-glow", "aurora-faint"],
+      },
+      {
+        id: 2,
+        title: "What Are Those Colors?",
+        text: "The sky was filled with beautiful colors—green, purple, and pink—swirling and shimmering like a rainbow! Ben was curious. 'What’s causing all of this?' he asked. His friend, Professor Lisa, who worked at the local science lab, called him on the phone. 'Ben, that’s the aurora! It’s a space weather event caused by solar flares from the Sun!'",
+        narrationTone: "Magical and curious.",
+        illustration: {
+          description:
+            "Ben holding his phone with Professor Lisa on the screen. The sky is full of colorful auroras swirling above the farm.",
+          image: "/stories/ben/img/page2.png",
+        },
+        animation: ["phone-ring", "aurora-dance"],
+      },
+      {
+        id: 3,
+        title: "What is Space Weather?",
+        text: "Professor Lisa explained, 'Space weather happens when the Sun releases bursts of energy, called solar flares. These flares send waves of light and particles to Earth. When they hit Earth’s atmosphere, they make the auroras—the beautiful lights you’re seeing!'",
+        narrationTone: "Informative and simple for kids.",
+        illustration: {
+          description:
+            "Diagram showing the Sun sending a solar flare to Earth, which causes glowing auroras in the atmosphere.",
+          image: "/stories/ben/img/page3.png",
+        },
+        animation: ["flare-travel", "aurora-glow"],
+      },
+      {
+        id: 4,
+        title: "A Solar Storm on the Farm",
+        text: "'But the auroras aren’t the only thing the solar flare is doing,' Professor Lisa warned. 'A solar storm can mess with your GPS and satellite systems.' Ben looked at his tractor. The GPS wasn’t working! 'Uh-oh!' said Ben. 'I guess I’ll have to do it the old-fashioned way today!'",
+        narrationTone: "Lightly suspenseful, playful.",
+        illustration: {
+          description:
+            "Ben standing next to his tractor, looking confused at the GPS error message. Auroras still shine in the sky.",
+          image: "/stories/ben/img/page4.png",
+        },
+        animation: ["gps-error", "aurora-faint"],
+      },
+      {
+        id: 5,
+        title: "The Farm Without GPS",
+        text: "Ben decided to trust his instincts and start plowing the field without the GPS. 'It’s like old times!' he laughed. As he worked, he thought about how space weather affects not just farmers, but everyone. Solar storms can mess with everything—from satellite TV to GPS, and even power grids.",
+        narrationTone: "Playful, educational.",
+        illustration: {
+          description:
+            "Ben plowing the field manually with a smile. The sun sets behind him and auroras glow in the sky. Farm animals follow along peacefully.",
+          image: "/stories/ben/img/page5.png",
+        },
+        animation: ["tractor-move", "aurora-dance"],
+      },
+      {
+        id: 6,
+        title: "The Return of the Calm",
+        text: "As the night went on, the auroras slowly faded. The sky returned to peaceful blue, and Ben’s GPS system came back online. 'Everything’s back to normal,' he smiled. 'But that was an exciting reminder of how space weather can affect us, even out here on the farm!'",
+        narrationTone: "Calm and reflective.",
+        illustration: {
+          description:
+            "Night sky calming, auroras fading. Farmer Ben relaxing on his porch, enjoying the peaceful farm.",
+          image: "/stories/ben/img/page6.png",
+        },
+        animation: ["aurora-fade", "porch-light"],
+      },
+      {
+        id: 7,
+        title: "What is a Solar Flare?",
+        text: "'Solar flares are like giant bursts of energy that shoot out from the Sun,' Professor Lisa had explained. 'They release light, heat, and particles into space. These flares can travel all the way to Earth, and when they hit Earth’s magnetic field, they create the auroras you saw!'",
+        narrationTone: "Educational and engaging.",
+        illustration: {
+          description:
+            "Diagram showing a solar flare bursting from the Sun, traveling through space, and impacting Earth's magnetic field.",
+          image: "/stories/ben/img/page7.png",
+        },
+        animation: ["flare-burst", "magnetic-field-glow"],
+      },
+      {
+        id: 8,
+        title: "The Solar Storm's Power",
+        text: "Ben had learned that solar storms could cause more than just a pretty light show. 'They can mess with our electronics and even cause power outages,' Professor Lisa had warned. 'So, it’s important to understand space weather.' Ben smiled and said, 'I never thought about how much the Sun affects us!'",
+        narrationTone: "Informative with wonder.",
+        illustration: {
+          description:
+            "Ben looking up at the Sun thoughtfully. Farm animals graze peacefully while auroras glow in the background.",
+          image: "/stories/ben/img/page8.png",
+        },
+        animation: ["sun-glow", "aurora-soft"],
+      },
+      {
+        id: 9,
+        title: "What We Learned About Space Weather",
+        text: "Farmer Ben now knew that space weather was more than just the beautiful auroras. It came from the Sun, in the form of solar flares and CMEs. While space weather can be beautiful, it’s also important to understand how it affects our lives—like messing with GPS, power grids, and satellites.",
+        narrationTone: "Reflective, educational.",
+        illustration: {
+          description:
+            "Ben in front of his farmhouse at twilight, auroras fading in the sky. He smiles, knowing he’s learned something new.",
+          image: "/stories/ben/img/page9.png",
+        },
+        animation: ["twilight-glow", "aurora-last-streak"],
+      },
+      {
+        id: 10,
+        title: "Looking to the Future",
+        text: "'The auroras are beautiful, but now I know how space weather works,' said Ben, watching the stars twinkle. 'And I’m glad I learned about the Sun’s power!' He sat on his porch, ready for whatever space weather would bring next. There’s always more to learn about the world above us!",
+        narrationTone: "Calm, hopeful bedtime tone.",
+        illustration: {
+          description:
+            "Ben sitting on his porch, looking at a starry sky. Auroras are fading, leaving a peaceful night full of possibilities.",
+          image: "/stories/ben/img/page10.png",
+        },
+        animation: ["stars-twinkle", "aurora-fade"],
+      },
+    ],
+  },
+  {
+    id: "lily-northern-lights",
+    title: "Lily the Photographer and the Northern Lights",
+    description:
+      "Lily, a young photographer, discovers the Northern Lights and learns how space weather affects Earth and technology.",
+    coverImage: "/stories/lily/img/cover.png",
+    pdfUrl: "/pdfs/story-lily.pdf",
+    videoUrl: "/vid/lily.mp4",
+    pages: [
+      {
+        id: 1,
+        title: "Meet Lily the Photographer",
+        text: "Lily loved taking pictures. She traveled all over the world, capturing beautiful sunsets, majestic mountains, and peaceful lakes. But there was one thing Lily had always dreamed of photographing — the Northern Lights!",
+        narrationTone: "Curious, adventurous, inspiring.",
+        illustration: {
+          description:
+            "Lily standing in a snowy landscape, holding her camera, surrounded by tall pine trees. The sky above begins to glow with soft green and purple light.",
+          image: "/stories/lily/img/page1.png",
+        },
+        animation: ["camera-focus", "aurora-faint"],
+      },
+      {
+        id: 2,
+        title: "A Perfect Night for Photos",
+        text: "One cold winter evening, Lily was in the perfect spot in the Arctic, waiting for the Northern Lights. The sky was clear, and the stars sparkled like diamonds. 'Tonight might be the night!' she thought, feeling excited.",
+        narrationTone: "Excited, magical.",
+        illustration: {
+          description:
+            "Lily setting up her camera, eagerly looking at the sky. The first faint hints of auroras appear as green streaks across the dark sky.",
+          image: "/stories/lily/img/page2.png",
+        },
+        animation: ["aurora-faint", "camera-adjust"],
+      },
+      {
+        id: 3,
+        title: "The Aurora is Born",
+        text: "Suddenly, the sky exploded in bright waves of green, purple, and pink! The Northern Lights were dancing in the sky! Lily gasped in amazement. She quickly grabbed her camera and snapped a photo. 'Wow, this is the best one yet!' she thought.",
+        narrationTone: "Magical, awe-filled.",
+        illustration: {
+          description:
+            "The sky above Lily is filled with vibrant auroras swirling in colorful patterns. Lily holds her camera, capturing the magical moment with joy.",
+          image: "/stories/lily/img/page3.png",
+        },
+        animation: ["aurora-dance", "camera-flash"],
+      },
+      {
+        id: 4,
+        title: "What Causes the Northern Lights?",
+        text: "As Lily snapped more photos, she remembered something her teacher had taught her. 'The Northern Lights are caused by space weather,' her teacher had explained. 'When solar flares and CMEs (Coronal Mass Ejections) hit Earth’s atmosphere, they create these beautiful lights in the sky!'",
+        narrationTone: "Educational, friendly.",
+        illustration: {
+          description:
+            "Diagram showing the Sun sending solar flares and CMEs toward Earth. The atmosphere glows with colorful auroras created by the Sun’s energy.",
+          image: "/stories/lily/img/page4.png",
+        },
+        animation: ["flare-travel", "aurora-glow"],
+      },
+      {
+        id: 5,
+        title: "Space Weather Affects Us All",
+        text: "Lily smiled. 'So, the Sun is responsible for this beauty!' she thought. But then, she remembered something else. 'Space weather can also affect our technology. Solar storms can mess with satellites, GPS, and even cause power outages!'",
+        narrationTone: "Curious, thoughtful.",
+        illustration: {
+          description:
+            "Lily sitting on a snowbank, looking at her camera with auroras above. A thought bubble shows a satellite and GPS system being affected by solar energy.",
+          image: "/stories/lily/img/page5.png",
+        },
+        animation: ["aurora-flicker", "satellite-energy-lines"],
+      },
+      {
+        id: 6,
+        title: "The Storm Passes",
+        text: "As the night went on, the auroras slowly started to fade. The sky calmed down, and the colorful lights disappeared into the dark sky. Lily packed up her camera, feeling content. 'What an amazing adventure,' she thought. 'Space weather can be magical, but it’s good to know how it works!'",
+        narrationTone: "Calm, reflective.",
+        illustration: {
+          description:
+            "Lily walking back to her cozy cabin, with the last of the auroras gently fading behind her. Snowflakes fall around her.",
+          image: "/stories/lily/img/page6.png",
+        },
+        animation: ["aurora-fade", "snow-fall"],
+      },
+      {
+        id: 7,
+        title: "What We Learned",
+        text: "Lily learned that space weather, like solar flares and CMEs, can be both beautiful and powerful. The Northern Lights are created by the Sun’s energy interacting with Earth’s atmosphere. And even though space weather can sometimes mess with our technology, it's always amazing to see how the Sun affects Earth!",
+        narrationTone: "Educational, uplifting.",
+        illustration: {
+          description:
+            "Lily standing outside her cabin, looking up at a calm, starry sky. Her camera rests on her shoulder, and the sky is peaceful.",
+          image: "/stories/lily/img/page7.png",
+        },
+        animation: ["stars-twinkle", "aurora-faint"],
+      },
+      {
+        id: 8,
+        title: "The Sun’s Power",
+        text: "Lily thought about how the Sun is a giant ball of gas, burning billions of miles away. It’s always sending out energy — sometimes gently, sometimes more powerfully. When the Sun’s energy reaches Earth, we get sunlight, warmth, and even auroras!",
+        narrationTone: "Educational, awe-inspiring.",
+        illustration: {
+          description:
+            "Illustration of the Sun with rays extending toward Earth, showing energy reaching the planet and creating a glowing atmosphere.",
+          image: "/stories/lily/img/page8.png",
+        },
+        animation: ["sun-rays", "aurora-glow"],
+      },
+      {
+        id: 9,
+        title: "Solar Flares and CMEs",
+        text: "Lily also remembered her teacher explaining solar flares and CMEs. A solar flare is like a giant burst of energy from the Sun, while a CME is a big cloud of solar particles that can travel through space. When these hit Earth’s atmosphere, they create auroras. Sometimes they also affect satellites and even power lines!",
+        narrationTone: "Educational, clear.",
+        illustration: {
+          description:
+            "Colorful diagram showing solar flares and CMEs bursting from the Sun. Particles travel through space and interact with Earth's magnetic field, creating auroras.",
+          image: "/stories/lily/img/page9.png",
+        },
+        animation: ["flare-burst", "aurora-dance"],
+      },
+      {
+        id: 10,
+        title: "The Beauty of Space Weather",
+        text: "Lily had learned so much about space weather that night. She smiled, knowing she’d share her knowledge with her friends and family. 'Space weather is fascinating,' she thought. 'It makes the sky look beautiful, and helps us understand the powerful Sun!'",
+        narrationTone: "Peaceful, reflective.",
+        illustration: {
+          description:
+            "Lily sitting inside her cabin, looking at photographs of the Northern Lights. Warm light inside, snow outside, peaceful starlit sky through the window.",
+          image: "/stories/lily/img/page10.png",
+        },
+        animation: ["cabin-light", "stars-twinkle"],
+      },
+    ],
+  },
+  {
+    id: "leo-cosmic-tides",
+    title: "Leo the Fisherman and the Cosmic Tides",
+    description:
+      "Leo, a fisherman, discovers how space weather affects Earth, the sky, the ocean, and technology while observing the Northern Lights.",
+    coverImage: "/stories/leo/img/cover.png",
+    pdfUrl: "/pdfs/story-leo.pdf",
+    videoUrl: "/vid/leo.mp4",
+    pages: [
+      {
+        id: 1,
+        title: "Meet Leo the Fisherman",
+        text: "Leo the fisherman loved to be out on the water. Every morning before the sun rose, he would set out in his little boat to catch fish. The sea was always calm and peaceful, and he enjoyed the quiet sounds of the waves. But one morning, something caught his eye in the sky.",
+        narrationTone: "Calm, curious.",
+        illustration: {
+          description:
+            "Leo sitting in his boat, looking out at the calm sea. The sky above is still dark, but colorful auroras are beginning to appear in the distance.",
+          image: "/stories/leo/img/page1.png",
+        },
+        animation: ["aurora-faint", "water-ripple"],
+      },
+      {
+        id: 2,
+        title: "A Mysterious Glow",
+        text: "As Leo sailed further from the shore, the sky began to glow with beautiful lights—green, purple, and pink swirls dancing across the dark sky. 'What’s happening up there?' Leo wondered aloud. He had never seen the sky like this before. 'It looks like the stars are moving!'",
+        narrationTone: "Amazed, curious.",
+        illustration: {
+          description:
+            "Leo in his boat, looking up at the vibrant auroras dancing across the sky. The ocean reflects the colorful lights, and the boat drifts peacefully.",
+          image: "/stories/leo/img/page2.png",
+        },
+        animation: ["aurora-dance", "water-reflect"],
+      },
+      {
+        id: 3,
+        title: "Leo Calls Professor Lisa",
+        text: "Leo picked up his phone and called his friend, Professor Lisa, who worked at the science lab. 'Lisa, what’s happening with the sky?' he asked. Professor Lisa explained, 'Leo, what you’re seeing is called the aurora! It’s caused by space weather from the Sun. Solar flares send bursts of energy toward Earth, and when they reach our atmosphere, they make the sky light up in beautiful colors!'",
+        narrationTone: "Informative, friendly.",
+        illustration: {
+          description:
+            "Leo sitting in his boat with his phone in hand, speaking with Professor Lisa. The auroras above swirl brightly, with soft waves rippling below the boat.",
+          image: "/stories/leo/img/page3.png",
+        },
+        animation: ["aurora-glow", "water-wave"],
+      },
+      {
+        id: 4,
+        title: "What is Space Weather?",
+        text: "Professor Lisa continued, 'Space weather happens when the Sun releases bursts of energy called solar flares. These flares send light and charged particles through space. When they reach Earth’s atmosphere, they create the auroras you’re seeing!' Leo smiled, excited to learn something new. 'So, the Sun is making the sky look like this?'",
+        narrationTone: "Curious, educational.",
+        illustration: {
+          description:
+            "Diagram showing solar flares coming from the Sun and traveling through space toward Earth. The Earth glows where auroras appear, with energy particles moving toward it.",
+          image: "/stories/leo/img/page4.png",
+        },
+        animation: ["flare-travel", "aurora-glow"],
+      },
+      {
+        id: 5,
+        title: "The Cosmic Tides",
+        text: "As Leo listened to Professor Lisa, he started to think. 'If space weather can make the sky light up like this, could it affect the ocean too?' Leo wondered. Professor Lisa chuckled, 'Well, the Sun’s energy can affect more than just the sky. It can also influence the tides! The magnetic field around Earth changes during solar storms, and that can cause tiny shifts in the ocean’s movement.'",
+        narrationTone: "Thoughtful, curious.",
+        illustration: {
+          description:
+            "Leo staring out at the ocean, with auroras glowing above. The ocean reflects the lights, and small waves ripple gently in the water.",
+          image: "/stories/leo/img/page5.png",
+        },
+        animation: ["aurora-faint", "water-ripple"],
+      },
+      {
+        id: 6,
+        title: "A Fisherman’s Challenge",
+        text: "Leo noticed something strange. His GPS was no longer working, and his compass seemed to be spinning in circles. 'Uh-oh!' he said, scratching his head. 'It looks like the space weather is messing with my equipment!' Professor Lisa explained, 'Solar storms can interfere with GPS systems and even power grids. It’s a reminder that space weather affects more than just the sky!'",
+        narrationTone: "Concerned, curious.",
+        illustration: {
+          description:
+            "Leo looking at his GPS screen showing an error message. The compass needle spins wildly. The auroras continue to glow above.",
+          image: "/stories/leo/img/page6.png",
+        },
+        animation: ["gps-error", "compass-spin", "aurora-glow"],
+      },
+      {
+        id: 7,
+        title: "Fishing Without GPS",
+        text: "Leo decided to trust his instincts and fish the old-fashioned way, without relying on his GPS. 'It’s like how the fishermen did it in the old days!' Leo smiled. He cast his fishing line into the water and waited patiently. As he sat back, he thought about how space weather affects not just sailors and fishermen, but everyone!",
+        narrationTone: "Confident, reflective.",
+        illustration: {
+          description:
+            "Leo fishing from his boat, with the beautiful auroras above. The water below is calm, and the boat drifts along peacefully.",
+          image: "/stories/leo/img/page7.png",
+        },
+        animation: ["aurora-dance", "water-calm"],
+      },
+      {
+        id: 8,
+        title: "The Return of Calm",
+        text: "As the night went on, the auroras slowly faded, and the sky turned back to its usual dark blue. The GPS and compass returned to normal, and Leo could navigate again. 'Everything’s back to normal,' Leo said with a laugh. 'But I’ll always remember how space weather made the sky look so amazing tonight!'",
+        narrationTone: "Peaceful, relieved.",
+        illustration: {
+          description:
+            "The night sky is calm, with the last of the auroras gently fading. Leo sits back in his boat, smiling as the stars twinkle. The calm sea reflects the stars.",
+          image: "/stories/leo/img/page8.png",
+        },
+        animation: ["aurora-fade", "stars-twinkle"],
+      },
+      {
+        id: 9,
+        title: "What We Learned",
+        text: "Leo learned that space weather isn’t just beautiful; it can also cause changes here on Earth. 'Solar flares and CMEs can affect more than just the sky,' Leo said. 'They can mess with our technology and even influence the ocean tides!' He smiled and cast his fishing line one more time, knowing that space weather was something he would always think about when he looked up at the sky.",
+        narrationTone: "Reflective, educational.",
+        illustration: {
+          description:
+            "Leo holding his fishing rod with a peaceful smile, looking at the stars above. The calm ocean reflects fading auroras, and the boat gently drifts.",
+          image: "/stories/leo/img/page9.png",
+        },
+        animation: ["stars-twinkle", "water-reflect"],
+      },
+      {
+        id: 10,
+        title: "The Magic of Space Weather",
+        text: "As Leo sailed back to shore, he thought about how lucky he was to see the Northern Lights that night. 'Space weather is like magic,' Leo said with a smile. 'It can change the sky, the sea, and even our technology. But it’s always amazing to see how the Sun’s energy reaches us here on Earth!' Leo was happy knowing he’d learned something new about the universe.",
+        narrationTone: "Peaceful, inspired.",
+        illustration: {
+          description:
+            "Leo’s boat sailing back to shore, with the last auroras glowing softly. He looks up at the starry sky with a contented smile, while the ocean reflects twinkling stars.",
+          image: "/stories/leo/img/page10.png",
+        },
+        animation: ["aurora-fade", "stars-twinkle", "water-reflect"],
+      },
+    ],
+  },
+  {
+    id: "max-solar-surprise",
+    title: "Max the Chef and the Solar Surprise",
+    description:
+      "Max the Chef discovers how space weather can affect Earth, electricity, and technology while witnessing the auroras from his kitchen.",
+    coverImage: "/stories/max/img/cover.png",
+    pdfUrl: "/pdfs/story-max.pdf",
+    videoUrl: "/vid/max.mp4",
+    pages: [
+      {
+        id: 1,
+        title: "Meet Max the Chef",
+        text: "Max the Chef owned a cozy little restaurant in the heart of town. Every day, he cooked delicious meals for everyone. From warm soups in winter to fresh salads in the summer, Max made food with love. But one cold evening, as he was preparing dinner, something strange happened.",
+        narrationTone: "Warm, inviting.",
+        illustration: {
+          description:
+            "Max in his kitchen, stirring a pot on the stove with his apron on. Through the window, the sky glows faintly with auroras.",
+          image: "/stories/max/img/page1.png",
+        },
+        animation: ["aurora-faint", "kitchen-light-flicker"],
+      },
+      {
+        id: 2,
+        title: "The Solar Surprise",
+        text: "As Max was chopping vegetables, he noticed something odd. The kitchen lights flickered. 'That’s strange,' Max thought. 'The lights never flicker like that.' Just then, his phone rang. It was his friend Lisa, a scientist. 'Max, you're experiencing space weather!' Lisa said excitedly.",
+        narrationTone: "Curious, surprised.",
+        illustration: {
+          description:
+            "Max looks up at the flickering lights, holding a knife in one hand. His phone is ringing on the counter, and through the window, the auroras glow softly.",
+          image: "/stories/max/img/page2.png",
+        },
+        animation: ["light-flicker", "aurora-soft"],
+      },
+      {
+        id: 3,
+        title: "What is Space Weather?",
+        text: "'Space weather?' Max asked, confused. 'Yes,' Lisa explained. 'It’s when the Sun sends out energy bursts called solar flares and CMEs (Coronal Mass Ejections). This energy can affect things here on Earth, like satellites and even the electricity we use!' Max was amazed. 'So, the Sun is causing the flickering lights?'",
+        narrationTone: "Curious, informative.",
+        illustration: {
+          description:
+            "Max talking on the phone with Lisa, with a thought bubble showing solar energy traveling from the Sun to Earth. Auroras start glowing in the sky.",
+          image: "/stories/max/img/page3.png",
+        },
+        animation: ["aurora-start", "energy-burst"],
+      },
+      {
+        id: 4,
+        title: "Solar Flares and CMEs",
+        text: "Lisa continued, 'Solar flares are huge bursts of energy from the Sun. And CMEs are big clouds of solar particles that shoot out into space. When they hit Earth’s atmosphere, they can create the auroras and sometimes cause electrical problems, like the flickering lights in your kitchen!'",
+        narrationTone: "Educational, friendly.",
+        illustration: {
+          description:
+            "Diagram showing solar flares and CMEs coming from the Sun, traveling through space toward Earth. Earth’s atmosphere glows with auroras. Max looks amazed.",
+          image: "/stories/max/img/page4.png",
+        },
+        animation: ["flare-burst", "aurora-glow"],
+      },
+      {
+        id: 5,
+        title: "The Kitchen Challenge",
+        text: "Max chuckled. 'Well, at least I don’t need GPS to make soup!' he joked. But then, he noticed something even stranger. His oven wasn’t working right. The heat wouldn’t turn up. 'Uh-oh! Even my stove is affected by space weather!' Max said, scratching his head.",
+        narrationTone: "Playful, surprised.",
+        illustration: {
+          description:
+            "Max opening the oven door, looking surprised as the oven light flickers and doesn’t heat up. Auroras glow outside the window.",
+          image: "/stories/max/img/page5.png",
+        },
+        animation: ["oven-flicker", "aurora-glow"],
+      },
+      {
+        id: 6,
+        title: "Max’s Creative Solution",
+        text: "Max was a creative chef. He thought, 'I don’t need the oven to make a great meal!' So, he set up a big pot on the stove and made his famous space-weather soup with extra warmth. 'Who needs an oven when you’ve got creativity?' Max laughed, stirring the pot.",
+        narrationTone: "Creative, cheerful.",
+        illustration: {
+          description:
+            "Max cooking on the stove, stirring a big pot of soup. Auroras glow softly outside his kitchen window, filling the room with warm, colorful light.",
+          image: "/stories/max/img/page6.png",
+        },
+        animation: ["stir-soup", "aurora-glow"],
+      },
+      {
+        id: 7,
+        title: "What is a Solar Storm?",
+        text: "As Max cooked, he thought more about space weather. 'Solar storms are caused by the Sun’s energy,' Lisa had explained. 'When the Sun sends out bursts of energy, it can mess with things like satellites and GPS. It also creates the beautiful auroras we see in the sky!' Max smiled, thinking about how something so far away could make such beautiful lights.",
+        narrationTone: "Reflective, educational.",
+        illustration: {
+          description:
+            "Diagram showing solar storms affecting Earth’s atmosphere, with satellites, GPS systems, and auroras glowing in the background.",
+          image: "/stories/max/img/page7.png",
+        },
+        animation: ["aurora-glow", "satellite-effect"],
+      },
+      {
+        id: 8,
+        title: "The Sky Clears",
+        text: "As the night went on, Max noticed the auroras slowly started to fade. The sky turned calm again, and the lights in his kitchen came back to normal. Max’s oven started working again, too. 'Looks like everything’s back to normal!' Max said with a big smile.",
+        narrationTone: "Peaceful, relieved.",
+        illustration: {
+          description:
+            "Max sitting at the dinner table with a bowl of soup, smiling as the auroras fade. Kitchen lights are bright again, stars twinkle outside.",
+          image: "/stories/max/img/page8.png",
+        },
+        animation: ["aurora-fade", "stars-twinkle"],
+      },
+      {
+        id: 9,
+        title: "What We Learned",
+        text: "Max learned that space weather, like solar flares and CMEs, can affect more than just the sky. 'Solar storms can mess with the electricity, satellites, and even power lines,' Lisa had said. 'But it’s amazing to know that space weather helps create the beautiful auroras we see!'",
+        narrationTone: "Reflective, informative.",
+        illustration: {
+          description:
+            "Max standing in his kitchen, looking out the window at the peaceful night sky. He has a peaceful smile, with his cooking tools on the counter.",
+          image: "/stories/max/img/page9.png",
+        },
+        animation: ["aurora-fade", "stars-twinkle"],
+      },
+      {
+        id: 10,
+        title: "The Magic of the Sun",
+        text: "Max sat back and thought, 'Space weather is like magic from the Sun. It makes the sky glow and affects our world in unexpected ways. I’ll always look up at the auroras now and remember how they happen.' Max was happy to have learned something new about space and the Sun.",
+        narrationTone: "Peaceful, inspired.",
+        illustration: {
+          description:
+            "Max sitting contentedly at his table, with his bowl of soup, looking out the window at the stars and the faint remnants of auroras. He smiles, grateful for the wonders of space.",
+          image: "/stories/max/img/page10.png",
+        },
+        animation: ["aurora-fade", "stars-twinkle", "warm-light"],
+      },
+    ],
+  },
+  {
+    id: "captain-mark-space-storm",
+    title: "Captain Mark and the Space Storm",
+    description:
+      "Captain Mark experiences a solar storm on the International Space Station and learns how space weather affects Earth and astronauts.",
+    coverImage: "/stories/mark/img/cover.png",
+    pdfUrl: "/pdfs/story-mark.pdf",
+    videoUrl: "/vid/mark.mp4",
+    pages: [
+      {
+        id: 1,
+        title: "Meet Captain Mark",
+        text: "Captain Mark was an astronaut who lived on the International Space Station, far above Earth. Every day, he floated in space, looking down at the planet below. He loved his job, but today was different. His space weather monitor started beeping loudly.",
+        narrationTone: "Calm, curious.",
+        illustration: {
+          description:
+            "Captain Mark floating inside the ISS, looking at his space weather monitor. Earth is visible through the large window. The monitor shows a warning about a solar storm.",
+          image: "/stories/mark/img/page1.png",
+        },
+        animation: ["monitor-beep", "earth-glow"],
+      },
+      {
+        id: 2,
+        title: "What is Space Weather?",
+        text: "Captain Mark quickly contacted his friend, Professor Lisa, who worked at the space lab on Earth. 'Professor Lisa, what’s happening? My monitor is flashing!' he asked. Lisa smiled. 'Captain Mark, that’s a solar storm! It’s a type of space weather caused by solar flares from the Sun.'",
+        narrationTone: "Informative, urgent.",
+        illustration: {
+          description:
+            "Captain Mark talking to Professor Lisa on video call. Solar flares are visible coming from the Sun. Earth is visible through the ISS window.",
+          image: "/stories/mark/img/page2.png",
+        },
+        animation: ["solar-flare-burst", "video-call-flicker"],
+      },
+      {
+        id: 3,
+        title: "Solar Flares and CMEs",
+        text: "Professor Lisa explained, 'A solar flare is a burst of energy from the Sun. And sometimes, the Sun releases a cloud of charged particles called coronal mass ejections or CMEs. These energy bursts travel through space and can reach Earth, causing space weather!'",
+        narrationTone: "Educational, friendly.",
+        illustration: {
+          description:
+            "Diagram showing solar flares and CMEs coming from the Sun and traveling through space toward Earth.",
+          image: "/stories/mark/img/page3.png",
+        },
+        animation: ["flare-burst", "particle-travel"],
+      },
+      {
+        id: 4,
+        title: "The Solar Storm Hits",
+        text: "Suddenly, Captain Mark’s communication system flickered. 'The storm is here!' he said, looking out the space station window. 'The solar flare is affecting our systems!' The solar storm sent waves of energy and particles through space, causing disruptions.",
+        narrationTone: "Tense, dramatic.",
+        illustration: {
+          description:
+            "Bright solar flare bursts from the Sun. Earth below shows glitches in communication lines. Captain Mark looks at his monitor showing an error.",
+          image: "/stories/mark/img/page4.png",
+        },
+        animation: ["flare-intense", "monitor-flicker"],
+      },
+      {
+        id: 5,
+        title: "Solar Storm’s Effects on Earth",
+        text: "Captain Mark looked at his monitor. 'Solar storms can mess with our technology on Earth,' he said. 'They can cause problems with satellites, GPS systems, and even power grids!' Professor Lisa added, 'But don’t worry, Captain Mark, these storms are a natural part of space weather.'",
+        narrationTone: "Educational, calm.",
+        illustration: {
+          description:
+            "Diagram showing solar storms affecting satellites and GPS systems on Earth with energy lines traveling from space.",
+          image: "/stories/mark/img/page5.png",
+        },
+        animation: ["energy-lines", "satellite-glow"],
+      },
+      {
+        id: 6,
+        title: "The Space Station’s Shield",
+        text: "Captain Mark knew the space station had special shields to protect the astronauts from the solar radiation. 'Luckily, we’re safe up here,' he said. 'But space weather can be dangerous for astronauts if we’re not prepared.'",
+        narrationTone: "Reassuring, informative.",
+        illustration: {
+          description:
+            "Captain Mark floating inside the ISS, smiling as he looks at protective shields. Outside, solar storm energy is blocked by the shields.",
+          image: "/stories/mark/img/page6.png",
+        },
+        animation: ["shield-glow", "solar-energy-block"],
+      },
+      {
+        id: 7,
+        title: "The Beautiful Aurora",
+        text: "Even though the solar storm was powerful, it created something beautiful. 'Look at that!' Captain Mark exclaimed. 'The auroras are glowing brightly!' The solar storm’s energy created colorful lights in the Earth’s atmosphere.",
+        narrationTone: "Amazed, joyful.",
+        illustration: {
+          description:
+            "Auroras glowing above Earth in greens, purples, and pinks. Captain Mark watches from the ISS window, mesmerized.",
+          image: "/stories/mark/img/page7.png",
+        },
+        animation: ["aurora-dance", "earth-glow"],
+      },
+      {
+        id: 8,
+        title: "The Calm After the Storm",
+        text: "As the solar storm passed, the auroras slowly faded away. 'The storm is over,' Captain Mark said. 'We’re safe, and everything is back to normal.' His communication system came back online, and the Sun returned to its calm state.",
+        narrationTone: "Peaceful, relieved.",
+        illustration: {
+          description:
+            "Captain Mark looking out of the ISS window at calm Earth. Auroras faded, stars twinkle in the sky.",
+          image: "/stories/mark/img/page8.png",
+        },
+        animation: ["aurora-fade", "stars-twinkle"],
+      },
+      {
+        id: 9,
+        title: "What We Learned",
+        text: "Captain Mark learned that solar flares and CMEs are powerful events from the Sun. They send energy to Earth, creating auroras but also affecting technology. 'Space weather is fascinating,' he said. 'It’s important to understand how the Sun affects everything on Earth.'",
+        narrationTone: "Reflective, educational.",
+        illustration: {
+          description:
+            "Captain Mark floating near the ISS window, looking at peaceful Earth. The Sun shines calmly in the distance.",
+          image: "/stories/mark/img/page9.png",
+        },
+        animation: ["earth-glow", "sun-calm"],
+      },
+      {
+        id: 10,
+        title: "Looking to the Future",
+        text: "Captain Mark smiled as he gazed at the stars. 'There’s always something new to learn about space,' he thought. 'I’m glad we’re prepared to study space weather. The Sun might be far away, but it affects us here on Earth!'",
+        narrationTone: "Hopeful, inspiring.",
+        illustration: {
+          description:
+            "Captain Mark at his station, looking up at starry sky outside. Earth peaceful below, ISS floats in space.",
+          image: "/stories/mark/img/page10.png",
+        },
+        animation: ["stars-twinkle", "earth-glow", "station-hover"],
       },
     ],
   },
