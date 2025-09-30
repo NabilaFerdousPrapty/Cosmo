@@ -5,17 +5,10 @@ import { Particles } from "@/components/ui/particles";
 import { MysteryBox } from "@/components/FunAndLearn/MysteryBox";
 import { funFacts } from "./data";
 import { FunFactCard } from "@/components/FunAndLearn/FunFactCard";
-
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
+import { RiddleCard } from "@/components/FunAndLearn/RiddleCard";
 // Types
-interface Riddle {
-  id: number;
-  question: string;
-  hint: string;
-  answer: string;
-  explanation: string;
-  image: string;
-  category: "space" | "earth" | "science" | "animals";
-}
 
 // Components
 const AnimatedSun = () => (
@@ -53,77 +46,7 @@ const StarBackground = () => {
     </div>
   );
 };
-
-const RiddleCard = ({
-  riddle,
-  onReveal,
-}: {
-  riddle: Riddle;
-  onReveal: () => void;
-}) => {
-  const [showHint, setShowHint] = useState(false);
-  const [showAnswer, setShowAnswer] = useState(false);
-
-  const handleReveal = () => {
-    setShowAnswer(true);
-    onReveal();
-  };
-
-  return (
-    <div className="bg-gradient-to-br from-zinc-800 to-gray-900 p-6 rounded-3xl shadow-2xl border-4 border-yellow-300 transform hover:scale-105 transition-all duration-300 min-h-[500px] flex flex-col">
-      <div className="text-center mb-4">
-        <span className="text-4xl">🤔</span>
-        <h3 className="text-xl font-bold text-white mt-2">Brain Teaser!</h3>
-      </div>
-
-      <p className="text-lg text-white text-center mb-4 font-semibold flex-grow">
-        {riddle.question}
-      </p>
-
-      <div className="flex justify-center mb-4">
-        <div className="w-48 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl border-2 border-white flex items-center justify-center">
-          <span className="text-4xl">
-            {riddle.category === "space" && "🌌"}
-            {riddle.category === "earth" && "🌍"}
-            {riddle.category === "science" && "🔬"}
-            {riddle.category === "animals" && "🐾"}
-          </span>
-        </div>
-      </div>
-
-      {!showAnswer && (
-        <div className="space-y-3 mt-auto">
-          <button
-            onClick={() => setShowHint(!showHint)}
-            className="w-full bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-3 rounded-xl transition-colors"
-          >
-            {showHint ? "Hide Hint" : "Show Hint"} 💡
-          </button>
-
-          {showHint && (
-            <div className="bg-blue-800 p-4 rounded-xl text-white text-center">
-              <p className="font-semibold">{riddle.hint}</p>
-            </div>
-          )}
-
-          <button
-            onClick={handleReveal}
-            className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition-colors"
-          >
-            Reveal Answer! 🎉
-          </button>
-        </div>
-      )}
-
-      {showAnswer && (
-        <div className="bg-green-600 p-4 rounded-xl text-white text-center animate-pulse mt-auto">
-          <h4 className="font-bold text-lg mb-2">Answer: {riddle.answer}</h4>
-          <p className="text-sm">{riddle.explanation}</p>
-        </div>
-      )}
-    </div>
-  );
-};
+const MySwal = withReactContent(Swal);
 
 // Main Component
 export default function FunAndLearn() {
@@ -133,37 +56,77 @@ export default function FunAndLearn() {
   const [solvedRiddles, setSolvedRiddles] = useState<number[]>([]);
 
   // Sample data
+
+  interface Riddle {
+    id: number;
+    question: string;
+    hint: string;
+    answer: string;
+    explanation: string;
+    image: string; // URL to a relevant image/icon
+    category: "space" | "earth" | "animals";
+    colorPalette: {
+      // New: for card styling
+      front: { from: string; to: string }; // Tailwind class parts, e.g., "from-blue-500", "to-blue-600"
+      back: { from: string; to: string };
+      border: string; // Tailwind class, e.g., "border-cyan-400"
+      text: string; // Tailwind class, e.g., "text-blue-100"
+      emoji: string; // Emoji for this riddle's general theme
+    };
+  }
+
   const riddles: Riddle[] = [
     {
       id: 1,
       question:
         "I'm a giant ball of gas that gives you light and heat. What am I?",
       hint: "I'm the center of our solar system!",
-      answer: "The Sun",
+      answer: "Sun",
       explanation:
         "The Sun is a star made of hot gases that provides light and heat to all planets in our solar system!",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r1.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-neutral-700", to: "to-slate-800" },
+        back: { from: "from-gray-600", to: "to-black" },
+        border: "border-yellow-400",
+        text: "text-white",
+        emoji: "☀️",
+      },
     },
     {
       id: 2,
       question: "I twinkle at night but I’m not a star, what am I?",
       hint: "You can find me in the night sky, but I'm not as far as stars!",
-      answer: "A planet",
+      answer: "planet",
       explanation:
         "Planets like Venus and Mars often appear as twinkling objects in the night sky, but they're closer to Earth than stars.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r2.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-gray-700", to: "to-zinc-800" },
+        back: { from: "from-black", to: "to-neutral-700" },
+        border: "border-blue-400",
+        text: "text-white",
+        emoji: "🪐",
+      },
     },
     {
       id: 3,
       question: "I have a tail but I'm not an animal. What am I?",
       hint: "I might appear when I’m close to the Sun!",
-      answer: "A comet",
+      answer: "comet",
       explanation:
         "Comets have tails made of dust and gas that glow when they approach the Sun.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r3.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-gray-700", to: "to-gray-900" },
+        back: { from: "from-zinc-600", to: "to-zinc-700" },
+        border: "border-gray-500",
+        text: "text-white",
+        emoji: "☄️",
+      },
     },
     {
       id: 4,
@@ -172,8 +135,15 @@ export default function FunAndLearn() {
       answer: "The Great Red Spot (on Jupiter)",
       explanation:
         "The Great Red Spot is a massive storm on Jupiter, and it has been raging for centuries!",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r4.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-zinc-700", to: "to-slate-800" },
+        back: { from: "from-black", to: "to-gray-700" },
+        border: "border-rose-400",
+        text: "text-white",
+        emoji: "🌀",
+      },
     },
     {
       id: 5,
@@ -182,8 +152,15 @@ export default function FunAndLearn() {
       answer: "Mars",
       explanation:
         "Mars is a planet with two small moons, Phobos and Deimos, orbiting around it.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r5.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-slate-700", to: "to-neutral-800" },
+        back: { from: "from-black", to: "to-gray-700" },
+        border: "border-orange-400",
+        text: "text-white",
+        emoji: "🔴",
+      },
     },
     {
       id: 6,
@@ -192,8 +169,15 @@ export default function FunAndLearn() {
       answer: "Saturn",
       explanation:
         "Saturn is famous for its beautiful and vast ring system made of ice and rock.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r6.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-zinc-700", to: "to-gray-800" },
+        back: { from: "from-gray-600", to: "to-neutral-700" },
+        border: "border-amber-400",
+        text: "text-white",
+        emoji: "🪐",
+      },
     },
     {
       id: 7,
@@ -202,18 +186,32 @@ export default function FunAndLearn() {
       answer: "Jupiter",
       explanation:
         "Jupiter is the largest planet in our solar system and is known for its Great Red Spot and its many moons.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r7.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-zinc-700", to: "to-gray-800" },
+        back: { from: "from-slate-600", to: "to-neutral-700" },
+        border: "border-red-400",
+        text: "text-white",
+        emoji: "🔭",
+      },
     },
     {
       id: 8,
       question: "I’m a satellite of Earth. What am I?",
       hint: "I help illuminate the night sky!",
-      answer: "The Moon",
+      answer: "Moon",
       explanation:
         "The Moon is Earth's only natural satellite and it reflects sunlight to light up the night sky.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r8.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-zinc-700", to: "to-gray-800" },
+        back: { from: "from-slate-600", to: "to-black" },
+        border: "border-sky-400",
+        text: "text-white",
+        emoji: "🌕",
+      },
     },
     {
       id: 9,
@@ -222,8 +220,15 @@ export default function FunAndLearn() {
       answer: "The Asteroid Belt",
       explanation:
         "The Asteroid Belt is a region filled with millions of asteroids, located between the orbits of Mars and Jupiter.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r9.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-gray-700", to: "to-stone-800" },
+        back: { from: "from-slate-600", to: "to-gray-700" },
+        border: "border-gray-500",
+        text: "text-white",
+        emoji: "☄️",
+      },
     },
     {
       id: 10,
@@ -232,17 +237,83 @@ export default function FunAndLearn() {
       answer: "Pluto",
       explanation:
         "Pluto is a dwarf planet in the outer reaches of the solar system and was once considered the ninth planet.",
-      image: "/api/placeholder/200/150",
+      image: "/riddles/r9.png",
       category: "space",
+      colorPalette: {
+        front: { from: "from-stone-700", to: "to-gray-800" },
+        back: { from: "from-slate-600", to: "to-black" },
+        border: "border-fuchsia-400",
+        text: "text-white",
+        emoji: "🌌",
+      },
     },
   ];
 
-  const handleRiddleReveal = (riddleId: number) => {
-    if (!solvedRiddles.includes(riddleId)) {
-      setSolvedRiddles([...solvedRiddles, riddleId]);
+  // Simulate loading solved riddles from localStorage or API
+  useEffect(() => {
+    const savedSolved = localStorage.getItem("solvedRiddles");
+    if (savedSolved) {
+      setSolvedRiddles(JSON.parse(savedSolved));
     }
-  };
+  }, []);
 
+  useEffect(() => {
+    localStorage.setItem("solvedRiddles", JSON.stringify(solvedRiddles));
+    if (solvedRiddles.length > 0 && solvedRiddles.length === riddles.length) {
+      // All riddles solved, trigger celebration!
+      MySwal.fire({
+        title: (
+          <span className="font-display text-5xl text-yellow-500 animate-pulse">
+            🌟 RIDDLE MASTER! 🌟
+          </span>
+        ),
+        html: (
+          <div className="flex flex-col items-center justify-center p-4">
+            <div className="relative w-40 h-40 mb-4 animate-spin-slow">
+              <Image
+                src="/images/confetti-star.png"
+                alt="Confetti Star"
+                layout="fill"
+                objectFit="contain"
+              />{" "}
+              {/* Make sure you have this image */}
+            </div>
+            <h3 className="font-story-text text-2xl text-gray-700 mb-2">
+              You've solved all the riddles! Amazing work!
+            </h3>
+            <p className="text-lg text-gray-600">
+              Your brain is super strong! Keep exploring!
+            </p>
+          </div>
+        ),
+        imageUrl: "/images/trophy.png", // Example: custom trophy image for the alert
+        imageWidth: 150,
+        imageHeight: 150,
+        imageAlt: "Trophy",
+        background: "#fff url('/images/celebration-bg.png')", // Example: confetti background
+        confirmButtonText: "Yay!",
+        confirmButtonColor: "#FFD700", // Gold button
+        customClass: {
+          popup: "rounded-3xl shadow-xl border-4 border-lime-400",
+          title: "sweet-alert-title",
+          htmlContainer: "sweet-alert-html-container",
+          confirmButton: "font-bold text-gray-800",
+        },
+        buttonsStyling: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      });
+    }
+  }, [solvedRiddles]);
+
+  const handleRiddleReveal = (riddleId: number) => {
+    setSolvedRiddles((prevSolved) => {
+      if (!prevSolved.includes(riddleId)) {
+        return [...prevSolved, riddleId];
+      }
+      return prevSolved;
+    });
+  };
   // Define tab type to avoid 'any'
   type TabType = "riddles" | "facts" | "discover";
 
@@ -296,35 +367,37 @@ export default function FunAndLearn() {
         {/* Riddles Section */}
         {activeTab === "riddles" && (
           <div>
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-yellow-300 mb-4">
+            <div className="text-center mb-12">
+              <h2 className="text-5xl font-extrabold font-display text-yellow-300 mb-4 drop-shadow-lg">
                 Can You Solve These Riddles? 🧩
               </h2>
-              <p className="text-blue-200 text-lg">
-                Test your thinking skills with these fun challenges!
+              <p className="text-blue-200 text-xl font-story-text max-w-2xl mx-auto">
+                Test your clever brain with these cosmic challenges!
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto w-full">
               {riddles.map((riddle) => (
                 <RiddleCard
                   key={riddle.id}
                   riddle={riddle}
-                  onReveal={() => handleRiddleReveal(riddle.id)}
+                  onReveal={handleRiddleReveal}
+                  isSolved={solvedRiddles.includes(riddle.id)}
                 />
               ))}
             </div>
 
-            <div className="text-center mt-8">
-              <div className="bg-green-600 bg-opacity-50 inline-block px-6 py-3 rounded-2xl">
-                <p className="text-white font-bold text-lg">
+            <div className="text-center mt-12">
+              <div className="bg-lime-600 bg-opacity-70 inline-block px-8 py-4 rounded-full shadow-lg border-2 border-lime-400">
+                <p className="text-white font-bold text-2xl font-display">
                   🎯 Solved: {solvedRiddles.length} of {riddles.length} riddles!
                 </p>
-                {solvedRiddles.length === riddles.length && (
-                  <p className="text-yellow-300 text-sm mt-2">
-                    🏆 Riddle Master! You solved them all!
-                  </p>
-                )}
+                {solvedRiddles.length > 0 &&
+                  solvedRiddles.length === riddles.length && (
+                    <p className="text-yellow-300 text-lg mt-3 font-story-text animate-pulse">
+                      🏆 WOW! You're a Riddle Master! 🚀
+                    </p>
+                  )}
               </div>
             </div>
           </div>
