@@ -432,11 +432,12 @@ export default function FunAndLearn() {
                 Mystery Discovery Boxes! 🎁
               </h2>
               <p className="text-blue-200 text-lg">
-                Click to discover fun learning activities!
+                Click to discover amazing space secrets!
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {/* Solar System Explorer */}
               <MysteryBox
                 title="Solar System Explorer"
                 emoji="🌞"
@@ -464,6 +465,8 @@ export default function FunAndLearn() {
                 boxColorGradient="bg-gradient-to-br from-yellow-600/20 via-orange-500/20 to-red-600/20"
                 boxBorderColor="border-amber-500/50"
               />
+
+              {/* Black Hole Hunter */}
               <MysteryBox
                 title="Black Hole Hunter"
                 emoji="🕳️"
@@ -492,6 +495,8 @@ export default function FunAndLearn() {
                 boxColorGradient="bg-gradient-to-br from-purple-600/20 via-fuchsia-500/20 to-pink-600/20"
                 boxBorderColor="border-purple-500/50"
               />
+
+              {/* Space Station Life */}
               <MysteryBox
                 title="Space Station Life"
                 emoji="🛰️"
@@ -519,6 +524,163 @@ export default function FunAndLearn() {
                 }
                 boxColorGradient="bg-gradient-to-br from-green-600/20 via-emerald-500/20 to-teal-600/20"
                 boxBorderColor="border-green-500/50"
+              />
+
+              {/* NEW: Sun's Super Power */}
+              <MysteryBox
+                title="Sun's Super Power"
+                emoji="☀️"
+                description="Discover the Sun's amazing energy!"
+                mysteryContent={
+                  <div className="text-center space-y-3">
+                    <p className="text-orange-300 font-semibold">
+                      Solar Secret Unlocked! 🔆
+                    </p>
+                    <p className="text-gray-200">
+                      You discovered that{" "}
+                      <span className="text-red-300 font-bold">
+                        sunlight takes 8 minutes
+                      </span>{" "}
+                      to travel to Earth!
+                    </p>
+                    <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
+                      <p className="text-sm text-gray-300">
+                        <span className="text-yellow-400">
+                          🌞 Science Fact:
+                        </span>{" "}
+                        The sunlight you see right now left the Sun 8 minutes
+                        ago - you&apos;re seeing the Sun as it was in the past!
+                      </p>
+                    </div>
+                  </div>
+                }
+                boxColorGradient="bg-gradient-to-br from-red-600/20 via-orange-500/20 to-yellow-600/20"
+                boxBorderColor="border-orange-500/50"
+              />
+
+              {/* NEW: Moon's Magic */}
+              <MysteryBox
+                title="Moon's Magic"
+                emoji="🌙"
+                description="Explore our closest space neighbor!"
+                mysteryContent={
+                  <div className="text-center space-y-3">
+                    <p className="text-silver-300 font-semibold">
+                      Lunar Discovery! 🌕
+                    </p>
+                    <p className="text-gray-200">
+                      You found out the Moon is{" "}
+                      <span className="text-blue-200 font-bold">
+                        slowly moving away
+                      </span>{" "}
+                      from Earth!
+                    </p>
+                    <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
+                      <p className="text-sm text-gray-300">
+                        <span className="text-purple-400">🌊 Ocean Magic:</span>{" "}
+                        The Moon&apos;s gravity makes ocean tides - it&apos;s
+                        like the Moon is gently pulling on our oceans!
+                      </p>
+                    </div>
+                  </div>
+                }
+                boxColorGradient="bg-gradient-to-br from-gray-600/20 via-slate-500/20 to-blue-600/20"
+                boxBorderColor="border-slate-400/50"
+              />
+
+              {/* NEW: Astronaut Training */}
+              <MysteryBox
+                title="Astronaut Training"
+                emoji="👨‍🚀"
+                description="What it takes to be a space explorer!"
+                mysteryContent={
+                  <div className="text-center space-y-3">
+                    <p className="text-white font-semibold">
+                      Astronaut Skills Learned! 🚀
+                    </p>
+                    <p className="text-gray-200">
+                      You discovered astronauts{" "}
+                      <span className="text-cyan-300 font-bold">
+                        grow taller in space
+                      </span>{" "}
+                      without gravity!
+                    </p>
+                    <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
+                      <p className="text-sm text-gray-300">
+                        <span className="text-green-400">
+                          📏 Height Change:
+                        </span>{" "}
+                        Astronauts can grow up to 2 inches taller in space, but
+                        shrink back on Earth!
+                      </p>
+                    </div>
+                  </div>
+                }
+                boxColorGradient="bg-gradient-to-br from-blue-600/20 via-cyan-500/20 to-teal-600/20"
+                boxBorderColor="border-cyan-400/50"
+              />
+
+              {/* NEW: Mars Adventure */}
+              <MysteryBox
+                title="Mars Adventure"
+                emoji="🪐"
+                description="Visit the Red Planet!"
+                mysteryContent={
+                  <div className="text-center space-y-3">
+                    <p className="text-red-300 font-semibold">
+                      Martian Mystery Solved! 🔴
+                    </p>
+                    <p className="text-gray-200">
+                      You learned that a day on Mars is called a{" "}
+                      <span className="text-orange-300 font-bold">
+                        "sol" and is 24.6 hours
+                      </span>{" "}
+                      long!
+                    </p>
+                    <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
+                      <p className="text-sm text-gray-300">
+                        <span className="text-yellow-300">
+                          🏜️ Desert Planet:
+                        </span>{" "}
+                        Mars has the biggest volcano in our solar system -
+                        Olympus Mons is 3 times taller than Mount Everest!
+                      </p>
+                    </div>
+                  </div>
+                }
+                boxColorGradient="bg-gradient-to-br from-red-700/20 via-orange-600/20 to-brown-600/20"
+                boxBorderColor="border-red-500/50"
+              />
+
+              {/* NEW: Space Weather */}
+              <MysteryBox
+                title="Space Weather"
+                emoji="🌠"
+                description="Discover solar storms and auroras!"
+                mysteryContent={
+                  <div className="text-center space-y-3">
+                    <p className="text-pink-300 font-semibold">
+                      Northern Lights Secret! 🌈
+                    </p>
+                    <p className="text-gray-200">
+                      You uncovered that{" "}
+                      <span className="text-green-300 font-bold">
+                        auroras are created when solar particles
+                      </span>{" "}
+                      hit Earth&apos;s atmosphere!
+                    </p>
+                    <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
+                      <p className="text-sm text-gray-300">
+                        <span className="text-purple-400">💫 Light Show:</span>{" "}
+                        The beautiful Northern and Southern Lights are
+                        Earth&apos;s way of protecting us from the Sun&apos;s
+                        energy!
+                      </p>
+                    </div>
+                  </div>
+                }
+                boxColorGradient="bg-gradient-to-br from-indigo-600/20 via-purple-500/20 to-pink-600/20"
+                boxBorderColor="border-indigo-400/50"
               />
             </div>
           </div>

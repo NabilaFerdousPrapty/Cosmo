@@ -1,301 +1,372 @@
 // src/app/games/solar-orbiter/page.tsx
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import GameLayout from "../../../../components/games/GameLayout";
 
 interface Planet {
   name: string;
-  distance: number; // in AU
+  distance: number;
   size: number;
   color: string;
-  speed: number;
+  emoji: string;
+  discovered: boolean;
 }
 
 export default function SolarOrbiter() {
   const [score, setScore] = useState(0);
   const [fuel, setFuel] = useState(100);
-  const [temperature, setTemperature] = useState(300);
-  const [distanceFromSun, setDistanceFromSun] = useState(1);
-  const [isOrbiting, setIsOrbiting] = useState(false);
+  const [currentPlanet, setCurrentPlanet] = useState(0);
   const [missionComplete, setMissionComplete] = useState(false);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isFlying, setIsFlying] = useState(false);
 
   const planets: Planet[] = [
-    { name: "Mercury", distance: 0.4, size: 8, color: "#8C7853", speed: 4.1 },
-    { name: "Venus", distance: 0.7, size: 12, color: "#FFC649", speed: 3.0 },
-    { name: "Earth", distance: 1.0, size: 13, color: "#6B93D6", speed: 2.5 },
-    { name: "Mars", distance: 1.5, size: 11, color: "#CD5C5C", speed: 2.0 },
-    { name: "Jupiter", distance: 5.2, size: 30, color: "#F0C78D", speed: 1.0 },
+    {
+      name: "Mercury",
+      distance: 1,
+      size: 8,
+      color: "bg-gray-400",
+      emoji: "🪐",
+      discovered: false,
+    },
+    {
+      name: "Venus",
+      distance: 2,
+      size: 12,
+      color: "bg-yellow-200",
+      emoji: "✨",
+      discovered: false,
+    },
+    {
+      name: "Earth",
+      distance: 3,
+      size: 13,
+      color: "bg-blue-400",
+      emoji: "🌍",
+      discovered: false,
+    },
+    {
+      name: "Mars",
+      distance: 4,
+      size: 11,
+      color: "bg-red-400",
+      emoji: "🔴",
+      discovered: false,
+    },
+    {
+      name: "Jupiter",
+      distance: 5,
+      size: 20,
+      color: "bg-orange-300",
+      emoji: "🟠",
+      discovered: false,
+    },
   ];
 
   const startMission = () => {
     setScore(0);
     setFuel(100);
-    setTemperature(300);
-    setDistanceFromSun(1);
-    setIsOrbiting(true);
+    setCurrentPlanet(0);
     setMissionComplete(false);
+    setIsFlying(true);
+
+    // Reset all planets to undiscovered
+    planets.forEach((planet) => (planet.discovered = false));
   };
 
-  const adjustOrbit = (direction: "in" | "out") => {
-    if (!isOrbiting || fuel <= 0) return;
+  const flyToNextPlanet = () => {
+    if (fuel <= 0 || currentPlanet >= planets.length - 1) return;
+
+    const fuelCost = 20;
+    setFuel((prev) => Math.max(0, prev - fuelCost));
+
+    // Simulate flying animation
+    setIsFlying(true);
+
+    setTimeout(() => {
+      const nextPlanet = currentPlanet + 1;
+      setCurrentPlanet(nextPlanet);
+
+      // Mark planet as discovered and add score
+      planets[nextPlanet].discovered = true;
+      setScore((prev) => prev + 50);
+
+      setIsFlying(false);
+
+      // Check if all planets discovered
+      if (nextPlanet === planets.length - 1) {
+        setMissionComplete(true);
+      }
+    }, 1500);
+  };
+
+  const collectScience = () => {
+    if (fuel <= 0) return;
 
     const fuelCost = 5;
-    const distanceChange = direction === "in" ? -0.1 : 0.1;
+    const scienceGain = 10;
 
     setFuel((prev) => Math.max(0, prev - fuelCost));
-    setDistanceFromSun((prev) =>
-      Math.max(0.3, Math.min(6, prev + distanceChange))
-    );
-
-    // Update temperature based on distance (inverse square law)
-    const newTemp = 300 * Math.pow(1 / (distanceFromSun + distanceChange), 2);
-    setTemperature(Math.max(100, Math.min(1000, newTemp)));
-
-    // Score for successful maneuver
-    setScore((prev) => prev + 10);
+    setScore((prev) => prev + scienceGain);
   };
-
-  useEffect(() => {
-    if (!isOrbiting || !canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let angle = 0;
-    const orbitInterval = setInterval(() => {
-      // Clear canvas
-      ctx.fillStyle = "#000000";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Draw stars
-      ctx.fillStyle = "#ffffff";
-      for (let i = 0; i < 100; i++) {
-        const x = (i * 7) % canvas.width;
-        const y = (i * 13) % canvas.height;
-        ctx.fillRect(x, y, 1, 1);
-      }
-
-      // Draw Sun
-      const sunGradient = ctx.createRadialGradient(
-        canvas.width / 2,
-        canvas.height / 2,
-        0,
-        canvas.width / 2,
-        canvas.height / 2,
-        50
-      );
-      sunGradient.addColorStop(0, "#FFFF00");
-      sunGradient.addColorStop(1, "#FF4500");
-      ctx.fillStyle = sunGradient;
-      ctx.beginPath();
-      ctx.arc(canvas.width / 2, canvas.height / 2, 50, 0, 2 * Math.PI);
-      ctx.fill();
-
-      // Draw planets and their orbits
-      planets.forEach((planet) => {
-        // Orbit path
-        ctx.strokeStyle = "#333344";
-        ctx.beginPath();
-        ctx.arc(
-          canvas.width / 2,
-          canvas.height / 2,
-          planet.distance * 60,
-          0,
-          2 * Math.PI
-        );
-        ctx.stroke();
-
-        // Planet
-        const planetAngle = angle * planet.speed;
-        const planetX =
-          canvas.width / 2 + Math.cos(planetAngle) * planet.distance * 60;
-        const planetY =
-          canvas.height / 2 + Math.sin(planetAngle) * planet.distance * 60;
-
-        ctx.fillStyle = planet.color;
-        ctx.beginPath();
-        ctx.arc(planetX, planetY, planet.size, 0, 2 * Math.PI);
-        ctx.fill();
-
-        // Planet label
-        ctx.fillStyle = "#ffffff";
-        ctx.font = "10px Arial";
-        ctx.fillText(planet.name, planetX - 15, planetY - planet.size - 5);
-      });
-
-      // Draw player spacecraft
-      const playerAngle = angle * (2.5 / distanceFromSun);
-      const playerX =
-        canvas.width / 2 + Math.cos(playerAngle) * distanceFromSun * 60;
-      const playerY =
-        canvas.height / 2 + Math.sin(playerAngle) * distanceFromSun * 60;
-
-      ctx.fillStyle = "#00aaff";
-      ctx.beginPath();
-      ctx.moveTo(playerX, playerY - 8);
-      ctx.lineTo(playerX - 6, playerY + 8);
-      ctx.lineTo(playerX + 6, playerY + 8);
-      ctx.closePath();
-      ctx.fill();
-
-      // Draw spacecraft trail
-      ctx.strokeStyle = "#00aaff";
-      ctx.beginPath();
-      ctx.moveTo(playerX, playerY + 8);
-      ctx.lineTo(
-        playerX - Math.cos(playerAngle) * 20,
-        playerY - Math.sin(playerAngle) * 20
-      );
-      ctx.stroke();
-
-      angle += 0.02;
-
-      // Check mission objectives
-      if (fuel <= 0) {
-        setIsOrbiting(false);
-      }
-
-      // Complete mission if all planets visited
-      if (score >= 500) {
-        setMissionComplete(true);
-        setIsOrbiting(false);
-      }
-    }, 50);
-
-    return () => clearInterval(orbitInterval);
-  }, [isOrbiting, distanceFromSun, score]);
 
   return (
     <GameLayout
-      title="Solar Orbiter"
-      description="Navigate a spacecraft around the Sun and explore planets"
+      title="Solar Orbiter Adventure"
+      description="Fly your spacecraft to discover planets in our solar system!"
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Game Stats */}
-        <div className="grid grid-cols-4 gap-4 mb-6 text-center">
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-blue-400">{score}</div>
-            <div className="text-sm text-gray-400">Science Data</div>
+      <div className="max-w-4xl mx-auto p-4">
+        {/* Game Stats - Simple and Colorful */}
+        <div className="grid grid-cols-3 gap-3 mb-6 text-center">
+          <div className="bg-blue-900/50 rounded-2xl p-3 border-2 border-blue-500">
+            <div className="text-xl font-bold text-yellow-300">{score}</div>
+            <div className="text-xs text-blue-200">Science Points</div>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-green-400">{fuel}%</div>
-            <div className="text-sm text-gray-400">Fuel</div>
+          <div className="bg-green-900/50 rounded-2xl p-3 border-2 border-green-500">
+            <div className="text-xl font-bold text-green-300">{fuel}%</div>
+            <div className="text-xs text-green-200">Rocket Fuel</div>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-red-400">
-              {Math.round(temperature)}K
+          <div className="bg-purple-900/50 rounded-2xl p-3 border-2 border-purple-500">
+            <div className="text-xl font-bold text-purple-300">
+              {currentPlanet + 1}/{planets.length}
             </div>
-            <div className="text-sm text-gray-400">Temperature</div>
-          </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-yellow-400">
-              {distanceFromSun.toFixed(1)} AU
-            </div>
-            <div className="text-sm text-gray-400">Distance from Sun</div>
+            <div className="text-xs text-purple-200">Planets Visited</div>
           </div>
         </div>
 
-        {/* Game Canvas */}
-        <div className="bg-black rounded-2xl p-1 border-2 border-gray-800 mb-6">
-          <canvas
-            ref={canvasRef}
-            width={800}
-            height={600}
-            className="w-full h-auto rounded-xl"
-          />
+        {/* Solar System Display */}
+        <div className="bg-gray-900/80 rounded-3xl p-6 border-4 border-gray-700 mb-6">
+          <h3 className="text-xl font-bold text-yellow-300 text-center mb-6">
+            🌟 Our Solar System 🌟
+          </h3>
+
+          {/* Planets Journey */}
+          <div className="relative h-48 mb-8">
+            {/* Orbit Lines */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              {[1, 2, 3, 4, 5].map((orbit) => (
+                <div
+                  key={orbit}
+                  className="absolute border-2 border-gray-600 rounded-full"
+                  style={{
+                    width: `${orbit * 50}px`,
+                    height: `${orbit * 50}px`,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Sun in Center */}
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="text-6xl animate-pulse">☀️</div>
+            </div>
+
+            {/* Planets */}
+            {planets.map((planet, index) => (
+              <div
+                key={planet.name}
+                className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ${
+                  isFlying ? "animate-bounce" : ""
+                }`}
+                style={{
+                  marginLeft: `${planet.distance * 50}px`,
+                  transform: `rotate(${index * 72}deg) translateX(${
+                    planet.distance * 25
+                  }px) rotate(-${index * 72}deg)`,
+                }}
+              >
+                <div
+                  className={`
+                    w-12 h-12 rounded-full flex items-center justify-center text-2xl
+                    ${planet.color} border-4
+                    ${
+                      planet.discovered
+                        ? "border-yellow-400 animate-pulse"
+                        : "border-gray-500"
+                    }
+                    ${
+                      index === currentPlanet
+                        ? "ring-4 ring-green-400 scale-125"
+                        : ""
+                    }
+                    transition-all duration-300
+                  `}
+                >
+                  {planet.discovered ? planet.emoji : "❓"}
+                </div>
+                <div className="text-center mt-2">
+                  <div className="text-white text-sm font-bold bg-black/50 px-2 py-1 rounded-full">
+                    {planet.discovered ? planet.name : "???"}
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Spacecraft */}
+            <div
+              className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-1000"
+              style={{
+                marginLeft: `${planets[currentPlanet].distance * 50}px`,
+                transform: `rotate(${currentPlanet * 72}deg) translateX(${
+                  planets[currentPlanet].distance * 25
+                }px) rotate(-${currentPlanet * 72}deg)`,
+              }}
+            >
+              <div className="text-3xl animate-bounce">🚀</div>
+            </div>
+          </div>
+
+          {/* Current Planet Info */}
+          <div className="text-center bg-gray-800/50 rounded-2xl p-4 border-2 border-yellow-500">
+            <div className="text-4xl mb-2">{planets[currentPlanet].emoji}</div>
+            <h4 className="text-xl font-bold text-yellow-300 mb-2">
+              {planets[currentPlanet].name}
+            </h4>
+            <p className="text-gray-300 text-sm">
+              {currentPlanet === 0 && "🌡️ Very hot planet closest to the Sun!"}
+              {currentPlanet === 1 && "☁️ Cloudy planet with a golden glow!"}
+              {currentPlanet === 2 &&
+                "💙 Our home - the blue planet with life!"}
+              {currentPlanet === 3 && "🏜️ Red desert planet with two moons!"}
+              {currentPlanet === 4 && "🌀 Giant planet with a big red spot!"}
+            </p>
+          </div>
         </div>
 
-        {/* Controls */}
-        {!isOrbiting && !missionComplete && (
-          <div className="text-center mb-6">
-            <button
-              onClick={startMission}
-              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg text-xl transition-colors"
-            >
-              🚀 Launch Mission
-            </button>
-          </div>
-        )}
+        {/* Game Controls */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <button
+            onClick={flyToNextPlanet}
+            disabled={
+              fuel <= 0 || currentPlanet >= planets.length - 1 || isFlying
+            }
+            className={`
+              py-4 text-white font-bold rounded-2xl text-lg transition-all duration-300
+              ${
+                fuel > 0 && currentPlanet < planets.length - 1 && !isFlying
+                  ? "bg-blue-600 hover:bg-blue-700 hover:scale-105 active:scale-95"
+                  : "bg-gray-600"
+              }
+            `}
+          >
+            🚀 Fly to Next Planet
+          </button>
 
-        {isOrbiting && (
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <button
-              onClick={() => adjustOrbit("in")}
-              disabled={fuel <= 0}
-              className="py-4 bg-red-600 hover:bg-red-700 disabled:bg-gray-600 text-white font-bold rounded-lg text-xl transition-colors"
-            >
-              ↙️ Move Closer to Sun
-            </button>
-            <button
-              onClick={() => adjustOrbit("out")}
-              disabled={fuel <= 0}
-              className="py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 text-white font-bold rounded-lg text-xl transition-colors"
-            >
-              ↗️ Move Away from Sun
-            </button>
-          </div>
-        )}
+          <button
+            onClick={collectScience}
+            disabled={fuel <= 0 || isFlying}
+            className={`
+              py-4 text-white font-bold rounded-2xl text-lg transition-all duration-300
+              ${
+                fuel > 0 && !isFlying
+                  ? "bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95"
+                  : "bg-gray-600"
+              }
+            `}
+          >
+            🔬 Collect Science (+10)
+          </button>
+        </div>
 
-        {missionComplete && (
+        {/* Start/Restart Game */}
+        {!isFlying && (missionComplete || fuel <= 0) && (
           <div className="text-center mb-6">
-            <div className="bg-green-900 bg-opacity-50 rounded-2xl p-6 border border-green-700 mb-4">
-              <div className="text-4xl mb-2">🎉 Mission Success!</div>
-              <div className="text-2xl text-yellow-400 mb-2">
+            <div
+              className={`
+              rounded-3xl p-6 border-4 mb-4
+              ${
+                missionComplete
+                  ? "bg-green-900/50 border-green-500"
+                  : "bg-red-900/50 border-red-500"
+              }
+            `}
+            >
+              <div className="text-4xl mb-3">
+                {missionComplete ? "🎉" : "⛽"}
+              </div>
+              <div className="text-2xl font-bold text-yellow-300 mb-2">
+                {missionComplete ? "Mission Accomplished!" : "Out of Fuel!"}
+              </div>
+              <div className="text-xl text-green-400 mb-2">
                 Final Score: {score}
               </div>
-              <p className="text-gray-400">
-                All planetary data collected successfully
+              <p className="text-gray-300">
+                {missionComplete
+                  ? "You discovered all planets in our solar system!"
+                  : "Your spacecraft needs more fuel to continue."}
               </p>
             </div>
+          </div>
+        )}
+
+        {!isFlying && !missionComplete && fuel > 0 && (
+          <div className="text-center">
             <button
               onClick={startMission}
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-xl transition-colors"
+              className="px-8 py-4 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded-2xl text-xl transition-colors hover:scale-105 active:scale-95 animate-pulse"
             >
-              🔄 New Mission
+              🌟 Start Space Mission
             </button>
           </div>
         )}
 
-        {fuel <= 0 && isOrbiting && (
-          <div className="text-center mb-6">
-            <div className="bg-red-900 bg-opacity-50 rounded-2xl p-6 border border-red-700">
-              <div className="text-4xl mb-2">⛽ Out of Fuel</div>
-              <p className="text-gray-400">
-                Mission terminated due to fuel exhaustion
+        {/* Simple Instructions */}
+        <div className="bg-gray-900/80 rounded-3xl p-4 border-4 border-purple-500">
+          <h3 className="text-xl font-bold text-purple-300 text-center mb-4">
+            How to Play 🎮
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="text-center">
+              <div className="text-2xl mb-2">🚀</div>
+              <p className="text-gray-300">
+                <strong>Fly to planets</strong> to discover them
+              </p>
+              <p className="text-yellow-300 text-xs mt-1">
+                Each flight uses 20% fuel
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2">🔬</div>
+              <p className="text-gray-300">
+                <strong>Collect science data</strong> at each planet
+              </p>
+              <p className="text-green-300 text-xs mt-1">
+                Get 10 points, use 5% fuel
               </p>
             </div>
           </div>
-        )}
+          <div className="text-center mt-4">
+            <p className="text-blue-300 font-bold">
+              ✨ Discover all {planets.length} planets to win! ✨
+            </p>
+          </div>
+        </div>
 
-        {/* Game Instructions */}
-        <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700">
-          <h3 className="text-xl font-bold mb-4 text-white">
-            Mission Objectives
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
-            <div>
-              <h4 className="font-semibold text-yellow-400 mb-2">
-                🎮 Controls
-              </h4>
-              <ul className="space-y-2">
-                <li>• Move closer to Sun for higher science yield</li>
-                <li>• Move away from Sun to cool spacecraft</li>
-                <li>• Each maneuver costs 5% fuel</li>
-                <li>• Collect 500 science data to win</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-blue-400 mb-2">⚠️ Warnings</h4>
-              <ul className="space-y-2">
-                <li>• Temperature increases near the Sun</li>
-                <li>• Watch your fuel consumption</li>
-                <li>• Maintain stable orbit</li>
-                <li>• Avoid planetary collisions</li>
-              </ul>
-            </div>
+        {/* Planet Discovery Progress */}
+        <div className="bg-gray-900/80 rounded-3xl p-4 border-4 border-blue-500 mt-4">
+          <h4 className="text-lg font-bold text-blue-300 text-center mb-3">
+            Planet Discovery Progress
+          </h4>
+          <div className="grid grid-cols-5 gap-2">
+            {planets.map((planet, index) => (
+              <div key={planet.name} className="text-center">
+                <div
+                  className={`
+                  w-10 h-10 rounded-full flex items-center justify-center mx-auto text-lg
+                  ${
+                    planet.discovered
+                      ? planet.color + " border-2 border-yellow-400"
+                      : "bg-gray-700 border-2 border-gray-500"
+                  }
+                `}
+                >
+                  {planet.discovered ? planet.emoji : "?"}
+                </div>
+                <div className="text-xs text-white mt-1">
+                  {planet.discovered ? planet.name : "???"}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

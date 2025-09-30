@@ -82,7 +82,7 @@ export const RiddleCard: React.FC<RiddleCardProps> = ({
           <div className="space-y-4 animate-fadeIn">
             <div className="text-6xl mb-2 animate-bounce">🎉</div>
             <h3 className="text-2xl font-bold text-white drop-shadow">
-              It's {riddle.answer}!
+              It&apos;s {riddle.answer}!
             </h3>
             <p className="text-blue-100 text-lg leading-relaxed">
               {riddle.explanation}

@@ -9,43 +9,49 @@ interface CMEParticle {
   y: number;
   speed: number;
   size: number;
+  emoji: string;
 }
 
-const PLAYER_SIZE = 15; // Increased player size for better visibility
-const GAME_WIDTH = 800; // Original canvas width
-const GAME_HEIGHT = 500; // Original canvas height
+const PLAYER_SIZE = 60; // Large player for easy tapping
+const GAME_WIDTH = 800;
+const GAME_HEIGHT = 600;
 
 export default function CMEDodger() {
   const [score, setScore] = useState(0);
   const [lives, setLives] = useState(3);
   const [isPlaying, setIsPlaying] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [level, setLevel] = useState(1);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const playerX = useRef(50); // Player position as a percentage of width
+  const playerX = useRef(50);
   const particles = useRef<CMEParticle[]>([]);
   const animationRef = useRef<number | null>(null);
+
+  const particleEmojis = ["☀️", "💥", "🔥", "⭐", "🌪️"];
 
   const startGame = () => {
     setScore(0);
     setLives(3);
+    setLevel(1);
     setIsPlaying(true);
     setGameOver(false);
     particles.current = [];
     playerX.current = 50;
   };
 
-  // Handle player movement
-  const movePlayer = useCallback(
-    (direction: "left" | "right") => {
-      if (!isPlaying) return;
-      const moveAmount = 5; // Smaller move amount for smoother control
-      playerX.current =
-        direction === "left"
-          ? Math.max(0, playerX.current - moveAmount)
-          : Math.min(100, playerX.current + moveAmount);
-    },
-    [isPlaying]
-  );
+  // Simple touch movement - just set position
+  const movePlayer = useCallback((touchX: number) => {
+    if (!isPlaying) return;
+    
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const canvasRect = canvas.getBoundingClientRect();
+    const relativeX = ((touchX - canvasRect.left) / canvasRect.width) * 100;
+    
+    // Keep player within bounds
+    playerX.current = Math.max(10, Math.min(90, relativeX));
+  }, [isPlaying]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -54,138 +60,128 @@ export default function CMEDodger() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Set canvas dimensions dynamically
+    // Set canvas dimensions
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     };
 
     window.addEventListener("resize", resizeCanvas);
-    resizeCanvas(); // Initial resize
+    resizeCanvas();
 
     if (!isPlaying) return;
 
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") movePlayer("left");
-      if (e.key === "ArrowRight") movePlayer("right");
+    // Touch and mouse controls
+    const handleInput = (clientX: number) => {
+      movePlayer(clientX);
     };
 
-    const handleTouchStart = (e: TouchEvent) => {
-      e.preventDefault(); // Prevent scrolling
-      const touchX = e.touches[0].clientX;
-      const canvasRect = canvas.getBoundingClientRect();
-      const relativeX = ((touchX - canvasRect.left) / canvasRect.width) * 100; // Touch position as a percentage
-
-      // Determine movement based on touch location relative to player
-      if (relativeX < playerX.current) {
-        movePlayer("left");
-      } else {
-        movePlayer("right");
-      }
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      handleInput(e.touches[0].clientX);
     };
 
-    window.addEventListener("keydown", handleKeyPress);
-    canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    const handleMouseMove = (e: MouseEvent) => {
+      handleInput(e.clientX);
+    };
+
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
+    canvas.addEventListener("mousemove", handleMouseMove);
 
     const gameLoop = () => {
-      // Clear canvas
-      ctx.fillStyle = "#000000";
+      // Clear canvas with space background
+      ctx.fillStyle = "#0f172a";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw stars
       ctx.fillStyle = "#ffffff";
-      for (let i = 0; i < 50; i++) {
-        const x = (i * 13) % canvas.width;
-        const y = (i * 7) % canvas.height;
-        ctx.fillRect(x, y, 1, 1);
+      for (let i = 0; i < 30; i++) {
+        const x = (i * 17) % canvas.width;
+        const y = (i * 11) % canvas.height;
+        ctx.fillRect(x, y, 2, 2);
       }
 
-      // Spawn new particles
-      const spawnRate = 0.05 + score / 5000; // Increase spawn rate with score
+      // Spawn new particles based on level
+      const spawnRate = 0.03 + (level * 0.01);
       if (Math.random() < spawnRate) {
         particles.current.push({
           id: Date.now(),
-          x: Math.random() * 100, // X position as percentage
-          y: 0,
-          speed: 1.5 + Math.random() * 2 + score / 1000, // Increase speed with score
-          size: 10 + Math.random() * 20,
+          x: Math.random() * 100,
+          y: -10,
+          speed: 1 + Math.random() * 2 + (level * 0.5),
+          size: 30 + Math.random() * 40,
+          emoji: particleEmojis[Math.floor(Math.random() * particleEmojis.length)],
         });
       }
 
       // Update and draw particles
       particles.current = particles.current.filter((particle) => {
-        // Convert particle Y position to canvas coordinates for accurate movement
-        particle.y += particle.speed * (canvas.height / GAME_HEIGHT);
+        particle.y += particle.speed;
 
-        // Calculate collision using actual pixel coordinates
+        // Calculate positions
         const playerCanvasX = (playerX.current / 100) * canvas.width;
-        const playerCanvasY = (90 / 100) * canvas.height; // Player fixed Y position
-
+        const playerCanvasY = canvas.height - 80;
         const particleCanvasX = (particle.x / 100) * canvas.width;
         const particleCanvasY = (particle.y / 100) * canvas.height;
 
         const distance = Math.sqrt(
           Math.pow(particleCanvasX - playerCanvasX, 2) +
-            Math.pow(particleCanvasY - playerCanvasY, 2)
+          Math.pow(particleCanvasY - playerCanvasY, 2)
         );
 
-        if (distance < particle.size / 2 + PLAYER_SIZE / 2) {
-          setLives((prev) => prev - 1);
-          return false; // Remove particle on collision
+        // Check collision
+        if (distance < (particle.size / 2) + (PLAYER_SIZE / 2)) {
+          setLives((prev) => {
+            const newLives = prev - 1;
+            if (newLives <= 0) {
+              setGameOver(true);
+              setIsPlaying(false);
+            }
+            return newLives;
+          });
+          return false;
         }
 
-        // Draw particle
-        const gradient = ctx.createRadialGradient(
-          particleCanvasX,
-          particleCanvasY,
-          0,
-          particleCanvasX,
-          particleCanvasY,
-          particle.size
-        );
-        gradient.addColorStop(0, "#ff4444");
-        gradient.addColorStop(1, "#ff0000");
+        // Draw particle as emoji with glow
+        ctx.font = `${particle.size}px Arial`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        
+        // Glow effect
+        ctx.shadowColor = "#ff4444";
+        ctx.shadowBlur = 15;
+        ctx.fillText(particle.emoji, particleCanvasX, particleCanvasY);
+        ctx.shadowBlur = 0;
 
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(
-          particleCanvasX,
-          particleCanvasY,
-          particle.size / 2,
-          0,
-          2 * Math.PI
-        );
-        ctx.fill();
-
-        // Remove particles that go off screen (past 100% of height)
+        // Remove particles that go off screen
         return particle.y < 110;
       });
 
-      // Draw player spacecraft
-      ctx.fillStyle = "#00aaff";
+      // Draw player spacecraft (large and clear)
+      const playerCanvasX = (playerX.current / 100) * canvas.width;
+      const playerCanvasY = canvas.height - 80;
+
+      // Player as rocket emoji
+      ctx.font = `${PLAYER_SIZE}px Arial`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("🚀", playerCanvasX, playerCanvasY);
+
+      // Player shield/glow
+      ctx.strokeStyle = lives > 1 ? "#00ff00" : "#ff4444";
+      ctx.lineWidth = 3;
       ctx.beginPath();
-      // Adjust player drawing based on canvas dimensions
-      const playerRenderX = (playerX.current / 100) * canvas.width;
-      const playerRenderY = (90 / 100) * canvas.height;
-      const playerWidth = (PLAYER_SIZE / 100) * canvas.width; // Scale player width
-      const playerHeight = (PLAYER_SIZE / 100) * canvas.height; // Scale player height
+      ctx.arc(playerCanvasX, playerCanvasY, PLAYER_SIZE / 2 + 5, 0, 2 * Math.PI);
+      ctx.stroke();
 
-      ctx.moveTo(playerRenderX, playerRenderY);
-      ctx.lineTo(playerRenderX - playerWidth / 2, playerRenderY + playerHeight);
-      ctx.lineTo(playerRenderX + playerWidth / 2, playerRenderY + playerHeight);
-      ctx.closePath();
-      ctx.fill();
-
-      // Update score (only if game is active)
+      // Update score and level
       if (isPlaying) {
-        setScore((prev) => prev + 1);
-      }
-
-      // Check game over
-      if (lives <= 0) {
-        setGameOver(true);
-        setIsPlaying(false);
-        return;
+        setScore((prev) => {
+          const newScore = prev + 1;
+          // Increase level every 500 points
+          setLevel(Math.floor(newScore / 500) + 1);
+          return newScore;
+        });
       }
 
       animationRef.current = requestAnimationFrame(gameLoop);
@@ -194,129 +190,144 @@ export default function CMEDodger() {
     animationRef.current = requestAnimationFrame(gameLoop);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyPress);
-      canvas.removeEventListener("touchstart", handleTouchStart);
+      canvas.removeEventListener("touchmove", handleTouchMove);
+      canvas.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isPlaying, lives, movePlayer]);
+  }, [isPlaying, level, movePlayer, lives]);
 
   return (
     <GameLayout
-      title="CME Dodger"
-      description="Navigate through coronal mass ejections in deep space"
+      title="Solar Storm Dodger"
+      description="Dodge solar particles and protect your spacecraft!"
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Game Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-blue-400">{score}</div>
-            <div className="text-sm text-gray-400">Distance</div>
+      <div className="max-w-4xl mx-auto p-4">
+        {/* Game Stats - Simple and Colorful */}
+        <div className="grid grid-cols-3 gap-3 mb-6 text-center">
+          <div className="bg-blue-900/50 rounded-2xl p-3 border-2 border-blue-500">
+            <div className="text-xl font-bold text-yellow-300">{score}</div>
+            <div className="text-xs text-blue-200">Score</div>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-red-400">
+          <div className="bg-red-900/50 rounded-2xl p-3 border-2 border-red-500">
+            <div className="text-xl font-bold text-red-300">
               {"❤️".repeat(lives)}
             </div>
-            <div className="text-sm text-gray-400">Lives</div>
+            <div className="text-xs text-red-200">Lives</div>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-yellow-400">
-              {Math.floor(score / 1000)} {/* Adjusted level calculation */}
-            </div>
-            <div className="text-sm text-gray-400">Level</div>
+          <div className="bg-purple-900/50 rounded-2xl p-3 border-2 border-purple-500">
+            <div className="text-xl font-bold text-purple-300">Level {level}</div>
+            <div className="text-xs text-purple-200">Difficulty</div>
           </div>
         </div>
 
         {/* Game Canvas */}
-        <div className="bg-black rounded-2xl p-1 border-2 border-gray-800 mb-6 aspect-video">
+        <div className="bg-black rounded-3xl p-2 border-4 border-gray-700 mb-6 aspect-video relative">
           <canvas
             ref={canvasRef}
-            className="w-full h-full rounded-xl" // Canvas fills its parent div
+            className="w-full h-full rounded-2xl"
           />
+          
+          {/* Touch Instruction Overlay */}
+          {isPlaying && (
+            <div className="absolute bottom-4 left-0 right-0 text-center">
+              <div className="text-white text-sm bg-black/50 px-4 py-2 rounded-full inline-block">
+                👆 Move your finger to dodge!
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Mobile Controls Overlay */}
-        {isPlaying && (
-          <div className="md:hidden absolute bottom-0 left-0 right-0 p-4">
-            <div className="flex justify-around gap-4">
-              <button
-                onTouchStart={() => movePlayer("left")}
-                className="flex-1 px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg text-xl transition-colors active:scale-95"
-              >
-                ← Left
-              </button>
-              <button
-                onTouchStart={() => movePlayer("right")}
-                className="flex-1 px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg text-xl transition-colors active:scale-95"
-              >
-                Right →
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Controls / Game Over */}
+        {/* Game Controls */}
         {!isPlaying && !gameOver && (
           <div className="text-center mb-6">
             <button
               onClick={startGame}
-              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg text-xl transition-colors"
+              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-2xl text-xl transition-colors hover:scale-105 active:scale-95 animate-bounce"
             >
-              🚀 Start Mission
+              🚀 Start Space Adventure
             </button>
           </div>
         )}
 
+        {/* Game Over Screen */}
         {gameOver && (
           <div className="text-center mb-6">
-            <div className="bg-red-900 bg-opacity-50 rounded-2xl p-6 border border-red-700 mb-4">
-              <div className="text-4xl mb-2">💥 Mission Failed</div>
-              <div className="text-2xl text-yellow-400 mb-2">
-                Final Score: {score}
+            <div className="bg-red-900/80 rounded-3xl p-6 border-4 border-red-500 mb-4">
+              <div className="text-4xl mb-3">💥</div>
+              <div className="text-2xl font-bold text-yellow-300 mb-2">
+                Spacecraft Damaged!
               </div>
-              <p className="text-gray-400">
-                Your spacecraft was destroyed by CMEs
+              <div className="text-3xl text-green-400 mb-2">Score: {score}</div>
+              <div className="text-white">Level Reached: {level}</div>
+              <p className="text-gray-300 mt-2">
+                {score > 1000 ? "🌟 Amazing dodging skills!" : "Great job protecting your spacecraft!"}
               </p>
             </div>
             <button
               onClick={startGame}
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-xl transition-colors"
+              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl text-xl transition-colors hover:scale-105 active:scale-95"
             >
-              🔄 Try Again
+              🔄 Play Again
             </button>
           </div>
         )}
 
-        {/* Game Instructions */}
-        <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700">
-          <h3 className="text-xl font-bold mb-4 text-white">
-            Mission Briefing
+        {/* Simple Instructions */}
+        <div className="bg-gray-900/80 rounded-3xl p-4 border-4 border-yellow-500">
+          <h3 className="text-xl font-bold text-yellow-300 text-center mb-4">
+            How to Play 🌟
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
-            <div>
-              <h4 className="font-semibold text-yellow-400 mb-2">
-                🎮 Controls
-              </h4>
-              <ul className="space-y-1">
-                <li>• ← → Arrow Keys (Desktop)</li>
-                <li>• Tap left/right side of screen (Mobile)</li>
-                <li>• Avoid red CME particles</li>
-                <li>• Survive as long as possible</li>
-              </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="text-center">
+              <div className="text-3xl mb-2">👆</div>
+              <p className="text-gray-300">
+                <strong>Move your finger</strong> to dodge solar particles
+              </p>
+              <p className="text-green-300 text-xs mt-2">
+                Touch anywhere on the screen!
+              </p>
             </div>
-            <div>
-              <h4 className="font-semibold text-blue-400 mb-2">
-                🌌 About CMEs
-              </h4>
-              <ul className="space-y-1">
-                <li>• Coronal Mass Ejections are solar explosions</li>
-                <li>• Travel at 500-3000 km/s</li>
-                <li>• Can damage satellites and power grids</li>
-              </ul>
+            <div className="text-center">
+              <div className="text-3xl mb-2">🚀</div>
+              <p className="text-gray-300">
+                <strong>Protect your spacecraft</strong> with {lives} lives
+              </p>
+              <p className="text-red-300 text-xs mt-2">
+                Avoid the glowing space particles!
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* Particle Types Guide */}
+        <div className="bg-gray-900/80 rounded-3xl p-4 border-4 border-purple-500 mt-4">
+          <h4 className="text-lg font-bold text-purple-300 text-center mb-3">
+            Space Particles to Dodge
+          </h4>
+          <div className="grid grid-cols-5 gap-2 text-center">
+            {particleEmojis.map((emoji, index) => (
+              <div key={index} className="text-3xl animate-pulse">
+                {emoji}
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-300 text-sm mt-2">
+            These are solar particles from the Sun - dodge them all!
+          </p>
+        </div>
+
+        {/* Educational Fact */}
+        <div className="bg-gray-900/80 rounded-3xl p-4 border-4 border-blue-500 mt-4">
+          <h4 className="text-lg font-bold text-blue-300 text-center mb-2">
+            🌞 Fun Space Fact
+          </h4>
+          <p className="text-center text-gray-300 text-sm">
+            The Sun sends out particles called "solar wind" that can create beautiful auroras 
+            but can also be dangerous for spacecraft!
+          </p>
         </div>
       </div>
     </GameLayout>

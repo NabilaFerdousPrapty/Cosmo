@@ -6,354 +6,401 @@ import GameLayout from "../../../../components/games/GameLayout";
 
 interface Aurora {
   id: number;
-  intensity: number;
   color: string;
-  duration: number;
-  pattern: string;
-}
-
-interface CameraSettings {
-  exposure: number;
-  iso: number;
-  aperture: number;
-  zoom: number;
+  size: number;
+  emoji: string;
+  points: number;
 }
 
 export default function AuroraChaser() {
   const [score, setScore] = useState(0);
-  const [film, setFilm] = useState(36);
+  const [photosLeft, setPhotosLeft] = useState(10);
   const [auroras, setAuroras] = useState<Aurora[]>([]);
-  const [currentAurora, setCurrentAurora] = useState<Aurora | null>(null);
-  const [cameraSettings, setCameraSettings] = useState<CameraSettings>({
-    exposure: 5,
-    iso: 800,
-    aperture: 2.8,
-    zoom: 1,
-  });
-  const [gameTime, setGameTime] = useState(0);
   const [isNight, setIsNight] = useState(true);
+  const [gameActive, setGameActive] = useState(true);
+  const [lastPhoto, setLastPhoto] = useState<{
+    emoji: string;
+    points: number;
+  } | null>(null);
 
-  const auroraColors = ["#00FF9D", "#00B8FF", "#FF00AA", "#FFD700", "#8A2BE2"];
-  const auroraPatterns = ["curtain", "ray", "corona", "arc", "patch"];
+  const auroraTypes = [
+    {
+      color: "from-green-400 to-emerald-600",
+      emoji: "💚",
+      points: 10,
+      name: "Green Aurora",
+    },
+    {
+      color: "from-purple-400 to-pink-600",
+      emoji: "💜",
+      points: 15,
+      name: "Purple Aurora",
+    },
+    {
+      color: "from-blue-400 to-cyan-600",
+      emoji: "💙",
+      points: 20,
+      name: "Blue Aurora",
+    },
+    {
+      color: "from-red-400 to-pink-600",
+      emoji: "❤️",
+      points: 25,
+      name: "Red Aurora",
+    },
+  ];
 
-  const spawnAurora = () => {
-    if (Math.random() < 0.3 && auroras.length < 3) {
-      const newAurora: Aurora = {
-        id: Date.now(),
-        intensity: Math.floor(Math.random() * 5) + 1,
-        color: auroraColors[Math.floor(Math.random() * auroraColors.length)],
-        duration: Math.floor(Math.random() * 10) + 5,
-        pattern:
-          auroraPatterns[Math.floor(Math.random() * auroraPatterns.length)],
-      };
-      setAuroras([...auroras, newAurora]);
-    }
+  const createAurora = () => {
+    if (auroras.length >= 3 || !isNight || !gameActive) return;
+
+    const auroraType =
+      auroraTypes[Math.floor(Math.random() * auroraTypes.length)];
+    const newAurora: Aurora = {
+      id: Date.now(),
+      color: auroraType.color,
+      size: Math.floor(Math.random() * 3) + 1, // 1-3
+      emoji: auroraType.emoji,
+      points: auroraType.points,
+    };
+
+    setAuroras((prev) => [...prev, newAurora]);
   };
 
   const takePhoto = (aurora: Aurora) => {
-    if (film <= 0) return;
+    if (photosLeft <= 0 || !gameActive) return;
 
-    // Calculate photo quality based on camera settings
-    const exposureMatch =
-      Math.abs(cameraSettings.exposure - aurora.intensity) <= 2;
-    const isoMatch = Math.abs(cameraSettings.iso / 100 - aurora.intensity) <= 3;
-    const apertureMatch = cameraSettings.aperture <= 4;
-    const zoomMatch = cameraSettings.zoom >= 1.5;
-
-    let quality = aurora.intensity;
-    if (exposureMatch) quality += 2;
-    if (isoMatch) quality += 2;
-    if (apertureMatch) quality += 1;
-    if (zoomMatch) quality += 1;
-
-    const points = quality * 10;
-    setScore(score + points);
-    setFilm(film - 1);
+    const points = aurora.points * aurora.size;
+    setScore((prev) => prev + points);
+    setPhotosLeft((prev) => prev - 1);
+    setLastPhoto({ emoji: aurora.emoji, points });
 
     // Remove the photographed aurora
-    setAuroras(auroras.filter((a) => a.id !== aurora.id));
-    setCurrentAurora(aurora);
+    setAuroras((prev) => prev.filter((a) => a.id !== aurora.id));
 
-    // Show result for 2 seconds
-    setTimeout(() => setCurrentAurora(null), 2000);
+    // Hide the result after 2 seconds
+    setTimeout(() => setLastPhoto(null), 2000);
   };
 
-  const adjustSetting = (setting: keyof CameraSettings, value: number) => {
-    setCameraSettings((prev) => ({
-      ...prev,
-      [setting]: Math.max(
-        0.1,
-        Math.min(
-          setting === "exposure"
-            ? 30
-            : setting === "iso"
-            ? 6400
-            : setting === "aperture"
-            ? 22
-            : 3,
-          prev[setting] + value
-        )
-      ),
-    }));
-  };
-
+  // Game loop
   useEffect(() => {
+    if (!gameActive) return;
+
     const gameInterval = setInterval(() => {
-      setGameTime((prev) => prev + 1);
-      spawnAurora();
-
-      // Update aurora durations
-      setAuroras((current) =>
-        current
-          .map((aurora) => ({
-            ...aurora,
-            duration: aurora.duration - 0.5,
-          }))
-          .filter((aurora) => aurora.duration > 0)
-      );
-
-      // Day/night cycle
-      if (gameTime % 20 === 0) {
-        setIsNight(!isNight);
+      // Spawn auroras randomly
+      if (Math.random() < 0.4) {
+        createAurora();
       }
-    }, 1000);
 
-    return () => clearInterval(gameInterval);
-  }, [gameTime, auroras.length]);
+      // Remove auroras after some time
+      setAuroras((prev) => {
+        if (prev.length > 0 && Math.random() < 0.2) {
+          return prev.slice(1);
+        }
+        return prev;
+      });
+    }, 1500);
 
-  const restartGame = () => {
+    // Day/night cycle
+    const dayNightInterval = setInterval(() => {
+      setIsNight((prev) => !prev);
+    }, 10000);
+
+    return () => {
+      clearInterval(gameInterval);
+      clearInterval(dayNightInterval);
+    };
+  }, [gameActive]);
+
+  const startNewGame = () => {
     setScore(0);
-    setFilm(36);
+    setPhotosLeft(10);
     setAuroras([]);
-    setCurrentAurora(null);
-    setGameTime(0);
+    setGameActive(true);
     setIsNight(true);
-    setCameraSettings({
-      exposure: 5,
-      iso: 800,
-      aperture: 2.8,
-      zoom: 1,
-    });
+    setLastPhoto(null);
   };
 
   return (
     <GameLayout
-      title="Aurora Chaser"
-      description="Capture the perfect aurora based on solar activity and camera settings"
+      title="Aurora Chaser Adventure"
+      description="Take photos of beautiful northern lights in the sky!"
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Game Stats */}
-        <div className="grid grid-cols-4 gap-4 mb-6 text-center">
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-yellow-400">{score}</div>
-            <div className="text-sm text-gray-400">Score</div>
+      <div className="max-w-4xl mx-auto p-4">
+        {/* Game Stats - Simple and Colorful */}
+        <div className="grid grid-cols-3 gap-3 mb-6 text-center">
+          <div className="bg-blue-900/50 rounded-2xl p-3 border-2 border-blue-500">
+            <div className="text-xl font-bold text-yellow-300">{score}</div>
+            <div className="text-xs text-blue-200">Points</div>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-blue-400">{film}</div>
-            <div className="text-sm text-gray-400">Film Left</div>
+          <div className="bg-green-900/50 rounded-2xl p-3 border-2 border-green-500">
+            <div className="text-xl font-bold text-green-300">{photosLeft}</div>
+            <div className="text-xs text-green-200">Photos Left</div>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-purple-400">
+          <div className="bg-purple-900/50 rounded-2xl p-3 border-2 border-purple-500">
+            <div className="text-xl font-bold text-purple-300">
               {isNight ? "🌙 Night" : "☀️ Day"}
             </div>
-            <div className="text-sm text-gray-400">Time</div>
-          </div>
-          <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <div className="text-2xl font-bold text-green-400">
-              {Math.floor(gameTime / 60)}:
-              {(gameTime % 60).toString().padStart(2, "0")}
-            </div>
-            <div className="text-sm text-gray-400">Game Time</div>
+            <div className="text-xs text-purple-200">Time</div>
           </div>
         </div>
 
-        {/* Aurora Display */}
+        {/* Sky Display */}
         <div
-          className={`rounded-2xl p-8 border-2 mb-6 transition-all duration-1000 ${
+          className={`
+          relative rounded-3xl p-6 border-4 mb-6 min-h-[300px] flex flex-col items-center justify-center
+          transition-all duration-1000
+          ${
             isNight
-              ? "bg-gradient-to-b from-gray-900 to-blue-900 border-blue-700"
-              : "bg-gradient-to-b from-blue-400 to-orange-400 border-orange-500"
-          }`}
+              ? "bg-gradient-to-b from-blue-900 via-purple-900 to-black border-blue-700"
+              : "bg-gradient-to-b from-blue-400 via-orange-300 to-yellow-200 border-orange-500"
+          }
+        `}
         >
-          <div className="text-center mb-4">
-            <h3 className="text-2xl font-bold text-white mb-2">
-              {isNight ? "Northern Lights Display" : "Daytime - No Auroras"}
+          {/* Stars at Night */}
+          {isNight && (
+            <div className="absolute inset-0">
+              {[...Array(20)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-1 h-1 bg-white rounded-full animate-twinkle"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 3}s`,
+                  }}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Time Message */}
+          <div className="text-center mb-8">
+            <div className="text-4xl mb-2">{isNight ? "🌙" : "☀️"}</div>
+            <h3 className="text-2xl font-bold text-white">
+              {isNight ? "Look! Northern Lights!" : "Wait for Nighttime"}
             </h3>
-            <p className="text-gray-300">
+            <p className="text-gray-200 text-sm mt-1">
               {isNight
-                ? "Auroras are visible! Adjust your camera settings."
-                : "Wait for nighttime to capture auroras."}
+                ? "Tap the colorful lights to take photos!"
+                : "Auroras only appear at night!"}
             </p>
           </div>
 
           {/* Auroras */}
-          <div className="flex justify-center space-x-4 min-h-[200px] items-end">
+          <div className="flex flex-wrap justify-center gap-6 items-end min-h-[120px]">
             {isNight &&
               auroras.map((aurora) => (
-                <div
+                <button
                   key={aurora.id}
-                  className="text-center cursor-pointer transform hover:scale-110 transition-transform"
                   onClick={() => takePhoto(aurora)}
+                  className={`
+                  transform transition-all duration-300 hover:scale-110 active:scale-95
+                  animate-float cursor-pointer
+                `}
                 >
                   <div
-                    className="w-24 h-32 rounded-lg mb-2 opacity-80 hover:opacity-100 transition-opacity"
-                    style={{
-                      background: `linear-gradient(to bottom, transparent, ${aurora.color})`,
-                      boxShadow: `0 0 20px ${aurora.color}`,
-                    }}
-                  ></div>
-                  <div className="text-white text-sm">
-                    {aurora.pattern} • Lv.{aurora.intensity}
+                    className={`
+                  rounded-2xl p-4 border-2 border-white border-opacity-50
+                  bg-gradient-to-b ${aurora.color}
+                  shadow-lg backdrop-blur-sm
+                  ${aurora.size === 1 ? "w-20 h-20 text-2xl" : ""}
+                  ${aurora.size === 2 ? "w-24 h-24 text-3xl" : ""}
+                  ${aurora.size === 3 ? "w-28 h-28 text-4xl" : ""}
+                `}
+                  >
+                    <div className="flex items-center justify-center h-full">
+                      <span className="drop-shadow-lg">{aurora.emoji}</span>
+                    </div>
                   </div>
-                  <div className="text-xs text-gray-400">
-                    {Math.round(aurora.duration)}s
+                  <div className="text-white text-xs text-center mt-2 bg-black/50 px-2 py-1 rounded-full">
+                    {aurora.size === 1
+                      ? "Small"
+                      : aurora.size === 2
+                      ? "Medium"
+                      : "Large"}
                   </div>
-                </div>
+                </button>
               ))}
           </div>
 
           {/* Photo Result */}
-          {currentAurora && (
-            <div className="mt-6 p-4 bg-black bg-opacity-50 rounded-lg border border-white border-opacity-20">
+          {lastPhoto && (
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 rounded-3xl p-6 border-4 border-yellow-400 animate-pop-in">
               <div className="text-center">
-                <div className="text-2xl text-green-400 mb-2">
-                  📸 Photo Captured!
+                <div className="text-6xl mb-3">{lastPhoto.emoji}</div>
+                <div className="text-2xl font-bold text-green-400 mb-1">
+                  +{lastPhoto.points} Points!
                 </div>
-                <div className="text-white">
-                  Aurora: {currentAurora.pattern} • Color:{" "}
-                  <span style={{ color: currentAurora.color }}>■</span>
-                </div>
-                <div className="text-yellow-400">
-                  +
-                  {Math.round(
-                    currentAurora.intensity * 10 +
-                      (Math.abs(
-                        cameraSettings.exposure - currentAurora.intensity
-                      ) <= 2
-                        ? 20
-                        : 0) +
-                      (Math.abs(
-                        cameraSettings.iso / 100 - currentAurora.intensity
-                      ) <= 3
-                        ? 20
-                        : 0)
-                  )}{" "}
-                  points
-                </div>
+                <div className="text-white text-lg">Great Photo! 📸</div>
+              </div>
+            </div>
+          )}
+
+          {/* No Auroras Message */}
+          {isNight && auroras.length === 0 && (
+            <div className="text-center">
+              <div className="text-6xl mb-3">👀</div>
+              <div className="text-white text-lg">Looking for auroras...</div>
+              <div className="text-gray-300 text-sm">They appear randomly!</div>
+            </div>
+          )}
+        </div>
+
+        {/* Camera Button */}
+        {isNight && auroras.length > 0 && gameActive && (
+          <div className="text-center mb-6">
+            <div className="text-white text-sm mb-2">
+              💡 Tap any colorful light to take a photo!
+            </div>
+          </div>
+        )}
+
+        {/* Game Over */}
+        {photosLeft <= 0 && (
+          <div className="text-center mb-6">
+            <div className="bg-purple-900/80 rounded-3xl p-6 border-4 border-purple-500 mb-4">
+              <div className="text-4xl mb-3">🎞️</div>
+              <div className="text-2xl font-bold text-yellow-300 mb-2">
+                Out of Photos!
+              </div>
+              <div className="text-3xl text-green-400 mb-2">Score: {score}</div>
+              <p className="text-gray-300">
+                {score >= 100
+                  ? "🌟 Amazing aurora photos!"
+                  : "Good job capturing the lights!"}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Start/Restart Button */}
+        <div className="text-center mb-6">
+          {!gameActive || photosLeft <= 0 ? (
+            <button
+              onClick={startNewGame}
+              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-2xl text-xl transition-colors hover:scale-105 active:scale-95 animate-bounce"
+            >
+              🚀 Start Aurora Adventure
+            </button>
+          ) : (
+            <div className="bg-yellow-900/50 rounded-2xl p-4 border-2 border-yellow-500">
+              <div className="text-yellow-300 font-bold text-lg">
+                🎯 Goal: Take {photosLeft} more photos!
               </div>
             </div>
           )}
         </div>
 
-        {/* Camera Controls */}
-        <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700 mb-6">
-          <h3 className="text-xl font-bold mb-4 text-white">
-            📷 Camera Settings
+        {/* Simple Instructions */}
+        <div className="bg-gray-900/80 rounded-3xl p-4 border-4 border-blue-500">
+          <h3 className="text-xl font-bold text-blue-300 text-center mb-4">
+            How to Play 🌟
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {
-                label: "Exposure",
-                key: "exposure",
-                value: cameraSettings.exposure,
-                unit: "s",
-              },
-              { label: "ISO", key: "iso", value: cameraSettings.iso, unit: "" },
-              {
-                label: "Aperture",
-                key: "aperture",
-                value: cameraSettings.aperture,
-                unit: "f/",
-              },
-              {
-                label: "Zoom",
-                key: "zoom",
-                value: cameraSettings.zoom,
-                unit: "x",
-              },
-            ].map((setting) => (
-              <div key={setting.key} className="bg-gray-800 p-4 rounded-lg">
-                <div className="text-center mb-2">
-                  <div className="text-sm text-gray-400">{setting.label}</div>
-                  <div className="text-xl font-bold text-white">
-                    {setting.unit}
-                    {setting.value}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="text-center">
+              <div className="text-2xl mb-2">📸</div>
+              <p className="text-gray-300">
+                <strong>Tap colorful lights</strong> to take photos
+              </p>
+              <div className="text-green-300 text-xs mt-2">
+                Bigger lights = More points!
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl mb-2">🌙</div>
+              <p className="text-gray-300">
+                <strong>Only at night</strong> - wait for daytime to pass
+              </p>
+              <div className="text-yellow-300 text-xs mt-2">
+                You have 10 photos total
+              </div>
+            </div>
+          </div>
+
+          {/* Aurora Types Guide */}
+          <div className="mt-6">
+            <h4 className="text-lg font-bold text-purple-300 text-center mb-3">
+              Aurora Colors & Points
+            </h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              {auroraTypes.map((aurora, index) => (
+                <div
+                  key={index}
+                  className="text-center bg-gray-800/50 rounded-2xl p-2"
+                >
+                  <div
+                    className={`text-2xl mb-1 ${
+                      aurora.emoji === "💚" ? "text-green-400" : ""
+                    }${aurora.emoji === "💜" ? "text-purple-400" : ""}${
+                      aurora.emoji === "💙" ? "text-blue-400" : ""
+                    }${aurora.emoji === "❤️" ? "text-red-400" : ""}`}
+                  >
+                    {aurora.emoji}
+                  </div>
+                  <div className="text-white text-xs">{aurora.name}</div>
+                  <div className="text-yellow-400 text-xs">
+                    {aurora.points} points
                   </div>
                 </div>
-                <div className="flex justify-between">
-                  <button
-                    onClick={() =>
-                      adjustSetting(setting.key as keyof CameraSettings, -1)
-                    }
-                    className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded text-sm"
-                  >
-                    -
-                  </button>
-                  <button
-                    onClick={() =>
-                      adjustSetting(setting.key as keyof CameraSettings, 1)
-                    }
-                    className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded text-sm"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Game Over */}
-        {film <= 0 && (
-          <div className="text-center mb-6">
-            <div className="bg-purple-900 bg-opacity-50 rounded-2xl p-6 border border-purple-700 mb-4">
-              <div className="text-4xl mb-2">🎞️ Out of Film</div>
-              <div className="text-2xl text-yellow-400 mb-2">
-                Final Score: {score}
-              </div>
-              <p className="text-gray-400">Great aurora chasing session!</p>
-            </div>
-            <button
-              onClick={restartGame}
-              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg text-xl transition-colors"
-            >
-              🔄 New Session
-            </button>
-          </div>
-        )}
-
-        {/* Game Instructions */}
-        <div className="bg-gray-900 rounded-2xl p-6 border border-gray-700">
-          <h3 className="text-xl font-bold mb-4 text-white">
-            Aurora Photography Guide
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
-            <div>
-              <h4 className="font-semibold text-yellow-400 mb-2">
-                🎯 Tips for Great Shots
-              </h4>
-              <ul className="space-y-2">
-                <li>• Match exposure time to aurora intensity</li>
-                <li>• Higher ISO for faint auroras</li>
-                <li>• Wide aperture (low f-number) for more light</li>
-                <li>• Use zoom for detailed shots</li>
-                <li>• Auroras only appear at night</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-blue-400 mb-2">
-                🌌 About Auroras
-              </h4>
-              <ul className="space-y-2">
-                <li>• Caused by solar particles hitting atmosphere</li>
-                <li>• Most common near polar regions</li>
-                <li>• Colors indicate different gases</li>
-                <li>• Green = oxygen, Purple = nitrogen</li>
-              </ul>
-            </div>
+        {/* Fun Facts */}
+        <div className="bg-gray-900/80 rounded-3xl p-4 border-4 border-green-500 mt-4">
+          <h4 className="text-lg font-bold text-green-300 text-center mb-3">
+            🌈 Fun Facts About Auroras
+          </h4>
+          <div className="text-center text-gray-300 text-sm space-y-2">
+            <p>✨ Auroras are also called Northern Lights!</p>
+            <p>🌞 They come from the Sun's energy hitting Earth's sky</p>
+            <p>🎨 Different colors come from different gases in the air</p>
+            <p>📍 Best seen near the North and South Poles</p>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes twinkle {
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.3;
+          }
+        }
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        @keyframes pop-in {
+          0% {
+            transform: translate(-50%, -50%) scale(0);
+          }
+          80% {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        .animate-twinkle {
+          animation: twinkle 2s infinite;
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        .animate-pop-in {
+          animation: pop-in 0.5s ease-out;
+        }
+      `}</style>
     </GameLayout>
   );
 }
