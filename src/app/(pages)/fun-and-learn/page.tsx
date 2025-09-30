@@ -633,7 +633,7 @@ export default function FunAndLearn() {
                     <p className="text-gray-200">
                       You learned that a day on Mars is called a{" "}
                       <span className="text-orange-300 font-bold">
-                        "sol" and is 24.6 hours
+                        &quot;sol&quot; and is 24.6 hours
                       </span>{" "}
                       long!
                     </p>

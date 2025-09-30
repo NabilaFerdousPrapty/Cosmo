@@ -354,7 +354,9 @@ export default function AuroraChaser() {
           </h4>
           <div className="text-center text-gray-300 text-sm space-y-2">
             <p>✨ Auroras are also called Northern Lights!</p>
-            <p>🌞 They come from the Sun's energy hitting Earth's sky</p>
+            <p>
+              🌞 They come from the Sun&apos;s energy hitting Earth&apos;s sky
+            </p>
             <p>🎨 Different colors come from different gases in the air</p>
             <p>📍 Best seen near the North and South Poles</p>
           </div>

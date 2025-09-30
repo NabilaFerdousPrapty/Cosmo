@@ -40,18 +40,21 @@ export default function CMEDodger() {
   };
 
   // Simple touch movement - just set position
-  const movePlayer = useCallback((touchX: number) => {
-    if (!isPlaying) return;
-    
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    const canvasRect = canvas.getBoundingClientRect();
-    const relativeX = ((touchX - canvasRect.left) / canvasRect.width) * 100;
-    
-    // Keep player within bounds
-    playerX.current = Math.max(10, Math.min(90, relativeX));
-  }, [isPlaying]);
+  const movePlayer = useCallback(
+    (touchX: number) => {
+      if (!isPlaying) return;
+
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const canvasRect = canvas.getBoundingClientRect();
+      const relativeX = ((touchX - canvasRect.left) / canvasRect.width) * 100;
+
+      // Keep player within bounds
+      playerX.current = Math.max(10, Math.min(90, relativeX));
+    },
+    [isPlaying]
+  );
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -102,15 +105,16 @@ export default function CMEDodger() {
       }
 
       // Spawn new particles based on level
-      const spawnRate = 0.03 + (level * 0.01);
+      const spawnRate = 0.03 + level * 0.01;
       if (Math.random() < spawnRate) {
         particles.current.push({
           id: Date.now(),
           x: Math.random() * 100,
           y: -10,
-          speed: 1 + Math.random() * 2 + (level * 0.5),
+          speed: 1 + Math.random() * 2 + level * 0.5,
           size: 30 + Math.random() * 40,
-          emoji: particleEmojis[Math.floor(Math.random() * particleEmojis.length)],
+          emoji:
+            particleEmojis[Math.floor(Math.random() * particleEmojis.length)],
         });
       }
 
@@ -126,11 +130,11 @@ export default function CMEDodger() {
 
         const distance = Math.sqrt(
           Math.pow(particleCanvasX - playerCanvasX, 2) +
-          Math.pow(particleCanvasY - playerCanvasY, 2)
+            Math.pow(particleCanvasY - playerCanvasY, 2)
         );
 
         // Check collision
-        if (distance < (particle.size / 2) + (PLAYER_SIZE / 2)) {
+        if (distance < particle.size / 2 + PLAYER_SIZE / 2) {
           setLives((prev) => {
             const newLives = prev - 1;
             if (newLives <= 0) {
@@ -146,7 +150,7 @@ export default function CMEDodger() {
         ctx.font = `${particle.size}px Arial`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        
+
         // Glow effect
         ctx.shadowColor = "#ff4444";
         ctx.shadowBlur = 15;
@@ -171,7 +175,13 @@ export default function CMEDodger() {
       ctx.strokeStyle = lives > 1 ? "#00ff00" : "#ff4444";
       ctx.lineWidth = 3;
       ctx.beginPath();
-      ctx.arc(playerCanvasX, playerCanvasY, PLAYER_SIZE / 2 + 5, 0, 2 * Math.PI);
+      ctx.arc(
+        playerCanvasX,
+        playerCanvasY,
+        PLAYER_SIZE / 2 + 5,
+        0,
+        2 * Math.PI
+      );
       ctx.stroke();
 
       // Update score and level
@@ -218,18 +228,17 @@ export default function CMEDodger() {
             <div className="text-xs text-red-200">Lives</div>
           </div>
           <div className="bg-purple-900/50 rounded-2xl p-3 border-2 border-purple-500">
-            <div className="text-xl font-bold text-purple-300">Level {level}</div>
+            <div className="text-xl font-bold text-purple-300">
+              Level {level}
+            </div>
             <div className="text-xs text-purple-200">Difficulty</div>
           </div>
         </div>
 
         {/* Game Canvas */}
         <div className="bg-black rounded-3xl p-2 border-4 border-gray-700 mb-6 aspect-video relative">
-          <canvas
-            ref={canvasRef}
-            className="w-full h-full rounded-2xl"
-          />
-          
+          <canvas ref={canvasRef} className="w-full h-full rounded-2xl" />
+
           {/* Touch Instruction Overlay */}
           {isPlaying && (
             <div className="absolute bottom-4 left-0 right-0 text-center">
@@ -263,7 +272,9 @@ export default function CMEDodger() {
               <div className="text-3xl text-green-400 mb-2">Score: {score}</div>
               <div className="text-white">Level Reached: {level}</div>
               <p className="text-gray-300 mt-2">
-                {score > 1000 ? "🌟 Amazing dodging skills!" : "Great job protecting your spacecraft!"}
+                {score > 1000
+                  ? "🌟 Amazing dodging skills!"
+                  : "Great job protecting your spacecraft!"}
               </p>
             </div>
             <button
@@ -325,8 +336,8 @@ export default function CMEDodger() {
             🌞 Fun Space Fact
           </h4>
           <p className="text-center text-gray-300 text-sm">
-            The Sun sends out particles called "solar wind" that can create beautiful auroras 
-            but can also be dangerous for spacecraft!
+            The Sun sends out particles called "solar wind" that can create
+            beautiful auroras but can also be dangerous for spacecraft!
           </p>
         </div>
       </div>
