@@ -70,28 +70,29 @@ const RiddleCard = ({
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-800 to-zinc-900 p-6 rounded-3xl shadow-2xl border-4 border-yellow-300 transform hover:scale-105 transition-all duration-300 h-[600px]">
+    <div className="bg-gradient-to-br from-zinc-800 to-gray-900 p-6 rounded-3xl shadow-2xl border-4 border-yellow-300 transform hover:scale-105 transition-all duration-300 min-h-[500px] flex flex-col">
       <div className="text-center mb-4">
         <span className="text-4xl">🤔</span>
         <h3 className="text-xl font-bold text-white mt-2">Brain Teaser!</h3>
       </div>
 
-      <p className="text-lg text-white text-center mb-4 font-semibold">
+      <p className="text-lg text-white text-center mb-4 font-semibold flex-grow">
         {riddle.question}
       </p>
 
       <div className="flex justify-center mb-4">
-        <Image
-          src={riddle.image}
-          alt="Riddle visual clue"
-          width={200}
-          height={150}
-          className="rounded-2xl border-2 border-white"
-        />
+        <div className="w-48 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl border-2 border-white flex items-center justify-center">
+          <span className="text-4xl">
+            {riddle.category === "space" && "🌌"}
+            {riddle.category === "earth" && "🌍"}
+            {riddle.category === "science" && "🔬"}
+            {riddle.category === "animals" && "🐾"}
+          </span>
+        </div>
       </div>
 
       {!showAnswer && (
-        <div className="space-y-3">
+        <div className="space-y-3 mt-auto">
           <button
             onClick={() => setShowHint(!showHint)}
             className="w-full bg-yellow-400 hover:bg-yellow-500 text-purple-900 font-bold py-3 rounded-xl transition-colors"
@@ -115,7 +116,7 @@ const RiddleCard = ({
       )}
 
       {showAnswer && (
-        <div className="bg-green-600 p-4 rounded-xl text-white text-center animate-pulse">
+        <div className="bg-green-600 p-4 rounded-xl text-white text-center animate-pulse mt-auto">
           <h4 className="font-bold text-lg mb-2">Answer: {riddle.answer}</h4>
           <p className="text-sm">{riddle.explanation}</p>
         </div>
@@ -136,35 +137,103 @@ export default function FunAndLearn() {
     {
       id: 1,
       question:
-        "I&apos;m a giant ball of gas that gives you light and heat. What am I?",
-      hint: "I&apos;m the center of our solar system!",
+        "I'm a giant ball of gas that gives you light and heat. What am I?",
+      hint: "I'm the center of our solar system!",
       answer: "The Sun",
       explanation:
         "The Sun is a star made of hot gases that provides light and heat to all planets in our solar system!",
-      image: "/r1.png",
+      image: "/api/placeholder/200/150",
       category: "space",
     },
     {
       id: 2,
-      question:
-        "I have cities but no houses, forests but no trees, and water but no fish. What am I?",
-      hint: "You can find me in your classroom!",
-      answer: "A Map",
+      question: "I twinkle at night but I’m not a star, what am I?",
+      hint: "You can find me in the night sky, but I'm not as far as stars!",
+      answer: "A planet",
       explanation:
-        "A map shows cities, forests, and water bodies, but they&apos;re just drawings, not the real things!",
-      image: "/r2.png",
-      category: "earth",
+        "Planets like Venus and Mars often appear as twinkling objects in the night sky, but they're closer to Earth than stars.",
+      image: "/api/placeholder/200/150",
+      category: "space",
     },
     {
       id: 3,
-      question:
-        "I&apos;m not alive, but I can grow; I don&apos;t have lungs, but I need air; I don&apos;t have a mouth, but water kills me. What am I?",
-      hint: "You can make me with bubbles!",
-      answer: "Fire",
+      question: "I have a tail but I'm not an animal. What am I?",
+      hint: "I might appear when I’m close to the Sun!",
+      answer: "A comet",
       explanation:
-        "Fire grows when it has oxygen (air), needs air to burn, and water puts it out!",
-      image: "/r3.png",
-      category: "science",
+        "Comets have tails made of dust and gas that glow when they approach the Sun.",
+      image: "/api/placeholder/200/150",
+      category: "space",
+    },
+    {
+      id: 4,
+      question: "I am a giant red spot, spinning on a gas giant. What am I?",
+      hint: "I'm located on the largest planet in our solar system!",
+      answer: "The Great Red Spot (on Jupiter)",
+      explanation:
+        "The Great Red Spot is a massive storm on Jupiter, and it has been raging for centuries!",
+      image: "/api/placeholder/200/150",
+      category: "space",
+    },
+    {
+      id: 5,
+      question: "I’m not a moon, but I have moons. What am I?",
+      hint: "I’m the fourth planet from the Sun!",
+      answer: "Mars",
+      explanation:
+        "Mars is a planet with two small moons, Phobos and Deimos, orbiting around it.",
+      image: "/api/placeholder/200/150",
+      category: "space",
+    },
+    {
+      id: 6,
+      question: "I have rings but I am not a jeweler. What am I?",
+      hint: "I am the second-largest planet in our solar system!",
+      answer: "Saturn",
+      explanation:
+        "Saturn is famous for its beautiful and vast ring system made of ice and rock.",
+      image: "/api/placeholder/200/150",
+      category: "space",
+    },
+    {
+      id: 7,
+      question: "I’m the largest planet in our solar system. What am I?",
+      hint: "I have a big red spot on me!",
+      answer: "Jupiter",
+      explanation:
+        "Jupiter is the largest planet in our solar system and is known for its Great Red Spot and its many moons.",
+      image: "/api/placeholder/200/150",
+      category: "space",
+    },
+    {
+      id: 8,
+      question: "I’m a satellite of Earth. What am I?",
+      hint: "I help illuminate the night sky!",
+      answer: "The Moon",
+      explanation:
+        "The Moon is Earth's only natural satellite and it reflects sunlight to light up the night sky.",
+      image: "/api/placeholder/200/150",
+      category: "space",
+    },
+    {
+      id: 9,
+      question: "I’m an asteroid belt between two planets. What am I?",
+      hint: "I lie between Mars and Jupiter!",
+      answer: "The Asteroid Belt",
+      explanation:
+        "The Asteroid Belt is a region filled with millions of asteroids, located between the orbits of Mars and Jupiter.",
+      image: "/api/placeholder/200/150",
+      category: "space",
+    },
+    {
+      id: 10,
+      question: "I’m a dwarf planet located beyond Neptune. What am I?",
+      hint: "I share my name with a Disney character!",
+      answer: "Pluto",
+      explanation:
+        "Pluto is a dwarf planet in the outer reaches of the solar system and was once considered the ninth planet.",
+      image: "/api/placeholder/200/150",
+      category: "space",
     },
   ];
 
@@ -174,14 +243,23 @@ export default function FunAndLearn() {
     }
   };
 
+  // Define tab type to avoid 'any'
+  type TabType = "riddles" | "facts" | "discover";
+
+  const tabs: { id: TabType; label: string; emoji: string }[] = [
+    { id: "riddles", label: "🧠 Brain Teasers", emoji: "🤔" },
+    { id: "facts", label: "✨ Amazing Facts", emoji: "🌟" },
+    { id: "discover", label: "🎁 Mystery Boxes", emoji: "🔍" },
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-slate-900 to-black text-white relative overflow-hidden ">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-zinc-900 to-black text-white relative overflow-hidden">
       <StarBackground />
       <Particles className="absolute inset-0 z-0" />
 
       {/* Header */}
       <div className="relative z-10 text-center py-8 px-4">
-        <div className="flex justify-center items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
           <AnimatedSun />
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent">
             Fun & Learn Galaxy!
@@ -197,15 +275,11 @@ export default function FunAndLearn() {
       {/* Navigation Tabs */}
       <div className="relative z-10 flex justify-center mb-8">
         <div className="bg-black bg-opacity-50 rounded-2xl p-2 border-2 border-yellow-400">
-          {[
-            { id: "riddles", label: "🧠 Brain Teasers", emoji: "🤔" },
-            { id: "facts", label: "✨ Amazing Facts", emoji: "🌟" },
-            { id: "discover", label: "🎁 Mystery Boxes", emoji: "🔍" },
-          ].map((tab) => (
+          {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`px-6 py-3 rounded-xl font-bold text-lg transition-all duration-300 ${
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-4 md:px-6 py-3 rounded-xl font-bold text-sm md:text-lg transition-all duration-300 ${
                 activeTab === tab.id
                   ? "bg-yellow-400 text-purple-900 shadow-lg"
                   : "text-yellow-300 hover:bg-yellow-400 hover:text-purple-900"
@@ -246,14 +320,19 @@ export default function FunAndLearn() {
                 <p className="text-white font-bold text-lg">
                   🎯 Solved: {solvedRiddles.length} of {riddles.length} riddles!
                 </p>
+                {solvedRiddles.length === riddles.length && (
+                  <p className="text-yellow-300 text-sm mt-2">
+                    🏆 Riddle Master! You solved them all!
+                  </p>
+                )}
               </div>
             </div>
           </div>
         )}
 
+        {/* Facts Section */}
         {activeTab === "facts" && (
-          <div className="min-h-screen flex flex-col justify-center py-12 px-4 bg-gradient-to-br from-zinc-900 to-black relative">
-            {" "}
+          <div className="min-h-screen flex flex-col justify-center py-12 px-4 bg-gradient-to-br from-slate-900 to-black relative">
             <Particles className="absolute inset-0 z-0" />
             <div className="text-center mb-12">
               <h2 className="text-5xl font-extrabold font-display text-yellow-300 mb-4 drop-shadow-lg">
@@ -271,6 +350,7 @@ export default function FunAndLearn() {
             </div>
           </div>
         )}
+
         {/* Discovery Section */}
         {activeTab === "discover" && (
           <div>
@@ -283,338 +363,7 @@ export default function FunAndLearn() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {" "}
-              <MysteryBox
-                title="Solar System Explorer"
-                emoji="🌞"
-                description="Journey through our cosmic neighborhood!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-yellow-300 mb-2">
-                      🚀 Mission Accomplished!
-                    </p>
-                    <p>
-                      You discovered that <strong>Jupiter is so big</strong>{" "}
-                      that all other planets could fit inside it! 🌌
-                    </p>
-                    <p className="text-sm mt-2">
-                      Did you know Jupiter has 95 moons? That&apos;s a busy
-                      planet!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-yellow-600 to-orange-700"
-                boxBorderColor="border-amber-400"
-              />
-              <MysteryBox
-                title="Astronaut Adventure"
-                emoji="👨‍🚀"
-                description="Experience life as a space explorer!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-blue-300 mb-2">
-                      👨‍🚀 Astronaut Gear Unlocked!
-                    </p>
-                    <p>
-                      You found a <strong>spacesuit helmet</strong> that
-                      protects astronauts in space! 🪐
-                    </p>
-                    <p className="text-sm mt-2">
-                      In space, astronauts grow about 2 inches taller because
-                      there&apos;s no gravity pushing down on their spines!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-blue-600 to-indigo-700"
-                boxBorderColor="border-cyan-400"
-              />
-              <MysteryBox
-                title="Mars Mission"
-                emoji="♂️"
-                description="Explore the mysterious Red Planet!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-red-300 mb-2">
-                      ♂️ Mars Rover Activated!
-                    </p>
-                    <p>
-                      You discovered that{" "}
-                      <strong>Mars has the tallest volcano</strong> in our solar
-                      system - Olympus Mons! 🏔️
-                    </p>
-                    <p className="text-sm mt-2">
-                      It&apos;s 3 times taller than Mount Everest and would
-                      cover the entire state of Arizona!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-red-600 to-pink-700"
-                boxBorderColor="border-rose-400"
-              />
-              <MysteryBox
-                title="Moon Mysteries"
-                emoji="🌙"
-                description="Discover secrets of Earth's closest neighbor!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-gray-300 mb-2">
-                      🌙 Lunar Discovery!
-                    </p>
-                    <p>
-                      You found <strong>moon rocks</strong> that are older than
-                      any rocks on Earth! 💎
-                    </p>
-                    <p className="text-sm mt-2">
-                      The Moon is slowly moving away from Earth at about 1.5
-                      inches per year!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-gray-600 to-slate-700"
-                boxBorderColor="border-slate-400"
-              />
-              <MysteryBox
-                title="Black Hole Hunter"
-                emoji="🕳️"
-                description="Dive into the mysteries of cosmic vacuum cleaners!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-purple-300 mb-2">
-                      🕳️ Cosmic Secret Revealed!
-                    </p>
-                    <p>
-                      You discovered that <strong>time slows down</strong> near
-                      black holes! ⏰
-                    </p>
-                    <p className="text-sm mt-2">
-                      If you could watch someone fall into a black hole, they
-                      would appear to freeze at the edge forever!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-purple-600 to-fuchsia-700"
-                boxBorderColor="border-purple-400"
-              />
-              <MysteryBox
-                title="Space Station Life"
-                emoji="🛰️"
-                description="Experience daily life in zero gravity!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-green-300 mb-2">
-                      🛰️ Space Station Access!
-                    </p>
-                    <p>
-                      You unlocked a <strong>zero-gravity sleeping bag</strong>{" "}
-                      used by astronauts! 🛌
-                    </p>
-                    <p className="text-sm mt-2">
-                      Astronauts on the ISS see 16 sunrises and sunsets every
-                      day as they orbit Earth!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-green-600 to-emerald-700"
-                boxBorderColor="border-lime-400"
-              />
-              <MysteryBox
-                title="Galaxy Gazer"
-                emoji="🌌"
-                description="Explore billions of stars and galaxies!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-indigo-300 mb-2">
-                      🌌 Galactic Discovery!
-                    </p>
-                    <p>
-                      You found that our <strong>Milky Way galaxy</strong> has
-                      100-400 billion stars! ✨
-                    </p>
-                    <p className="text-sm mt-2">
-                      It would take 100,000 years to travel across our galaxy at
-                      the speed of light!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-indigo-600 to-blue-700"
-                boxBorderColor="border-blue-400"
-              />
-              <MysteryBox
-                title="Asteroid Miner"
-                emoji="💫"
-                description="Hunt for space rocks and cosmic treasures!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-orange-300 mb-2">
-                      💫 Space Treasure Found!
-                    </p>
-                    <p>
-                      You discovered an <strong>asteroid made of metal</strong>{" "}
-                      worth more than Earth&apos;s economy! 💰
-                    </p>
-                    <p className="text-sm mt-2">
-                      Some asteroids are so valuable that scientists call them
-                      &apos;flying gold mines&apos;!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-orange-600 to-red-700"
-                boxBorderColor="border-orange-400"
-              />
-              <MysteryBox
-                title="Solar Flare Watcher"
-                emoji="🔥"
-                description="Witness the Sun's incredible power!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-yellow-400 mb-2">
-                      🔥 Solar Power Unlocked!
-                    </p>
-                    <p>
-                      You captured the energy of a <strong>solar flare</strong>{" "}
-                      that could power Earth for millions of years! ⚡
-                    </p>
-                    <p className="text-sm mt-2">
-                      Solar flares are enormous explosions on the Sun that can
-                      be seen from other stars!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-yellow-500 to-red-600"
-                boxBorderColor="border-yellow-300"
-              />
-              <MysteryBox
-                title="First Human in Space"
-                emoji="👨‍🚀"
-                description="Learn about Yuri Gagarin's historic journey!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-blue-300 mb-2">
-                      👨‍🚀 History Made!
-                    </p>
-                    <p>
-                      You discovered that <strong>Yuri Gagarin</strong> was the
-                      first human in space in 1961! 🚀
-                    </p>
-                    <p className="text-sm mt-2">
-                      His famous words: "I see Earth! It is so beautiful!"
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-blue-600 to-indigo-700"
-                boxBorderColor="border-cyan-400"
-              />
-              <MysteryBox
-                title="Moon Landing"
-                emoji="🌕"
-                description="Relive humanity's greatest adventure!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-gray-300 mb-2">
-                      🌕 One Small Step!
-                    </p>
-                    <p>
-                      You found Neil Armstrong&apos;s{" "}
-                      <strong>first footprint on the Moon</strong> from 1969! 👣
-                    </p>
-                    <p className="text-sm mt-2">
-                      That footprint will last for millions of years because
-                      there&apos;s no wind or rain on the Moon!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-gray-600 to-slate-700"
-                boxBorderColor="border-slate-400"
-              />
-              <MysteryBox
-                title="Space Food Scientist"
-                emoji="🍽️"
-                description="Discover what astronauts eat in space!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-green-300 mb-2">
-                      🍽️ Space Kitchen!
-                    </p>
-                    <p>
-                      You invented <strong>space ice cream</strong> that
-                      doesn&apos;t melt in zero gravity! 🍦
-                    </p>
-                    <p className="text-sm mt-2">
-                      Astronauts use magnetic spoons and drink from sealed bags
-                      to keep food from floating away!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-green-600 to-emerald-700"
-                boxBorderColor="border-lime-400"
-              />
-              <MysteryBox
-                title="Space Suit Designer"
-                emoji="🧑‍🔬"
-                description="Create the ultimate space exploration outfit!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-white mb-2">
-                      🧑‍🔬 High-Tech Fashion!
-                    </p>
-                    <p>
-                      You designed a <strong>smart spacesuit</strong> that can
-                      repair itself! 👕
-                    </p>
-                    <p className="text-sm mt-2">
-                      Real spacesuits have 14 layers of material to protect
-                      astronauts from extreme temperatures and space radiation!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-white to-gray-400"
-                boxBorderColor="border-gray-300"
-              />
-              <MysteryBox
-                title="Mars Colony Planner"
-                emoji="🏗️"
-                description="Design the first human city on another planet!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-red-300 mb-2">
-                      🏗️ Future City!
-                    </p>
-                    <p>
-                      You planned a <strong>Mars colony</strong> with domes that
-                      protect humans from radiation! 🏠
-                    </p>
-                    <p className="text-sm mt-2">
-                      The first Mars settlers might live in underground tunnels
-                      to stay safe from cosmic rays!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-red-600 to-orange-700"
-                boxBorderColor="border-red-400"
-              />
-              <MysteryBox
-                title="Space Doctor"
-                emoji="🩺"
-                description="Learn how to keep astronauts healthy in space!"
-                mysteryContent={
-                  <div className="text-center">
-                    <p className="text-lg font-bold text-pink-300 mb-2">
-                      🩺 Space Medicine!
-                    </p>
-                    <p>
-                      You discovered how{" "}
-                      <strong>zero gravity affects the human body</strong>! 💪
-                    </p>
-                    <p className="text-sm mt-2">
-                      Astronauts exercise 2 hours daily to prevent muscle and
-                      bone loss in space!
-                    </p>
-                  </div>
-                }
-                boxColorGradient="from-pink-600 to-rose-700"
-                boxBorderColor="border-pink-400"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <MysteryBox
                 title="Solar System Explorer"
                 emoji="🌞"
@@ -634,7 +383,7 @@ export default function FunAndLearn() {
                     <div className="bg-gray-800/50 p-3 rounded-lg mt-2">
                       <p className="text-sm text-gray-300">
                         <span className="text-green-400">✨ Fun Fact:</span>{" "}
-                        Jupiter has 95 moons - tha&apos;s a busy planet!
+                        Jupiter has 95 moons - that&apos;s a busy planet!
                       </p>
                     </div>
                   </div>
