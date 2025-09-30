@@ -65,7 +65,7 @@ export const RiddleCard: React.FC<RiddleCardProps> = ({
     const { value: answerInput } = await MySwal.fire({
       title: (
         <span className="font-display text-2xl text-blue-700">
-          What's your guess? 🤔
+          What&apos;s your guess? 🤔
         </span>
       ),
       input: "text",
@@ -105,7 +105,7 @@ export const RiddleCard: React.FC<RiddleCardProps> = ({
             <div className="flex flex-col items-center justify-center p-4">
               <div className="text-6xl mb-4 animate-bounceCustom">✅</div>
               <h3 className="font-story-text text-xl text-gray-700 mb-2">
-                You solved it! It's {riddle.answer}!
+                You solved it! It&apos;s {riddle.answer}!
               </h3>
               <p className="text-lg text-gray-600 mb-4">{riddle.explanation}</p>
             </div>
@@ -134,7 +134,7 @@ export const RiddleCard: React.FC<RiddleCardProps> = ({
             <div className="flex flex-col items-center justify-center p-4">
               <div className="text-5xl mb-4">Try again!</div>
               <p className="text-lg text-gray-700">
-                That's not {riddle.answer}. Don't give up!
+                That&apos;s not {riddle.answer}. Don't give up!
               </p>
             </div>
           ),
