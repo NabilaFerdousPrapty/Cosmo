@@ -324,7 +324,7 @@ export default function FunAndLearn() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-zinc-900 to-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-bl from-black via-zinc-900 to-black text-white relative overflow-hidden">
       <StarBackground />
       <Particles className="absolute inset-0 z-0" />
 
@@ -332,12 +332,12 @@ export default function FunAndLearn() {
       <div className="relative z-10 text-center py-8 px-4">
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-4">
           <AnimatedSun />
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-400 bg-clip-text text-transparent">
             Fun & Learn Galaxy!
           </h1>
           <AnimatedSun />
         </div>
-        <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+        <p className="text-xl text-blue-100 max-w-2xl mx-auto">
           Explore amazing facts, solve cool riddles, and discover the wonders of
           our universe! 🌟
         </p>
@@ -405,7 +405,7 @@ export default function FunAndLearn() {
 
         {/* Facts Section */}
         {activeTab === "facts" && (
-          <div className="min-h-screen flex flex-col justify-center py-12 px-4 bg-gradient-to-br from-slate-900 to-black relative">
+          <div className="min-h-screen flex flex-col justify-center py-12 px-4 relative">
             <Particles className="absolute inset-0 z-0" />
             <div className="text-center mb-12">
               <h2 className="text-5xl font-extrabold font-display text-yellow-300 mb-4 drop-shadow-lg">

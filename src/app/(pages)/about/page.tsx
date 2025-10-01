@@ -13,11 +13,12 @@ const page = () => {
       <div className="relative z-10 mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         {/* 1. Hero Section: Our Story */}
         <section className="mb-20 text-center">
-          <h1 className="flex items-center justify-center text-5xl font-extrabold tracking-tight text-transparent sm:text-6xl lg:text-7xl bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text drop-shadow-lg animate-fade-in">
+          <h1 className="flex items-center justify-center tracking-tight text-transparent  drop-shadow-lg animate-fade-in text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-400 bg-clip-text">
             <Sun className="mr-4 h-12 w-12 sm:h-16 sm:w-16 animate-pulse-slow" />
-            Welcome to Sunflare! ☀️ Our Story Begins...
+            Welcome to Sunflare! ☀️
+            <br /> Our Story Begins...
           </h1>
-          <p className="mt-6 text-xl text-yellow-200 sm:text-2xl font-semibold max-w-3xl mx-auto">
+          <p className="mt-6 text-xl text-white sm:text-2xl font-semibold max-w-3xl mx-auto text-justify lg:text-center">
             Have you ever looked at the Sun and wondered what amazing things are
             happening up there? At Sunflare, we turn those big questions into
             exciting adventures!
@@ -37,14 +38,14 @@ const page = () => {
               <h2 className="mb-6 text-4xl font-bold text-blue-300">
                 More Than Just a Storybook! 📖
               </h2>
-              <p className="mb-4 text-lg text-gray-300">
+              <p className="mb-4 text-lg text-gray-300 text-justify">
                 Sunflare is your secret portal to understanding the incredible
                 world of space weather! We&apos;re a digital storybook designed
                 especially for curious kids like you. We explore solar storms,
                 magnificent flares, and dazzling auroras, breaking down complex
                 science into easy-to-understand tales.
               </p>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-gray-300 text-justify">
                 Our mission is to spark wonder and teach you how the Sun&apos;s
                 big burps affect our world, from the sky-high journeys of pilots
                 to the hard work of farmers and brave astronauts.
@@ -165,13 +166,13 @@ const page = () => {
                 <p className="text-sm text-gray-500 mt-1">The Sunflare Guide</p>
               </div>
               <div className="md:w-1/2">
-                <p className="mb-4 text-lg text-gray-300">
+                <p className="mb-4 text-lg text-gray-300 text-justify">
                   Hello! I&apos;m Prapty, the creator behind Sunflare. I believe
                   that science is an amazing adventure, and learning about space
                   shouldn&apos;t be boring! That&apos;s why I created Sunflare –
                   to make the cosmos accessible and exciting for young minds.
                 </p>
-                <p className="text-lg text-gray-300">
+                <p className="text-lg text-gray-300 text-justify">
                   My goal is to inspire the next generation of scientists,
                   explorers, and stargazers, showing them that the universe is
                   full of fascinating secrets just waiting to be discovered. I
@@ -199,12 +200,12 @@ const page = () => {
                 <p className="text-gray-400">Story & Content Creation</p>
               </div>
               <div className="md:w-1/2">
-                <p className="mb-4 text-lg text-gray-300">
+                <p className="mb-4 text-lg text-gray-300 text-justify">
                   As the content creator for Sunflare, I focus on crafting
                   engaging stories and educational materials that make complex
                   space concepts accessible and exciting for young learners.
                 </p>
-                <p className="text-lg text-gray-300">
+                <p className="text-lg text-gray-300 text-justify">
                   My passion for storytelling combined with scientific accuracy
                   helps create an immersive learning experience that sparks
                   curiosity and inspires future space explorers.
@@ -230,12 +231,12 @@ const page = () => {
                 <p className="text-gray-400">Video Content & Media</p>
               </div>
               <div className="md:w-1/2">
-                <p className="mb-4 text-lg text-gray-300">
+                <p className="mb-4 text-lg text-gray-300 text-justify">
                   I specialize in creating captivating video content that brings
                   the wonders of space to life. Through visual storytelling, I
                   help make astronomical phenomena understandable and engaging.
                 </p>
-                <p className="text-lg text-gray-300">
+                <p className="text-lg text-gray-300 text-justify">
                   My work involves producing educational videos, animations, and
                   visual media that complement our platform&apos;s mission to
                   inspire young minds about the cosmos.
@@ -256,12 +257,12 @@ const page = () => {
         </section>
 
         {/* 4. Section: Why Space Weather Matters */}
-        <section className="mb-20 rounded-xl border border-orange-700 bg-orange-950/20 p-8 shadow-2xl backdrop-blur-sm">
+        <section className="mb-20 rounded-xl border border-orange-700 bg-black p-8 shadow-2xl backdrop-blur-sm">
           <h2 className="mb-8 text-center text-4xl font-bold text-orange-300">
             Why Care About Sun Burps? 🤔
           </h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="text-center p-6 rounded-lg bg-orange-800/30 hover:scale-105 transition-transform duration-200">
+            <div className="text-center p-6 rounded-lg bg-black hover:scale-105 transition-transform duration-200 border-2 border-orange-800">
               <span className="text-5xl">🚜</span> {/* Tractor emoji */}
               <h3 className="mt-4 mb-2 text-xl font-semibold text-yellow-100">
                 For Farmers
@@ -271,32 +272,32 @@ const page = () => {
                 tractors to find their way!
               </p>
             </div>
-            <div className="text-center p-6 rounded-lg bg-orange-800/30 hover:scale-105 transition-transform duration-200">
+            <div className="text-center p-6 rounded-lg bg-black border-orange-800 hover:scale-105 transition-transform duration-200 border-2">
               <span className="text-5xl">✈️</span> {/* Airplane emoji */}
               <h3 className="mt-4 mb-2 text-xl font-semibold text-yellow-100">
                 For Pilots
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-justify lg:text-center">
                 Auroras are beautiful, but strong space weather can make plane
                 radios noisy!
               </p>
             </div>
-            <div className="text-center p-6 rounded-lg bg-orange-800/30 hover:scale-105 transition-transform duration-200">
+            <div className="text-center p-6 rounded-lg bg-black border-orange-800 border-2 hover:scale-105 transition-transform duration-200">
               <span className="text-5xl">👨‍🚀</span> {/* Astronaut emoji */}
               <h3 className="mt-4 mb-2 text-xl font-semibold text-yellow-100">
                 For Astronauts
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-justify lg:text-center">
                 They&apos;re brave, but need to be protected from space
                 radiation during flares!
               </p>
             </div>
-            <div className="text-center p-6 rounded-lg bg-orange-800/30 hover:scale-105 transition-transform duration-200">
+            <div className="text-center p-6 rounded-lg bg-black border-orange-800 border-2 hover:scale-105 transition-transform duration-200">
               <span className="text-5xl">🌟</span> {/* Star emoji */}
-              <h3 className="mt-4 mb-2 text-xl font-semibold text-yellow-100">
+              <h3 className="mt-4 mb-2 text-xl font-semibold text-yellow-100 lg:text-center">
                 For YOU!
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-justify lg:text-center">
                 Ever seen the Northern Lights? Tha&apos;s space weather creating
                 a magical show just for us!
               </p>
@@ -305,8 +306,8 @@ const page = () => {
         </section>
 
         {/* 5. Footer CTA */}
-        <section className="text-center py-10">
-          <p className="text-2xl text-yellow-300 mb-6">
+        <section className="text-center py-2">
+          <p className="text-2xl text-white mb-6">
             Ready for another solar adventure?
           </p>
           <Link

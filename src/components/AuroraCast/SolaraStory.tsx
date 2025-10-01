@@ -140,7 +140,7 @@ const SolaraStory: React.FC = () => {
   }
 
   return (
-    <div className="font-comic-sans p-4 md:p-5 max-w-6xl mx-auto leading-relaxed bg-gradient-to-b from-black via-purple-900/20 to-blue-900/20 min-h-screen relative overflow-hidden">
+    <div className="font-comic-sans p-4 md:p-5 max-w-6xl mx-auto leading-relaxed  from-black  min-h-screen relative overflow-hidden">
       {/* Fixed Star Background */}
       <StarBackground />
 
@@ -155,13 +155,13 @@ const SolaraStory: React.FC = () => {
         >
           <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-4 mb-4">
             <AnimatedSun />
-            <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 via-yellow-400 to-red-400 bg-clip-text text-transparent drop-shadow-lg text-center">
+            <h1 className="text-4xl md:text-6xl  font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-400 bg-clip-text text-transparent">
               Hi, I am Solara!
             </h1>
             <AnimatedSun />
           </div>
 
-          <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-yellow-500/50 shadow-2xl">
+          <div className="bg-black p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-yellow-500/50 shadow-2xl">
             <p className="text-base md:text-xl text-center mb-2 text-gray-200 leading-relaxed">
               Although I&apos;m 93 million miles away from Earth, my solar
               activity can significantly impact your daily life!
@@ -176,7 +176,7 @@ const SolaraStory: React.FC = () => {
 
         {/* Main Story Section */}
         <div
-          className={`mb-8 md:mb-10 bg-gradient-to-br from-purple-900/30 via-black/40 to-blue-900/30 p-4 md:p-8 rounded-2xl md:rounded-3xl border-2 border-green-500/50 shadow-2xl transform transition-all duration-1000 delay-300 ${
+          className={`mb-8 md:mb-10 bg-black p-4 md:p-8 rounded-2xl md:rounded-3xl border-2 border-green-500/50 shadow-2xl transform transition-all duration-1000 delay-300 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
@@ -260,7 +260,7 @@ const SolaraStory: React.FC = () => {
 
         {/* Interactive Facts Section */}
         <div
-          className={`bg-gradient-to-r from-orange-900/20 to-red-900/20 p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-orange-500/50 transform transition-all duration-1000 delay-600 ${
+          className={`bg-black p-4 md:p-6 rounded-xl md:rounded-2xl border-2 border-orange-500/50 transform transition-all duration-1000 delay-600 ${
             isVisible
               ? "translate-x-0 opacity-100"
               : "-translate-x-10 opacity-0"

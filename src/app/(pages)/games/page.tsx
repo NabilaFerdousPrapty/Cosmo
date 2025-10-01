@@ -68,11 +68,11 @@ const games = [
 
 export default function GamesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-black text-white">
+    <div className="min-h-screen  bg-black text-white">
       {/* Header */}
-      <header className="container mx-auto px-4 py-12 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-          Solar Games
+      <header className="container mx-auto px-4 pb-12 pt-5 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-400 bg-clip-text text-transparent my-4">
+         Fun with the Sun: Learn and Play
         </h1>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
           Interactive games that teach you about the Sun, solar flares, and
