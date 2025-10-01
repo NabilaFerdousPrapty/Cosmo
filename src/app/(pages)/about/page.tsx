@@ -10,15 +10,14 @@ const page = () => {
       <Particles className="absolute inset-0 z-0" />
 
       {/* Main Content Wrapper */}
-      <div className="relative z-10 mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 pb-10 py-6 sm:px-6 lg:px-8">
         {/* 1. Hero Section: Our Story */}
         <section className="mb-20 text-center">
-          <h1 className="flex items-center justify-center tracking-tight text-transparent  drop-shadow-lg animate-fade-in text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-400 bg-clip-text">
+          <h1 className="flex items-center justify-center tracking-tight text-transparent  drop-shadow-lg animate-fade-in text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-400 bg-clip-text max-w-3xl mx-auto">
             <Sun className="mr-4 h-12 w-12 sm:h-16 sm:w-16 animate-pulse-slow" />
-            Welcome to Sunflare! ☀️
-            <br /> Our Story Begins...
+            Welcome to Sunflare! ☀️ Our Story Begins...
           </h1>
-          <p className="mt-6 text-xl text-white sm:text-2xl font-semibold max-w-3xl mx-auto text-justify lg:text-center">
+          <p className="mt-6 text-xl text-white sm:text-2xl font-semibold max-w-3xl mx-auto text-center">
             Have you ever looked at the Sun and wondered what amazing things are
             happening up there? At Sunflare, we turn those big questions into
             exciting adventures!
@@ -129,7 +128,7 @@ const page = () => {
         </section>
 
         {/* 3. Section: Meet the Creators / Our Mission */}
-        <section className="mb-20 rounded-xl border border-pink-700 bg-pink-950/20 p-8 shadow-2xl backdrop-blur-sm">
+        <section className="mb-20 rounded-xl border border-pink-700 bg-black p-8 shadow-2xl backdrop-blur-sm">
           <h2 className="mb-6 text-center text-4xl font-bold text-pink-300">
             Behind the Sunflare Magic! ✨
           </h2>
