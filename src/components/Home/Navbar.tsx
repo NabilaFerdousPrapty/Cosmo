@@ -81,6 +81,7 @@ export function NavbarHome() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
+                href="/auth/login"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
