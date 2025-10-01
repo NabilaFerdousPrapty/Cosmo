@@ -67,22 +67,22 @@ export default function Footer() {
             <div className="flex flex-col space-y-2">
               <h4 className="text-white font-semibold mb-2">Learn</h4>
               <Link
-                href="/education"
+                href="/games"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Education
+                Play
               </Link>
               <Link
-                href="/blog"
+                href="/Stories"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Blog
+                Stories
               </Link>
               <Link
-                href="/resources"
+                href="/aurora-cast"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
-                Resources
+                Weather
               </Link>
             </div>
           </nav>

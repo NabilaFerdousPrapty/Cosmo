@@ -324,7 +324,7 @@ export default function FunAndLearn() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-black via-zinc-900 to-black text-white relative overflow-hidden">
+    <div className="min-h-screen  bg-black text-white relative overflow-hidden">
       <StarBackground />
       <Particles className="absolute inset-0 z-0" />
 

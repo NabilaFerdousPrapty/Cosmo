@@ -9,8 +9,10 @@ export default function StoriesPage() {
       <Particles className="absolute inset-0" />
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-0">
-          <h1 className="text-4xl font-bold text-white mb-2">Solar Stories</h1>
+        <div className="text-center mt-4 mb-5">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-500 via-orange-500 to-red-400 bg-clip-text text-transparent my-1.5">
+            Learn with Solar Stories
+          </h1>
           <p className="text-white text-xl my-1">
             Learn with fun about Space and its Wonders
           </p>

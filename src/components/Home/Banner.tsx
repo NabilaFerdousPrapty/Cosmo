@@ -4,9 +4,11 @@ import { motion } from "motion/react";
 import { Particles } from "../ui/particles";
 import { HeroVideoDialog } from "../ui/hero-video-dialog";
 import { Lobster_Two, Lora, Merriweather } from "next/font/google"; // Import Lora and Merriweather
+import Link from "next/link";
 const lora = Lora({ subsets: ["latin"], weight: ["700"] }); // Lora for headline, bold for impact
 const merriweather = Merriweather({ subsets: ["latin"], weight: "400" });
 const lobsterTwo = Lobster_Two({ subsets: ["latin"], weight: ["700"] });
+
 export function HeroSection() {
   return (
     <div className="relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center rounded-4xl ">
@@ -72,16 +74,21 @@ export function HeroSection() {
           }}
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
-          <button
-            className={`w-60 transform rounded-lg bg-black px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 ${merriweather.className}`}
-          >
-            Start the Adventure
-          </button>
-          <button
-            className={`w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900 ${merriweather.className}`}
-          >
-            Meet the Characters
-          </button>
+          <Link href="/Stories">
+            <button
+              className={`w-60 transform rounded-lg bg-black px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 ${merriweather.className}`}
+            >
+              Start the Adventure
+            </button>
+          </Link>
+
+          <Link href="/aurora-cast">
+            <button
+              className={`w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900 ${merriweather.className}`}
+            >
+              Meet the Characters
+            </button>
+          </Link>
         </motion.div>
         <motion.div
           initial={{
