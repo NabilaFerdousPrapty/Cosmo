@@ -1,9 +1,29 @@
 "use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const sohoImage =
-  "https://soho.nascom.nasa.gov/data/realtime/c2/1024/latest.jpg";
 export default function SohoStory() {
+  const [imageUrl, setImageUrl] = useState(
+    "https://soho.nascom.nasa.gov/data/realtime/c2/1024/latest.jpg"
+  );
+
+  useEffect(() => {
+    const updateImage = () => {
+      // Add a timestamp to bypass browser cache
+      setImageUrl(
+        `https://soho.nascom.nasa.gov/data/realtime/c2/1024/latest.jpg?ts=${Date.now()}`
+      );
+    };
+
+    updateImage(); // update immediately on load
+
+    // Refresh every 5 minutes
+    const interval = setInterval(updateImage, 5 * 60 * 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="min-h-screen bg-black text-white p-6 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-yellow-300 mb-6">
@@ -18,11 +38,12 @@ export default function SohoStory() {
 
       <div className="mb-4">
         <Image
-          src={sohoImage}
+          src={imageUrl}
           alt="Latest SOHO CME image"
           width={600}
           height={600}
           className="rounded-2xl border-4 border-yellow-500 shadow-2xl"
+          priority
         />
       </div>
 
