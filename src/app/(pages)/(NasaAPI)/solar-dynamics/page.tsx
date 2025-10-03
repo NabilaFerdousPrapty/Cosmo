@@ -37,7 +37,7 @@ export default function SdoStory() {
 
   return (
     <main className="min-h-screen bg-black text-white p-6 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-orange-300 mb-6">
+      <h1 className="text-4xl font-bold text-orange-300 mb-6 text-center">
         🌞 Solara&apos;s Dynamic Ultraviolet Show! 🌞
       </h1>
 
