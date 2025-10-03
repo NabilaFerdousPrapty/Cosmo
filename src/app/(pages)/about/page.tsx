@@ -139,7 +139,7 @@ const page = () => {
                 NASA Space Apps Challenge 2025
               </h1>
               <p className="text-xl text-gray-300">
-                Team iT3rat0r - RUET ECE 20 Series
+                Team iT3rat0rs - RUET ECE 20 Series
               </p>
               <p className="text-lg text-pink-400 mt-2">
                 Built with Next.js & TypeScript
