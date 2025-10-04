@@ -108,14 +108,14 @@ export function HeroSection() {
           <HeroVideoDialog
             className="block dark:hidden"
             animationStyle="from-left"
-            videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+            videoSrc="https://www.youtube.com/embed/RoCRONr_Enk"
             thumbnailSrc="/videothumbnail.jpg.png"
             thumbnailAlt="Hero Video"
           />
           <HeroVideoDialog
             className="hidden dark:block mt-10"
             animationStyle="from-left"
-            videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+            videoSrc="https://www.youtube.com/embed/RoCRONr_Enk"
             thumbnailSrc="/videothumbnail.jpg.png"
             thumbnailAlt="Hero Video"
           />
