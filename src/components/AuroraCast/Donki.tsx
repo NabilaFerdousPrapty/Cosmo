@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { getSolarFlares } from "../../../lib/nasaDONKIApi";
-import { Particles } from "../ui/particles"; // Assuming this is your background animation
+import { Particles } from "../ui/particles";
 
-// Sun icon component - using an SVG for flexibility and scalability
+// Sun icon component
 const SunIcon = ({ className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ const SunIcon = ({ className = "" }) => (
   >
     <path
       fillRule="evenodd"
-      d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.06l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.243 18.894a.75.75 0 101.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18.75A.75.75 0 0112 18zM5.007 17.243a.75.75 0 00-1.061 1.06l1.591 1.59a.75.75 0 001.06-1.06l-1.59-1.591zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.166 5.007a.75.75 0 00-1.06-1.061l-1.591 1.591a.75.75 0 001.061 1.06l1.59-1.591z"
+      d="M1a2 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.06l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.243 18.894a.75.75 0 101.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V18.75A.75.75 0 0112 18zM5.007 17.243a.75.75 0 00-1.061 1.06l1.591 1.59a.75.75 0 001.06-1.06l-1.59-1.591zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.166 5.007a.75.75 0 00-1.06-1.061l-1.591 1.591a.75.75 0 001.061 1.06l1.59-1.591z"
       clipRule="evenodd"
     />
   </svg>
@@ -32,18 +32,51 @@ const Donki = () => {
   const [flares, setFlares] = React.useState<SolarFlare[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
+  const [startDate, setStartDate] = React.useState<string>("");
+  const [endDate, setEndDate] = React.useState<string>("");
 
-  // Get today's date
-  const today = new Date();
-  const endDate = today.toISOString().split("T")[0]; // YYYY-MM-DD
+  // Initialize with default dates (last month to today)
+  React.useEffect(() => {
+    const today = new Date();
+    const defaultEndDate = today.toISOString().split("T")[0];
 
-  // Get date 1 month ago
-  const lastMonth = new Date();
-  lastMonth.setMonth(today.getMonth() - 1);
-  const startDate = lastMonth.toISOString().split("T")[0];
+    const lastMonth = new Date();
+    lastMonth.setMonth(today.getMonth() - 1);
+    const defaultStartDate = lastMonth.toISOString().split("T")[0];
+
+    setStartDate(defaultStartDate);
+    setEndDate(defaultEndDate);
+  }, []);
+
+  // Format date as "X days ago"
+  const formatDaysAgo = (dateString: string) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now.getTime() - date.getTime());
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return "Today";
+    if (diffDays === 1) return "1 day ago";
+    return `${diffDays} days ago`;
+  };
+
+  // Convert location to more readable format (mock conversion)
+  const formatLocation = (location: string) => {
+    if (!location) return "Unknown location";
+
+    // Mock conversion - in a real app, you'd use actual coordinate conversion
+    const randomDistance = Math.floor(Math.random() * 50000) + 1000;
+    const randomDirection = ["north", "south", "east", "west"][
+      Math.floor(Math.random() * 4)
+    ];
+
+    return `${randomDistance.toLocaleString()} km ${randomDirection}`;
+  };
 
   // Fetch NASA DONKI data
   React.useEffect(() => {
+    if (!startDate || !endDate) return;
+
     const fetchData = async () => {
       setLoading(true);
       setError(null);
@@ -63,18 +96,24 @@ const Donki = () => {
   }, [startDate, endDate]);
 
   const getClassEmoji = (classType: string) => {
-    if (classType.startsWith("X")) return "💥"; // Super big flare!
-    if (classType.startsWith("M")) return "🔥"; // Medium flare!
-    if (classType.startsWith("C")) return "☀️"; // Small flare!
-    return "✨"; // Just a flare!
+    if (classType.startsWith("X")) return "💥";
+    if (classType.startsWith("M")) return "🔥";
+    if (classType.startsWith("C")) return "☀️";
+    return "✨";
+  };
+
+  const handleStartDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setStartDate(e.target.value);
+  };
+
+  const handleEndDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEndDate(e.target.value);
   };
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-white">
-      {/* Background Particles */}
       <Particles className="absolute inset-0 z-0" />
 
-      {/* Content Container */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <header className="mb-10 text-center">
           <h1 className="flex items-center justify-center text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text">
@@ -85,13 +124,61 @@ const Donki = () => {
           <p className="mt-3 text-lg font-medium text-yellow-300 sm:text-xl">
             See what our big star has been up to!
           </p>
-          <p className="mt-2 text-md text-gray-400">
-            From{" "}
-            <span className="font-semibold text-yellow-200">{startDate}</span>{" "}
-            to <span className="font-semibold text-yellow-200">{endDate}</span>
-          </p>
         </header>
 
+        {/* Date Range Selector */}
+        <section className="mb-8 rounded-xl border border-yellow-700 bg-yellow-950/20 p-6 shadow-2xl backdrop-blur-sm">
+          <h2 className="mb-4 text-2xl font-bold text-yellow-300 text-center">
+            Choose Your Time Range
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col">
+              <label
+                htmlFor="startDate"
+                className="mb-2 text-yellow-200 font-medium"
+              >
+                From Date:
+              </label>
+              <input
+                type="date"
+                id="startDate"
+                value={startDate}
+                onChange={handleStartDateChange}
+                className="px-4 py-2 rounded-lg bg-yellow-900/30 border border-yellow-600 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+              {startDate && (
+                <p className="mt-1 text-sm text-yellow-300">
+                  {formatDaysAgo(startDate)}
+                </p>
+              )}
+            </div>
+
+            <div className="text-yellow-400 font-bold text-xl">→</div>
+
+            <div className="flex flex-col">
+              <label
+                htmlFor="endDate"
+                className="mb-2 text-yellow-200 font-medium"
+              >
+                To Date:
+              </label>
+              <input
+                type="date"
+                id="endDate"
+                value={endDate}
+                onChange={handleEndDateChange}
+                className="px-4 py-2 rounded-lg bg-yellow-900/30 border border-yellow-600 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+              {endDate && (
+                <p className="mt-1 text-sm text-yellow-300">
+                  {formatDaysAgo(endDate)}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Results Section */}
         <section className="rounded-xl border border-yellow-700 bg-yellow-950/20 p-6 shadow-2xl backdrop-blur-sm sm:p-8">
           {loading ? (
             <div className="flex items-center justify-center py-10">
@@ -123,7 +210,6 @@ const Donki = () => {
                   key={flare.flrID}
                   className="relative transform overflow-hidden rounded-xl border-2 border-orange-500 bg-gradient-to-br from-yellow-900/40 to-orange-900/40 p-5 shadow-xl transition-all duration-300 hover:scale-[1.03] hover:border-yellow-300 hover:shadow-2xl hover:shadow-yellow-500/30"
                 >
-                  {/* Playful background element */}
                   <div className="absolute -right-4 -top-4 z-0 h-16 w-16 rounded-full bg-yellow-500 opacity-20 blur-md"></div>
                   <div className="absolute -bottom-4 -left-4 z-0 h-16 w-16 rounded-full bg-orange-500 opacity-20 blur-md"></div>
 
@@ -141,14 +227,18 @@ const Donki = () => {
                       <span className="font-semibold text-yellow-100">
                         When:
                       </span>{" "}
-                      {new Date(flare.peakTime).toLocaleString()}
+                      {formatDaysAgo(flare.peakTime)}
+                      <br />
+                      <span className="text-sm text-yellow-300">
+                        {new Date(flare.peakTime).toLocaleString()}
+                      </span>
                     </p>
                     {flare.sourceLocation && (
                       <p>
                         <span className="font-semibold text-yellow-100">
                           Where:
                         </span>{" "}
-                        {flare.sourceLocation}
+                        {formatLocation(flare.sourceLocation)}
                       </p>
                     )}
                     {flare.activeRegionNum !== -1 && (
@@ -165,8 +255,6 @@ const Donki = () => {
                     </p>
                   </div>
                   <div className="relative z-10 mt-6 text-center">
-                    {" "}
-                    {/* Added text-center */}
                     <a
                       href={flare.link}
                       target="_blank"
