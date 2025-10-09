@@ -1,7 +1,6 @@
 # 🌞 Sunflare - Space Weather Adventures
 
 ![NASA Space Apps](https://img.shields.io/badge/NASA-Space%20Apps%202025-blue)
-![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-black)
 ![All Girls Team](https://img.shields.io/badge/Team-All%20Girls%20Team-pink)
 
 An interactive educational platform that makes space weather and solar science exciting for young explorers! Built for the NASA Space Apps Challenge 2025.
